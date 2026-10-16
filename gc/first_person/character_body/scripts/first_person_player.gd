@@ -92,14 +92,14 @@ func check_interactions():
 			current_interaction = collider
 			current_interaction.highlight()
 			
-			crosshair.texture = DOT_HOLE
+			crosshair.texture = DOT
 	else:
 		# If we aren't looking at anything interactable, clear the old highlight
 		if current_interaction:
 			current_interaction.unhighlight()
 			current_interaction = null
 			
-			crosshair.texture = DOT
+			crosshair.texture = DOT_HOLE
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -176,19 +176,3 @@ func move_camera():
 	pass
 
 #endregion
-
-
-func _on_health_component_is_dead() -> void:
-	print("Is Dead")
-	pass # Replace with function body.
-
-
-func _on_health_component_on_life_change(amount: int) -> void:
-	update_health_ui(amount)
-	pass # Replace with function body.
-
-func update_health_ui(amount: int):
-	var health_control: HealthControl = $HealthControl
-	if not health_control:
-		return
-	health_control.update_health_label(amount)

@@ -1,12 +1,48 @@
 [gd_scene format=3 uid="uid://djfagpi4wf30r"]
 
 [ext_resource type="Script" uid="uid://bfhi236tiknul" path="res://gc/first_person/character_body/scripts/first_person_player.gd" id="1_0p46v"]
-[ext_resource type="PackedScene" uid="uid://b5w8mt6l8vqin" path="res://gc/first_person/common/nodes/components/health_component.tscn" id="2_e2l54"]
-[ext_resource type="PackedScene" uid="uid://07522onx1w2v" path="res://gc/first_person/common/nodes/items/damage_container.tscn" id="3_as8a4"]
-[ext_resource type="Texture2D" uid="uid://dr64yhqkp5nv" path="res://sprites/dot.png" id="4_y2f5i"]
-[ext_resource type="PackedScene" uid="uid://b5u5nqlca4mtn" path="res://gc/first_person/common/nodes/ui/health_control.tscn" id="5_y2f5i"]
+[ext_resource type="Texture2D" uid="uid://t6mhgutjwtji" path="res://sprites/dot_hole.png" id="2_o8i6v"]
+[ext_resource type="Texture2D" uid="uid://codiomhyqfmtk" path="res://sprites/heatwave.png" id="3_yx6yx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofe37"]
+
+[sub_resource type="Animation" id="Animation_yx6yx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tp7c1"]
+resource_name = "heat"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 2.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.19607843), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.19607843)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2f5i"]
+_data = {
+&"RESET": SubResource("Animation_yx6yx"),
+&"heat": SubResource("Animation_tp7c1")
+}
 
 [node name="FirstPersonPlayer" type="CharacterBody3D" unique_id=752721606]
 collision_mask = 3
@@ -24,11 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -1.5)
 
-[node name="HealthComponent" parent="." unique_id=1253568854 node_paths=PackedStringArray("damage_control") instance=ExtResource("2_e2l54")]
-damage_control = NodePath("DamageContainer")
-
-[node name="DamageContainer" parent="HealthComponent" unique_id=392166868 instance=ExtResource("3_as8a4")]
-
 [node name="Crosshair" type="TextureRect" parent="." unique_id=1340775454]
 custom_minimum_size = Vector2(10, 10)
 custom_maximum_size = Vector2(10, 10)
@@ -45,10 +76,17 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("4_y2f5i")
+texture = ExtResource("2_o8i6v")
 expand_mode = 1
 
-[node name="HealthControl" parent="." unique_id=1072110693 instance=ExtResource("5_y2f5i")]
+[node name="HeatVignette" type="TextureRect" parent="." unique_id=400155212]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yx6yx")
 
-[connection signal="is_dead" from="HealthComponent" to="." method="_on_health_component_is_dead"]
-[connection signal="on_life_change" from="HealthComponent" to="." method="_on_health_component_on_life_change"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HeatVignette" unique_id=548775]
+libraries/ = SubResource("AnimationLibrary_y2f5i")
