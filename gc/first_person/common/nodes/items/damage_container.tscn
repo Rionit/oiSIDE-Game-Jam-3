@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://07522onx1w2v"]
+
+[ext_resource type="Texture2D" uid="uid://b02yqfps104p3" path="res://gc/first_person/character_body/sprites/damage.png" id="1_40hvq"]
+
+[sub_resource type="Animation" id="Animation_4jbn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8fp3r"]
+resource_name = "damage"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txjet"]
+_data = {
+&"RESET": SubResource("Animation_4jbn3"),
+&"damage": SubResource("Animation_8fp3r")
+}
+
+[node name="DamageContainer" type="Control" unique_id=1068572903]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1179685052]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_40hvq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1025846751]
+libraries/ = SubResource("AnimationLibrary_txjet")

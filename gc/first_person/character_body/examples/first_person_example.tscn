@@ -1,0 +1,460 @@
+[gd_scene format=3 uid="uid://boop7q2cmkfea"]
+
+[ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="1_jwahl"]
+[ext_resource type="Material" uid="uid://cxei1ugbnqkws" path="res://gc/prototype_textures/materials/black_material.tres" id="1_mfbm4"]
+[ext_resource type="PackedScene" uid="uid://cs7706ckj661f" path="res://gc/first_person/common/nodes/items/cure.tscn" id="2_2he2x"]
+[ext_resource type="Material" uid="uid://bhxov55o4cgfs" path="res://gc/prototype_textures/materials/orange_material.tres" id="2_gum3p"]
+[ext_resource type="Material" uid="uid://bdd0l6ls5empc" path="res://gc/prototype_textures/materials/grey_material.tres" id="2_v32ks"]
+[ext_resource type="Material" uid="uid://by5encxbbc8ur" path="res://gc/prototype_textures/materials/blue_material.tres" id="5_li86b"]
+[ext_resource type="Material" uid="uid://r1a6lmiyi22y" path="res://gc/prototype_textures/materials/red_material.tres" id="6_e8ybj"]
+[ext_resource type="PackedScene" uid="uid://bg12h8pa826dd" path="res://gc/first_person/common/nodes/items/example_door.tscn" id="7_ffbgs"]
+[ext_resource type="Material" uid="uid://cu403c4mr1wnh" path="res://gc/prototype_textures/materials/green_material.tres" id="8_a5rex"]
+[ext_resource type="Script" uid="uid://bwk3i1lnp1fjl" path="res://gc/first_person/character_body/examples/scripts/player_damage.gd" id="11_e8ybj"]
+[ext_resource type="Script" uid="uid://hiavw4s2cn8y" path="res://gc/first_person/character_body/examples/scripts/player_heal.gd" id="12_ffbgs"]
+[ext_resource type="Script" uid="uid://dp4oawc61eljj" path="res://gc/first_person/common/scripts/ui/menu.gd" id="12_h05pv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2he2x"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_1657g"]
+sky_material = SubResource("ProceduralSkyMaterial_2he2x")
+
+[sub_resource type="Environment" id="Environment_mfbm4"]
+background_mode = 2
+sky = SubResource("Sky_1657g")
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gum3p"]
+albedo_color = Color(0.0457637, 0.0457637, 0.0457637, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v32ks"]
+albedo_color = Color(1, 0.396078, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ffbgs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0442286, 1.23433, 8.75014)]
+}
+
+[sub_resource type="Animation" id="Animation_a5rex"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.044, 4.35, 8.75), Vector3(0.0442286, 1.23433, 8.75014)]
+}
+
+[sub_resource type="Animation" id="Animation_e8ybj"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0442286, 1.23433, 8.75014), Vector3(0.0442286, 4.35006, 8.75014)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8vjl"]
+_data = {
+&"RESET": SubResource("Animation_ffbgs"),
+&"close": SubResource("Animation_a5rex"),
+&"open": SubResource("Animation_e8ybj")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_li86b"]
+size = Vector3(1.5, 2, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_li86b"]
+size = Vector3(1.5, 0.01, 1.5)
+
+[sub_resource type="Theme" id="Theme_j32v1"]
+Button/font_sizes/font_size = 32
+
+[node name="FirstPersonExample" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mfbm4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="Scenario" type="Node" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.364746, 0)
+material_override = ExtResource("1_mfbm4")
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = SubResource("StandardMaterial3D_gum3p")
+
+[node name="Wall" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.68525, 48.8774)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(100, 10, 1)
+material = SubResource("StandardMaterial3D_gum3p")
+
+[node name="Wall2" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.68525, -47.1226)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(100, 10, 1)
+material = SubResource("StandardMaterial3D_gum3p")
+
+[node name="Wall3" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49, 4.68525, -0.122631)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(100, 10, 1)
+material = SubResource("StandardMaterial3D_gum3p")
+
+[node name="Wall4" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49, 4.68525, -0.122631)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(100, 10, 1)
+material = SubResource("StandardMaterial3D_gum3p")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04423, 2.18525, 8.60938)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(7, 5, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0442286, 3.68525, 8.60938)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(3, 2, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95508, 2.1989, 8.61336)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(7, 5, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04423, 2.18525, 1.67984)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(7, 5, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0442286, 3.68525, 1.67984)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(3, 2, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95508, 2.1989, 1.68382)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(7, 5, 1)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544229, 5.18525, -4.39062)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(18, 1, 41)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.18525, -7.5)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 33)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.18525, 12)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 6)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.18525, 12)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 6)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.18525, 5)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 6)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.18525, -4)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 40)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 2.18525, 15.5)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 18)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 2.18525, -24.5)
+material_override = ExtResource("2_v32ks")
+use_collision = true
+size = Vector3(1, 5, 18)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185254, -8.2829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18525, -6.7829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 3)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18525, -11.7829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 3)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18525, -16.2829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 2)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18525, -16.2829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 2)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18525, -18.2829)
+material_override = ExtResource("2_gum3p")
+use_collision = true
+size = Vector3(10, 1, 2)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="FirstPersonPlayer" parent="." instance=ExtResource("1_jwahl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48823e-05, 0.689604, 13.7355)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0055685, 4.45076, 12.3377)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0055685, 4.45076, 5.3377)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.99443, 4.45076, -3.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.00557, 4.45076, -3.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.99443, 4.45076, -11.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.00557, 4.45076, -11.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.99443, 4.45076, -20.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.00557, 4.45076, -20.6623)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+spot_angle = 82.9507
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.99443, 4.45076, 5.3377)
+light_indirect_energy = 9.525
+spot_range = 7.527
+spot_attenuation = -1.14
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label3D" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9.15536)
+text = "Welcome to First Person Example"
+
+[node name="Label3D2" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2.21197)
+text = "Health Damage and Heal ->"
+
+[node name="Label3D3" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47347, -5.20874)
+text = "Jump"
+
+[node name="Interactions" type="Node" parent="."]
+
+[node name="InitialDoor" type="CSGBox3D" parent="Interactions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0442286, 1.23433, 8.75014)
+material_override = ExtResource("8_a5rex")
+use_collision = true
+size = Vector3(3, 3.09814, 0.274292)
+material = SubResource("StandardMaterial3D_v32ks")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Interactions/InitialDoor"]
+libraries = {
+&"": SubResource("AnimationLibrary_l8vjl")
+}
+
+[node name="InitialDoorArea" parent="Interactions" node_paths=PackedStringArray("door_anim") instance=ExtResource("7_ffbgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+door_anim = NodePath("../InitialDoor/AnimationPlayer")
+
+[node name="PlayerDamage" type="Area3D" parent="Interactions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99454, 0.190391, 4.00557)
+script = ExtResource("11_e8ybj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/PlayerDamage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234153, 0.5, 0)
+shape = SubResource("BoxShape3D_li86b")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Interactions/PlayerDamage/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = ExtResource("6_e8ybj")
+mesh = SubResource("BoxMesh_li86b")
+
+[node name="Label3D" type="Label3D" parent="Interactions/PlayerDamage"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.448122, 1.49561, 0)
+text = "Player Damage"
+
+[node name="Timer" type="Timer" parent="Interactions/PlayerDamage"]
+one_shot = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Interactions/PlayerDamage"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.61752, 0)
+spot_attenuation = -0.54
+
+[node name="PlayerHeal" type="Node3D" parent="Interactions" node_paths=PackedStringArray("instance_item")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75143, 0, 6.33766)
+script = ExtResource("12_ffbgs")
+instance_item = NodePath("Cure")
+heal_item = ExtResource("2_2he2x")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Interactions/PlayerHeal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31, 0)
+material_override = ExtResource("5_li86b")
+mesh = SubResource("BoxMesh_li86b")
+
+[node name="Cure" parent="Interactions/PlayerHeal" instance=ExtResource("2_2he2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Timer" type="Timer" parent="Interactions/PlayerHeal"]
+one_shot = true
+
+[node name="Label3D2" type="Label3D" parent="Interactions/PlayerHeal"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.691, 1.68561, 0)
+text = "Player Heal"
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Interactions/PlayerHeal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.243, 2.80752, 0)
+spot_attenuation = -0.54
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_h05pv")
+
+[node name="MenuButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -26.5
+offset_right = 100.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_j32v1")
+text = "Quit"
+
+[connection signal="body_entered" from="Interactions/PlayerDamage" to="Interactions/PlayerDamage" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactions/PlayerDamage" to="Interactions/PlayerDamage" method="_on_body_exited"]
+[connection signal="timeout" from="Interactions/PlayerDamage/Timer" to="Interactions/PlayerDamage" method="_on_timer_timeout"]
+[connection signal="timeout" from="Interactions/PlayerHeal/Timer" to="Interactions/PlayerHeal" method="_on_timer_timeout"]
+[connection signal="pressed" from="Menu/MenuButton" to="Menu" method="_on_menu_button_pressed"]

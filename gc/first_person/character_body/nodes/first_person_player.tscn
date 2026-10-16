@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://djfagpi4wf30r"]
+
+[ext_resource type="Script" uid="uid://bfhi236tiknul" path="res://gc/first_person/character_body/scripts/first_person_player.gd" id="1_0p46v"]
+[ext_resource type="PackedScene" uid="uid://b5w8mt6l8vqin" path="res://gc/first_person/common/nodes/components/health_component.tscn" id="2_e2l54"]
+[ext_resource type="PackedScene" uid="uid://07522onx1w2v" path="res://gc/first_person/common/nodes/items/damage_container.tscn" id="3_as8a4"]
+[ext_resource type="Texture2D" uid="uid://dr64yhqkp5nv" path="res://sprites/dot.png" id="4_y2f5i"]
+[ext_resource type="PackedScene" uid="uid://b5u5nqlca4mtn" path="res://gc/first_person/common/nodes/ui/health_control.tscn" id="5_y2f5i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofe37"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D" unique_id=752721606]
+collision_mask = 3
+script = ExtResource("1_0p46v")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=992260533]
+shape = SubResource("CapsuleShape3D_ofe37")
+
+[node name="Camera" type="Node3D" parent="." unique_id=347107271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera" unique_id=1008336844]
+
+[node name="InteractRayCast3D" type="RayCast3D" parent="Camera/Camera3D" unique_id=284567336]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -1.5)
+
+[node name="HealthComponent" parent="." unique_id=1253568854 node_paths=PackedStringArray("damage_control") instance=ExtResource("2_e2l54")]
+damage_control = NodePath("DamageContainer")
+
+[node name="DamageContainer" parent="HealthComponent" unique_id=392166868 instance=ExtResource("3_as8a4")]
+
+[node name="Crosshair" type="TextureRect" parent="." unique_id=1340775454]
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(10, 10)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_y2f5i")
+expand_mode = 1
+
+[node name="HealthControl" parent="." unique_id=1072110693 instance=ExtResource("5_y2f5i")]
+
+[connection signal="is_dead" from="HealthComponent" to="." method="_on_health_component_is_dead"]
+[connection signal="on_life_change" from="HealthComponent" to="." method="_on_health_component_on_life_change"]

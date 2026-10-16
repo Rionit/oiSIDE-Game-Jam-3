@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://brf04vyupjui8"]
+
+[ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="2_w7c3h"]
+[ext_resource type="Material" uid="uid://djo00u2we4r87" path="res://materials/outline.tres" id="3_w8frs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qaqv0"]
+size = Vector3(7.145508, 1, 7.9521484)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2q6dc"]
+points = PackedVector3Array(3.572754, 0.5, 3.975296, 3.572754, -0.5, 3.975296, 3.572754, 0.5, -3.9760742, -3.572754, 0.5, 3.975296, -3.572754, -0.5, 3.975296, 3.572754, -0.5, -3.9760742, -3.572754, 0.5, -3.9760742, -3.572754, -0.5, -3.9760742)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2q6dc"]
+size = Vector3(0.33203125, 0.22290039, 0.3203125)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w7c3h"]
+points = PackedVector3Array(-0.16601563, -0.111450195, -0.16015625, -0.16601563, 0.111450195, -0.16015625, 0.16601563, -0.111450195, -0.16015625, -0.16601563, -0.111450195, 0.16015625, -0.16601563, 0.111450195, 0.16015625, 0.16601563, 0.111450195, -0.16015625, 0.16601563, -0.111450195, 0.16015625, 0.16601563, 0.111450195, 0.16015625)
+
+[node name="Level" type="Node3D" unique_id=1033408852]
+
+[node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("1_2q6dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1871579, 0)
+can_run = false
+can_jump = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=523735967]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=14990118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48879516, 0)
+mesh = SubResource("BoxMesh_qaqv0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1344255712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48879516, 0)
+shape = SubResource("ConvexPolygonShape3D_2q6dc")
+
+[node name="Interactable" type="StaticBody3D" parent="." unique_id=1474020971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99745, 4.47278)
+script = ExtResource("2_w7c3h")
+outline_material = ExtResource("3_w8frs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactable" unique_id=1604268200]
+mesh = SubResource("BoxMesh_2q6dc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1146825881]
+shape = SubResource("ConvexPolygonShape3D_w7c3h")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bg12h8pa826dd"]
+
+[ext_resource type="Script" uid="uid://swpxhefwxmbn" path="res://gc/first_person/common/nodes/items/example_door.gd" id="1_mm8hk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8ybj"]
+size = Vector3(3, 1, 4)
+
+[node name="InitialDoorArea" type="Area3D"]
+script = ExtResource("1_mm8hk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.27573)
+shape = SubResource("BoxShape3D_e8ybj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
