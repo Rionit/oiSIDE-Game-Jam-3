@@ -1,0 +1,40 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ctk6cicvya27l"]
+
+[sub_resource type="Shader" id="Shader_vf37k"]
+code = "shader_type spatial;
+render_mode depth_draw_opaque, unshaded, shadows_disabled;
+
+uniform sampler2D noise_tex : hint_default_white;
+uniform vec4 root_color : source_color = vec4( 1.0, 0.75, 0.3, 1.0 );
+uniform vec4 tip_color : source_color = vec4( 1.0, 0.03, 0.001, 1.0 );
+
+uniform float fire_alpha : hint_range( 0.0, 1.0 ) = 1.0;
+uniform vec2 fire_speed = vec2( 0.0, 1.0 );
+uniform float fire_aperture : hint_range( 0.0, 3.0 ) = 0.22;
+
+void fragment( )
+{
+	vec2 shifted_uv = UV + TIME * fire_speed;
+	float fire_noise = texture( noise_tex, shifted_uv ).r;
+	float noise = UV.y * ( ( ( UV.y + fire_aperture ) * fire_noise - fire_aperture ) * 75.0 );
+	vec4 fire_color = mix( tip_color, root_color, noise * 0.05 );
+
+	ALPHA = clamp( noise, 0.0, 1.0 ) * fire_alpha;
+	ALBEDO = fire_color.rgb;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
+fractal_gain = 0.8
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vf37k"]
+noise = SubResource("FastNoiseLite_xx5bj")
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_vf37k")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_vf37k")
+shader_parameter/root_color = Color(1, 0.75, 0.3, 1)
+shader_parameter/tip_color = Color(1, 0.03, 0.001, 1)
+shader_parameter/fire_alpha = 0.850000040375
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/fire_aperture = 0.800000038

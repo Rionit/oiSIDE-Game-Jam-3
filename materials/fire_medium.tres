@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7ge67vv2ctck"]
+
+[ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="1_ne1xg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
+fractal_gain = 0.8
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vf37k"]
+noise = SubResource("FastNoiseLite_xx5bj")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ne1xg")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_vf37k")
+shader_parameter/root_color = Color(1, 0.75, 0.3, 1)
+shader_parameter/tip_color = Color(1, 0.03, 0.001, 1)
+shader_parameter/fire_alpha = 0.850000040375
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/fire_aperture = 1.1770000559075

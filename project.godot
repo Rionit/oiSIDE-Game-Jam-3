@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="oiSide Game Jam 3"
-run/main_scene="res://scenes/food_flashback_level.tscn"
+run/main_scene="uid://dkekqiv4pf21g"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

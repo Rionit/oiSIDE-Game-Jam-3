@@ -61,6 +61,8 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -1.5)
 
 [node name="Crosshair" type="TextureRect" parent="." unique_id=1340775454]
+top_level = true
+z_index = 3026
 custom_minimum_size = Vector2(10, 10)
 custom_maximum_size = Vector2(10, 10)
 anchors_preset = 8
@@ -80,7 +82,6 @@ texture = ExtResource("2_o8i6v")
 expand_mode = 1
 
 [node name="HeatVignette" type="TextureRect" parent="." unique_id=400155212]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

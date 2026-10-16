@@ -1,9 +1,13 @@
 extends CharacterBody3D
+class_name PlayerController
 
 const DOT = preload("uid://dr64yhqkp5nv")
 const DOT_HOLE = preload("uid://t6mhgutjwtji")
 
 #region Variables
+
+@export_category("Override")
+@export var can_move: bool = true
 
 @export_category("Movement")
 ##Speed of the character movement
@@ -39,6 +43,10 @@ const DOT_HOLE = preload("uid://t6mhgutjwtji")
 @onready var crosshair: TextureRect = $Crosshair
 @onready var interact_ray_cast_3d: RayCast3D = %InteractRayCast3D
 
+@export_category("Overlays")
+@export var is_hot: bool = false
+@onready var heat_vignette: TextureRect = $HeatVignette
+
 var _current_speed: float
 var _current_fall_multiplier: float
 var _mouse_motion: Vector2
@@ -50,10 +58,16 @@ func _ready() -> void:
 	_current_fall_multiplier = fall_multiplier
 	_current_speed = speed
 	show_mouse(false)
+	
+	if is_hot:
+		heat_vignette.get_child(0).play("heat")
 	pass
 
 func _physics_process(delta: float) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		return
+		
+	if !can_move:
 		return
 	
 	# Move Camera
