@@ -12,6 +12,7 @@ var gear_count: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.play_sfx("basement")
 	buddy_player.play("explaining")
 	dialogue_manager.all_dialogue_finished.connect(on_dialogue_finished)
 
@@ -19,11 +20,13 @@ func on_weapon_picked(interactable: Interactable):
 	interactable.mesh_instance.queue_free()
 	interactable.queue_free()
 	gear_count += 1
+	AudioManager.play_sfx("gun_pick")
 
 func on_ammo_picked(interactable: Interactable):
 	interactable.mesh_instance.queue_free()
 	interactable.queue_free()
 	gear_count += 1
+	AudioManager.play_sfx("ammo")
 	
 func on_buddy_interacted(interactable: Interactable):
 	interactable.unhighlight()
