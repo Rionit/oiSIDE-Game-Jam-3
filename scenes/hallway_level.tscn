@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://c582tbim68s0a"]
+[gd_scene format=4 uid="uid://c582tbim68s0a"]
 
+[ext_resource type="Script" uid="uid://c8b7ptlinvrw" path="res://scripts/levels/hallway_level.gd" id="1_4qn80"]
 [ext_resource type="PackedScene" uid="uid://sg3elif44r5a" path="res://models/hallway/hallway.blend" id="4_rwby4"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="4_wg10x"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="6_reoqw"]
+[ext_resource type="PackedScene" uid="uid://c5mpa3pw81hd5" path="res://models/money_stack/money_stack.glb" id="7_ndyok"]
+[ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="8_fhpxn"]
+[ext_resource type="Texture2D" uid="uid://cv78c3lespgc0" path="res://models/money_stack/money_stack_Image_0.png" id="8_qatkm"]
+[ext_resource type="PackedScene" uid="uid://dxsh6jweo72dg" path="res://models/dufflebag/duffle_bag.glb" id="9_iopuq"]
 [ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="10_vcdxh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7c3h"]
@@ -21,17 +26,92 @@ glow_bloom = 0.2
 glow_hdr_threshold = 0.1
 glow_hdr_scale = 1.45
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rwby4"]
+data = PackedVector3Array(2.3074, -0.3782, 17.9278, -2.3074, 0.37809998, 17.9278, 2.3074, 0.37809998, 17.9278, 2.3074, -0.3782, 17.9278, -2.3074, -0.3782, 17.9278, -2.3074, 0.37809998, 17.9278, -2.3074, 0.37809998, 17.9278, 2.3074, 4.1637, 17.9278, 2.3074, 0.37809998, 17.9278, -2.3074, 0.37809998, 17.9278, -2.3074, 4.1637, 17.9278, 2.3074, 4.1637, 17.9278, -2.3074, -0.3782, 17.9278, -2.3074, 0.37809998, -17.9278, -2.3074, 0.37809998, 17.9278, -2.3074, -0.3782, 17.9278, -2.3074, -0.3782, -17.9278, -2.3074, 0.37809998, -17.9278, -2.3074, 0.37809998, -17.9278, -2.3074, 4.1637, 17.9278, -2.3074, 0.37809998, 17.9278, -2.3074, 0.37809998, -17.9278, -2.3074, 4.1637, -17.9278, -2.3074, 4.1637, 17.9278, -2.3074, -0.3782, -17.9278, 2.3074, -0.3782, 17.9278, 2.3074, -0.3782, -17.9278, -2.3074, -0.3782, -17.9278, -2.3074, -0.3782, 17.9278, 2.3074, -0.3782, 17.9278, 2.3074, -0.3782, -17.9278, 2.3074, 0.37809998, 17.9278, 2.3074, 0.37809998, -17.9278, 2.3074, -0.3782, -17.9278, 2.3074, -0.3782, 17.9278, 2.3074, 0.37809998, 17.9278, 2.3074, 0.37809998, 17.9278, 2.3074, 4.1637, -17.9278, 2.3074, 0.37809998, -17.9278, 2.3074, 0.37809998, 17.9278, 2.3074, 4.1637, 17.9278, 2.3074, 4.1637, -17.9278, -2.3074, -0.3782, -17.9278, 2.3074, 0.37809998, -17.9278, -2.3074, 0.37809998, -17.9278, -2.3074, -0.3782, -17.9278, 2.3074, -0.3782, -17.9278, 2.3074, 0.37809998, -17.9278, 2.3074, 0.37809998, -17.9278, -2.3074, 4.1637, -17.9278, -2.3074, 0.37809998, -17.9278, 2.3074, 0.37809998, -17.9278, 2.3074, 4.1637, -17.9278, -2.3074, 4.1637, -17.9278, 1.9109999, 0.37809998, -14.848599, 1.9109999, 4.1637, 14.8481, 1.9109999, 0.37809998, 14.8481, 1.9109999, 0.37809998, -14.848599, 1.9109999, 4.1637, -14.848599, 1.9109999, 4.1637, 14.8481, -1.9110999, 0.37809998, -14.848599, 1.9109999, 4.1637, -14.848599, 1.9109999, 0.37809998, -14.848599, -1.9110999, 0.37809998, -14.848599, -1.9110999, 4.1637, -14.848599, 1.9109999, 4.1637, -14.848599, 1.9109999, 4.1637, 14.8481, -2.3074, 4.1637, 17.9278, -1.9110999, 4.1637, 14.8481, -1.9110999, 4.1637, 14.8481, -2.3074, 4.1637, 17.9278, -2.3074, 4.1637, -17.9278, 1.9109999, 4.1637, 14.8481, 2.3074, 4.1637, 17.9278, -2.3074, 4.1637, 17.9278, -1.9110999, 4.1637, 14.8481, -2.3074, 4.1637, -17.9278, -1.9110999, 4.1637, -14.848599, 1.9109999, 4.1637, -14.848599, 2.3074, 4.1637, 17.9278, 1.9109999, 4.1637, 14.8481, -1.9110999, 4.1637, -14.848599, -2.3074, 4.1637, -17.9278, 2.3074, 4.1637, -17.9278, 1.9109999, 4.1637, -14.848599, 2.3074, 4.1637, -17.9278, 2.3074, 4.1637, 17.9278, -1.9110999, 4.1637, -14.848599, 2.3074, 4.1637, -17.9278, 1.9109999, 4.1637, -14.848599, -1.9110999, 0.37809998, 14.8481, -1.9110999, 4.1637, -14.848599, -1.9110999, 0.37809998, -14.848599, -1.9110999, 0.37809998, 14.8481, -1.9110999, 4.1637, 14.8481, -1.9110999, 4.1637, -14.848599, 1.9109999, 0.37809998, 14.8481, -1.9110999, 4.1637, 14.8481, -1.9110999, 0.37809998, 14.8481, 1.9109999, 0.37809998, 14.8481, 1.9109999, 4.1637, 14.8481, -1.9110999, 4.1637, 14.8481, 1.9109999, 0.3782, -14.8483, -1.9109999, 0.3782, 14.8483, -1.9109999, 0.3782, -14.8483, 1.9109999, 0.3782, -14.8483, 1.9109999, 0.3782, 14.8483, -1.9109999, 0.3782, 14.8483)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qatkm"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fcx3"]
+size = Vector3(0.18554688, 0.064208984, 0.080078125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fcx3"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ndyok"]
+points = PackedVector3Array(-0.058867197, 0.2887946, 0.38137397, -0.046414327, 0.0052910144, -0.3894496, 0.056628767, 0.005313013, -0.3894189, -0.022007849, 0.558216, -0.029686851, 0.19535656, 0.035265837, 0.314089, -0.18506739, 0.035034925, 0.25094807, 0.1564863, 0.30126855, -0.3430755, -0.14507656, 0.2886597, -0.32872048, 0.18190806, 0.26352522, 0.3126155, -0.1700173, 0.34291297, 0.10483175, 0.20833752, 0.03490457, -0.25668174, -0.1854279, 0.034581374, -0.26975572, -0.09760592, 0.006182999, 0.3569276, 0.045174357, 0.558216, -0.029686851, -0.0590861, 0.30163053, -0.38816765, 0.1344898, 0.01703534, 0.3855598, -0.13374722, 0.28871077, 0.35105205, 0.16624139, 0.35639066, -0.11043172, 0.042852208, 0.32623878, 0.3603832, 0.21652271, 0.16442859, 0.1586721, -0.14932002, 0.0056051756, -0.36328, 0.17321983, 0.01730074, -0.37788764, -0.11621939, 0.38328937, -0.29872406, -0.1949296, 0.16352263, -0.15296529, -0.15007433, 0.017266283, 0.37233642, 0.030979844, 0.17220989, -0.41784954, 0.15902369, 0.0066724196, 0.3306582, 0.09498156, 0.31448075, -0.37513766, 0.043733336, 0.14725961, 0.40925783, 0.21995041, 0.09935595, -0.14165455, -0.19463927, 0.17621127, 0.14715421, -0.022007849, 0.558216, -0.0027999878)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svrfw"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("8_qatkm")
+roughness = 0.75
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n40nk"]
+_surfaces = [{
+"aabb": AABB(-0.08039816, -0.02344946, -0.03349923, 0.16079631, 0.04689892, 0.06699846),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwAAAAIAAwABAAQAAAAFAAEABgADAAQABgAHAAMAAwAHAAAACAAHAAYACQAFAAAABwAJAAAACQAKAAUACQAIAAoACAALAAcABwALAAkACQALAAgA"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/3////7/AAAAAAAA//8AAAAA/////wAAAAD//wAAAAAAAAAAAAAAAP9/AAD+/wAA/38AAAAAAAD/f///AAAAAP7/AAAAAAAA//////7/AAD//wAA/v8AAP7///8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fltfp"]
+resource_name = "materials_Object_0_009"
+_surfaces = [{
+"aabb": AABB(-0.08039816, -0.02344946, -0.03349923, 0.16079631, 0.04689892, 0.06699846),
+"attribute_data": PackedByteArray("6GmHl+hph5dlEVhsZRFYbJABaMCQAWjAUXBsNlFwbDZB0qZuQdKmbj3PgAA9z4AAQwiAtO4NfLqCw3oLxcQXEiUTvmqmG7pwUMScaNXGlHSRaQSY92qDnYU8Vv6FPFb+sppl2mOdpOGIAhzFiAIcxWbT63Vm0+t1Qv7yxEL+8sSQAWjAkAFowD3PgAA9z4AAZRFYbGURWGxB0qZuQdKmblFwbDZRcGw2QdKmbkHSpm49z4AAPc+AAOhph5foaYeXZRFYbGURWGyQAWjAkAFowA=="),
+"format": 34896613431,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAHAAgABgAJAAcACgALAAwACgANAAsADgAKAAwADgAMAA8AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAXABQAGAAZABcA"),
+"material": SubResource("StandardMaterial3D_svrfw"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("/3////7/E18AAAAA//88XAAA/////+JU/38AAP7/dHT//////v8TWf//AAD+/49cAAD//wAAUyYAAAAA//8nUwAAAAAAAJ0cAAD/////cFj/f///AAADBf/////+/7AD/3////7/egr+////AAA4CwAA//8AAHkaAAD/////TRH//////v9MQv7/AAAAAI4d//8AAP7/80/+////AAAkHv9/AAAAAAAAAAD//wAAERsAAAAAAABhH/9///8AAAkD/v8AAAAAUR/+////AAC5E5r271+OtJrwfNs/xP////8SwIU/80zzDgOyfMZGy/LpObQQ28qzG741jSrRbZyqmQuFAqSCPTEgW34O3I5rp6FkyLoJdVHoICswYRc+p6oK+Y8F8EuAj92Wm3zsSIil1FRjRRR7SzgS")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n40nk")
+
 [node name="HalwayLevel" type="Node3D" unique_id=1033408852]
+script = ExtResource("1_4qn80")
 
 [node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("4_wg10x")]
-transform = Transform3D(-0.8421455, 0, 0.5392503, 0, 1, 0, -0.5392503, 0, -0.8421455, 1.9965285, 1.0687702, 5.765743)
+transform = Transform3D(0.89371276, 0, 0.4486396, 0, 1, 0, -0.4486396, 0, 0.89371276, 2.1117108, 0.74854696, 9.858527)
+can_walk = false
 can_run = false
 can_jump = false
+use_camera_limit = true
+camera_limit_angle = 80.0
+camera_limit_direction = Vector3(-0.15, -0.2, -1)
 is_hot = true
 
-[node name="Camera3D" parent="FirstPersonPlayer/Camera" parent_id_path=PackedInt32Array(1973127356, 347107271) index="0" unique_id=1008336844]
+[node name="Camera" parent="FirstPersonPlayer" index="1" unique_id=347107271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13900697, 0)
+
+[node name="Camera3D" parent="FirstPersonPlayer/Camera" index="0" unique_id=1008336844]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0)
 current = true
+
+[node name="HeatVignette" parent="FirstPersonPlayer" index="3" unique_id=400155212]
+self_modulate = Color(0, 0, 0, 1)
 
 [node name="Light" type="Node3D" parent="." unique_id=431302223]
 
@@ -44,12 +124,233 @@ environment = SubResource("Environment_mx8sn")
 visible = false
 
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_vcdxh")]
-transform = Transform3D(-0.9839087, 0, 0.17867182, 0, 1, 0, -0.17867182, 0, -0.9839087, 0.67455184, 0.24470547, 8.747436)
+transform = Transform3D(0.9978195, 0, -0.066002175, 0, 1, 0, 0.066002175, 0, 0.9978195, 0.5596173, -0.2334533, 9.531842)
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1735404108) index="0" unique_id=2028347770]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 521920846) index="0" unique_id=608039347]
+bones/0/position = Vector3(-1.7219164, -9.894493, -82.631516)
+bones/0/rotation = Quaternion(-0.60734934, 0.028679162, -0.019772349, 0.7936709)
+bones/1/rotation = Quaternion(0.07418616, 0.10082162, 0.9846005, -0.122038)
+bones/2/rotation = Quaternion(-0.35364443, -0.028166957, 0.17940892, 0.9175809)
+bones/3/rotation = Quaternion(0.5751846, 0.028035866, -0.0050731297, 0.81752735)
+bones/4/rotation = Quaternion(0.48589414, -0.028928194, 0.02263079, 0.8732456)
+bones/5/rotation = Quaternion(0.058852613, -4.201283e-05, 0.004875537, 0.9982548)
+bones/6/position = Vector3(-10.557263, -6.5977235, 0.40961224)
+bones/6/rotation = Quaternion(-0.15322548, 0.51269925, 0.8371916, 0.1130122)
+bones/7/rotation = Quaternion(-0.47568014, -0.07113341, 0.08535025, 0.87257314)
+bones/8/rotation = Quaternion(0.4761127, -0.020588934, -0.006687916, 0.87911785)
+bones/9/rotation = Quaternion(0.38151067, 0.026241679, -0.010765868, 0.92392915)
+bones/10/rotation = Quaternion(-0.015734343, -4.1479954e-05, -0.0037246386, 0.9998693)
+bones/11/rotation = Quaternion(0.12157826, -0.0047643194, -0.07034856, 0.9900744)
+bones/12/rotation = Quaternion(0.12173799, 0.0058296076, -0.004508425, 0.99253494)
+bones/13/rotation = Quaternion(0.13502121, -0.02993344, -0.042371783, 0.9894837)
+bones/14/position = Vector3(6.942249, 14.428085, -0.032922138)
+bones/14/rotation = Quaternion(0.08139029, -0.04963371, 0.7322789, -0.67429954)
+bones/15/position = Vector3(2.0105465e-06, 15.521035, 4.7744725e-06)
+bones/15/rotation = Quaternion(-0.0036932176, -0.20193513, 0.047778066, 0.9782259)
+bones/16/position = Vector3(5.23322e-06, 25.324205, -3.2814514e-06)
+bones/16/rotation = Quaternion(0.8863211, -0.05900217, 0.17508672, 0.42461523)
+bones/17/position = Vector3(-2.1798708e-06, 32.926945, 2.456693e-08)
+bones/17/rotation = Quaternion(0.24501503, -0.20428446, -0.08775692, 0.9436813)
+bones/18/position = Vector3(-4.842829e-06, 2.2384717, -3.7163556e-06)
+bones/18/rotation = Quaternion(0.01907102, 0.99927765, 0.0074494146, -0.03201563)
+bones/19/position = Vector3(-1.657008e-05, 3.4501061, 1.9073457e-06)
+bones/19/rotation = Quaternion(0.07042388, 0.013083971, -0.10157875, 0.9922455)
+bones/20/position = Vector3(-1.9913957, 4.691098, -0.11983204)
+bones/20/rotation = Quaternion(0.18941249, 0.10478628, -0.03231942, 0.9757552)
+bones/21/position = Vector3(-1.9677076, 2.4749582, -1.1043282)
+bones/22/rotation = Quaternion(-0.07055285, -0.10451255, 0.01548253, 0.99189705)
+bones/23/rotation = Quaternion(-0.18708093, -0.003479513, -0.007515161, 0.9823097)
+bones/24/position = Vector3(1.4305115e-06, 21.349375, 5.1519055)
+bones/25/position = Vector3(-6.9422555, 14.429741, 0.112117395)
+bones/25/rotation = Quaternion(0.3902852, -0.58000106, 0.43925261, 0.56421053)
+bones/26/position = Vector3(-5.0440003e-06, 15.521037, -1.1677854e-05)
+bones/26/rotation = Quaternion(0.5527433, 0.025956266, -0.0785072, 0.82923925)
+bones/27/position = Vector3(1.2955303e-05, 25.317577, -4.1560797e-06)
+bones/27/rotation = Quaternion(0.049021825, 0.0073231673, -0.32865763, 0.9431477)
+bones/28/rotation = Quaternion(-0.11370112, -0.050375402, -0.09146592, 0.9880123)
+bones/29/position = Vector3(-4.4137173e-06, 2.2552905, -1.4994311e-05)
+bones/29/rotation = Quaternion(0.43179882, -0.58192426, -0.32709333, 0.6065674)
+bones/30/position = Vector3(-5.736948e-06, 3.438533, -6.198882e-06)
+bones/30/rotation = Quaternion(0.15790154, -0.09007245, -0.44346693, 0.8776623)
+bones/31/position = Vector3(2.2108815, 4.2761188, -1.0835087)
+bones/31/rotation = Quaternion(0.090383425, -0.29662827, -0.5254704, 0.79229)
+
+[node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=398009383]
+transform = Transform3D(0.16810335, -0.83599293, 0.52235615, 0.5595082, 0.5171879, 0.6476624, -0.81159765, 0.1833885, 0.55468684, 36.434246, 40.419796, -114.527794)
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1967155826]
+transform = Transform3D(-0.04024081, -0.42482167, -0.9043817, -0.22753617, 0.8852305, -0.40570122, 0.97293735, 0.18945418, -0.13228497, 52.2591, 10.044622, -121.12772)
+
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=166128216]
+visible = false
+
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=2014847931]
+transform = Transform3D(0.4899417, -0.58448577, 0.6467874, 0.7935887, -0.008031152, -0.6084014, 0.3607964, 0.8113644, 0.4599064, -34.05047, 18.132898, -123.282684)
+
+[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=815016828]
+transform = Transform3D(0.9876052, 0.15128012, 0.041835245, -0.10967694, 0.4744717, 0.8734115, 0.11228014, -0.86717415, 0.48518267, -1.7531285, -6.659498, -94.04053)
+
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" index="0" unique_id=702026064]
 visible = false
 
 [node name="hallway" parent="." unique_id=1029003116 instance=ExtResource("4_rwby4")]
 
+[node name="barracade" parent="hallway" index="0" unique_id=680002409]
+transform = Transform3D(0.10350476, 0.64806074, 0.00026536395, 0.013221038, -0.0017505693, -0.48778635, -0.6478679, 0.10349984, -0.0099118585, 0.6370833, 0.35364395, 10.578691)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hallway/floor" parent_id_path=PackedInt32Array(1029003116, 1167733162) index="0" unique_id=178039349]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hallway/floor/StaticBody3D" unique_id=108294841]
+shape = SubResource("ConcavePolygonShape3D_rwby4")
+
+[node name="Money" type="Node3D" parent="." unique_id=604517631]
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money" unique_id=656643175 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.68378484, 0, 0.72968364, 0, 1, 0, -0.72968364, 0, 0.68378484, 1.5648476, -0.22455001, 9.027554)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney" unique_id=1379399443]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney" unique_id=849542922 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money" unique_id=459115104 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.9999685, 0, -0.007929355, 0, 1, 0, 0.007929355, 0, 0.9999685, 1.4535679, -0.22455007, 9.169831)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney2" unique_id=301681294]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney2" unique_id=145018237 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money" unique_id=2113742836 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.63604283, 0, 0.77165365, 0, 1, 0, -0.77165365, 0, 0.63604283, 1.3734055, -0.22455007, 9.32899)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney3" unique_id=141181851]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney3" unique_id=2122165800 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money" unique_id=18122921 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.7978518, 0, 0.6028535, 0, 1, 0, -0.6028535, 0, 0.7978518, 1.7109126, -0.22455007, 9.405912)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney4" unique_id=86075849]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney4" unique_id=1550076808 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money" unique_id=1873901925 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.4366489, 0, -0.89963186, 0, 1, 0, 0.89963186, 0, 0.4366489, 1.5863401, -0.22455007, 9.304503)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney5" unique_id=1713788386]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney5" unique_id=341967927 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money" unique_id=1301252091 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.98805434, 0, -0.15410537, 0, 1, 0, 0.15410537, 0, 0.98805434, 1.7020494, -0.22455007, 9.080552)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney6" unique_id=2064769257]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney6" unique_id=2011244088 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money" unique_id=1134412076 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.26772475, 0, 0.9634954, 0, 1, 0, -0.9634954, 0, 0.26772475, 1.836458, -0.22455007, 9.590906)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney7" unique_id=1074943385]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney7" unique_id=1513144280 instance=ExtResource("7_ndyok")]
+
+[node name="one_money_stack" parent="Money/InteractableMoney7/MoneyStack" index="0" unique_id=208507747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047307245, 0, -0.02404654)
+
+[node name="InteractableMoney9" type="StaticBody3D" parent="Money" unique_id=1791424124 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.7451784, 0, 0.66686517, 0, 1, 0, -0.66686517, 0, 0.7451784, 1.3062534, -0.22455007, 9.803655)
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_qatkm")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/InteractableMoney9" unique_id=1676165950]
+shape = SubResource("BoxShape3D_6fcx3")
+
+[node name="MoneyStack" parent="Money/InteractableMoney9" unique_id=1659454718 instance=ExtResource("7_ndyok")]
+
+[node name="InteractableDufflebag" type="StaticBody3D" parent="." unique_id=1689441009 node_paths=PackedStringArray("mesh_instance")]
+script = ExtResource("8_fhpxn")
+outline_material = SubResource("StandardMaterial3D_6fcx3")
+mesh_instance = NodePath("duffle_bag/duffle_bag-og")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableDufflebag" unique_id=980558135]
+transform = Transform3D(-0.39713335, -0.84206676, 0.3649776, 0.9044597, -0.4265589, -3.7252903e-08, 0.15568443, 0.33010754, 0.9310164, 2.165361, -0.050306514, 9.045786)
+shape = SubResource("ConvexPolygonShape3D_ndyok")
+
+[node name="duffle_bag" parent="InteractableDufflebag" unique_id=1564248986 instance=ExtResource("9_iopuq")]
+transform = Transform3D(-0.39713323, -0.8420668, 0.3649776, 0.9044597, -0.42655885, 2.8604497e-08, 0.15568438, 0.33010757, 0.9310163, 2.165361, -0.050306514, 9.045786)
+
+[node name="duffle_bag_flipped" parent="." unique_id=237715042 instance=ExtResource("9_iopuq")]
+transform = Transform3D(0.93105567, 0, 0.36487678, 0, 1, 0, -0.36487675, 0, 0.9310558, 2.165361, -0.31452644, 9.045786)
+visible = false
+
+[node name="MoneyStackTooFar" parent="." unique_id=1781825329 instance=ExtResource("7_ndyok")]
+transform = Transform3D(0.98805434, 0, -0.15410537, 0, 1, 0, 0.15410537, 0, 0.98805434, 1.089041, -0.22455007, 9.017096)
+
+[node name="one_money_stack" parent="MoneyStackTooFar" index="0" unique_id=208507747]
+transform = Transform3D(0.9935748, 0, -0.11317736, 0, 1, 0, 0.11317736, 0, 0.9935748, -0.11007882, 0, -0.01799638)
+
+[node name="one_money_stack2" type="MeshInstance3D" parent="MoneyStackTooFar" unique_id=1155832406]
+transform = Transform3D(0.8732543, 0, -0.4872647, 0, 1, 0, 0.4872647, 0, 0.8732543, -0.25496918, 0, -0.36781546)
+mesh = SubResource("ArrayMesh_fltfp")
+
+[connection signal="interacted" from="Money/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/InteractableMoney9" to="." method="on_money_picked"]
+[connection signal="interacted" from="InteractableDufflebag" to="." method="on_dufflebag_interacted"]
+
 [editable path="FirstPersonPlayer"]
 [editable path="buddy"]
+[editable path="hallway"]
+[editable path="Money/InteractableMoney/MoneyStack"]
+[editable path="Money/InteractableMoney2/MoneyStack"]
+[editable path="Money/InteractableMoney3/MoneyStack"]
+[editable path="Money/InteractableMoney4/MoneyStack"]
+[editable path="Money/InteractableMoney5/MoneyStack"]
+[editable path="Money/InteractableMoney6/MoneyStack"]
+[editable path="Money/InteractableMoney7/MoneyStack"]
+[editable path="Money/InteractableMoney9/MoneyStack"]
+[editable path="InteractableDufflebag/duffle_bag"]
+[editable path="MoneyStackTooFar"]
