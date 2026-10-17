@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c8loqlr2xc8el"]
 
+[ext_resource type="Script" uid="uid://urmpw1a34hey" path="res://scripts/levels/rooftop_entry_level.gd" id="1_6pmqq"]
 [ext_resource type="PackedScene" uid="uid://devgtmpeuomay" path="res://models/rooftop/rooftop.blend" id="1_567tm"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="4_4vbf8"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="6_rua83"]
@@ -68,9 +69,10 @@ glow_hdr_scale = 1.45
 fog_light_color = Color(0.1267241, 0.14171177, 0.16503283, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gsyc7"]
-size = Vector3(4.0666504, 3.440277, 1)
+size = Vector3(6.5999146, 3.440277, 2.2878418)
 
 [node name="RooftopEntryLevel" type="Node3D" unique_id=1033408852]
+script = ExtResource("1_6pmqq")
 
 [node name="rooftop" parent="." unique_id=2093155760 instance=ExtResource("1_567tm")]
 
@@ -186,13 +188,14 @@ environment = SubResource("Environment_mx8sn")
 visible = false
 
 [node name="ExitArea" type="Area3D" parent="." unique_id=747773176]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1006169, 0, 8.452354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8870683, 1.3543844, -10.291155)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea" unique_id=503224099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7688904, 0, 0.6439209)
 shape = SubResource("BoxShape3D_gsyc7")
 
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_fp17x")]
-transform = Transform3D(0.9494303, 0, 0.31397778, 0, 1, 0, -0.31397778, 0, 0.9494303, 4.7527733, -0.3408911, -10.961983)
+transform = Transform3D(0.98302543, 0, -0.18346995, 0, 1, 0, 0.18346995, 0, 0.98302543, 5.2062197, -0.23544034, -11.044964)
 
 [node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 521920846) index="0" unique_id=608039347]
 bones/0/position = Vector3(1.1536181e-07, -1.2508827, -97.22229)
@@ -208,19 +211,19 @@ bones/7/rotation = Quaternion(-0.31280798, 0.0010501146, 0.41355732, 0.85505587)
 bones/8/rotation = Quaternion(0.38644668, -0.0066955965, 0.0025883557, 0.92228377)
 bones/9/rotation = Quaternion(0.3338785, 0.029123649, -0.016477615, 0.942022)
 bones/10/rotation = Quaternion(-0.015734343, -4.1479045e-05, -0.003724646, 0.9998693)
-bones/11/rotation = Quaternion(0.12528212, 0.01025647, 0.042305496, 0.99116576)
+bones/11/rotation = Quaternion(0.13746147, 0.011905119, 0.04305804, 0.9894992)
 bones/12/rotation = Quaternion(0.069800265, 0.26002932, -0.036251012, 0.9623921)
 bones/13/rotation = Quaternion(0.012121908, 0.17466238, -0.03386679, 0.9839711)
 bones/14/position = Vector3(6.942257, 14.428009, -0.032975487)
 bones/14/rotation = Quaternion(-0.5116684, -0.50884354, 0.5563278, -0.41203532)
 bones/15/position = Vector3(-2.647432e-06, 15.521033, -2.273432e-06)
-bones/15/rotation = Quaternion(0.18959376, -0.35355857, 0.2104654, 0.8914903)
+bones/15/rotation = Quaternion(0.19593997, -0.33338422, 0.19309667, 0.9017628)
 bones/16/position = Vector3(8.863406e-06, 25.324215, -2.7655737e-05)
-bones/16/rotation = Quaternion(0.07261211, -0.23234786, 0.4598542, 0.8539766)
+bones/16/rotation = Quaternion(0.06231244, -0.22620822, 0.4245832, 0.87445766)
 bones/17/position = Vector3(2.3268864e-05, 32.926945, 4.311847e-06)
-bones/17/rotation = Quaternion(-0.02861144, -0.24723426, 0.06431248, 0.9663956)
+bones/17/rotation = Quaternion(0.012239177, -0.24735373, 0.12174504, 0.9611683)
 bones/18/position = Vector3(1.4439026e-05, 2.2384686, 6.011321e-06)
-bones/18/rotation = Quaternion(0.070826955, 0.34930143, -0.113697946, 0.927386)
+bones/18/rotation = Quaternion(0.09105322, 0.34746253, -0.037164114, 0.9325224)
 bones/19/position = Vector3(-1.7642964e-05, 3.4500926, 8.463862e-06)
 bones/19/rotation = Quaternion(-1.806766e-07, 3.3713877e-07, -1.5832484e-07, 1)
 bones/20/position = Vector3(-1.9913902, 4.6911, -0.119823694)
@@ -244,21 +247,27 @@ bones/31/position = Vector3(2.210898, 4.276125, -1.0835181)
 bones/31/rotation = Quaternion(9.895331e-09, 2.6577618e-07, -2.3492612e-07, 1)
 
 [node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=398009383]
-transform = Transform3D(0.5989711, -0.42920113, -0.6760321, 0.4320598, 0.8840153, -0.17843749, 0.6742085, -0.18520789, 0.7149407, -3.3548813, 64.92849, -158.90538)
+transform = Transform3D(0.5766746, -0.532318, -0.61974454, 0.5795839, 0.8011985, -0.14887002, 0.57578486, -0.27334476, 0.77055424, -0.739787, 65.91497, -155.88998)
+
+[node name="uzi" parent="buddy/Armature/Skeleton3D/mixamorig_LeftHandIndex1" index="0" unique_id=455652752]
+visible = false
 
 [node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1967155826]
-transform = Transform3D(0.3973327, -0.40009803, -0.82586163, 0.46617, 0.86318445, -0.19389936, 0.79045016, -0.30795, 0.52948534, 10.642812, 34.670525, -147.78491)
+transform = Transform3D(0.50170285, -0.32292092, -0.80250573, 0.36279178, 0.92072564, -0.14368503, 0.785287, -0.21905565, 0.5790839, 10.797918, 33.78215, -147.7319)
 
 [node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=166128216]
 visible = false
 
 [node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=2014847931]
-transform = Transform3D(-0.9685421, 0.012833074, 0.24851838, 0.20351826, -0.5338354, 0.82073164, 0.14320049, 0.8454913, 0.5144299, -24.429192, -44.295883, -132.98645)
+transform = Transform3D(-0.9641248, 0.03029029, 0.26371536, 0.20873635, -0.52723336, 0.8236835, 0.16398907, 0.8491808, 0.50199574, -25.151604, -44.378887, -132.07451)
 
 [node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=815016828]
-transform = Transform3D(-0.24163596, -0.22068822, -0.94493854, 0.9665099, -0.1414749, -0.21411097, -0.08643333, -0.9650293, 0.24748275, -0.13512963, -1.2860712, -109.08029)
+transform = Transform3D(-0.23965836, -0.2435988, -0.9397997, 0.9668166, -0.14810786, -0.20815791, -0.08848469, -0.95850074, 0.27101064, -0.13512963, -1.2860712, -109.08029)
 
-[connection signal="body_entered" from="ExitArea" to="." method="_on_area_3d_body_entered"]
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" index="0" unique_id=702026064]
+visible = false
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
 
 [editable path="rooftop"]
 [editable path="FirstPersonPlayer"]
