@@ -3,7 +3,158 @@
 [ext_resource type="Script" uid="uid://dpedvpv2q5drg" path="res://scripts/audio/music.gd" id="1_xf70o"]
 [ext_resource type="Script" uid="uid://bv1r6iypadxw1" path="res://scripts/audio/audio_library.gd" id="2_c4kn6"]
 [ext_resource type="Script" uid="uid://cx7tu3j60rgxd" path="res://scripts/audio/sfx.gd" id="3_geqqb"]
+[ext_resource type="AudioStream" uid="uid://ds41t3s86w82w" path="res://audio/atmo/scene_start.wav" id="4_c4kn6"]
+[ext_resource type="AudioStream" uid="uid://bcisd7o7wdtps" path="res://audio/atmo/night_bg.mp3" id="5_geqqb"]
+[ext_resource type="AudioStream" uid="uid://bsffqdarv7rnb" path="res://audio/sfx/pizza_eating.wav" id="6_x3vvp"]
+[ext_resource type="AudioStream" uid="uid://bl1xj8h04hi4m" path="res://audio/sfx/fridge.wav" id="7_cbwqd"]
+[ext_resource type="AudioStream" uid="uid://nj37k1prt3gc" path="res://audio/sfx/drink.wav" id="8_wdse5"]
+[ext_resource type="AudioStream" uid="uid://cmnye6vvnjfjc" path="res://audio/sfx/bag.wav" id="9_ym8em"]
+[ext_resource type="AudioStream" uid="uid://ygxfgyu1fyfb" path="res://audio/atmo/basement_bg.wav" id="10_jaogm"]
+[ext_resource type="AudioStream" uid="uid://bpetgiv2k5gt3" path="res://audio/sfx/microwave_open.wav" id="11_abf41"]
+[ext_resource type="AudioStream" uid="uid://c44qf4fnnt2dq" path="res://audio/sfx/microwave_close.wav" id="12_ikubc"]
+[ext_resource type="AudioStream" uid="uid://c5wfn7j5brq3q" path="res://audio/sfx/ventcrawling.wav" id="13_q7acc"]
+[ext_resource type="AudioStream" uid="uid://b5br7mnndx08s" path="res://audio/atmo/scene_vent.wav" id="14_hvytk"]
+[ext_resource type="AudioStream" uid="uid://ctu7hw0u15cwo" path="res://audio/sfx/gunshot.wav" id="15_72jes"]
+[ext_resource type="AudioStream" uid="uid://coxpt0aqqjf08" path="res://audio/sfx/cashgrab_01.wav" id="16_qmcs3"]
+[ext_resource type="AudioStream" uid="uid://bd42km0x0su31" path="res://audio/sfx/cashgrab_02.wav" id="17_jgf1q"]
+[ext_resource type="AudioStream" uid="uid://6a4mg4tqohep" path="res://audio/sfx/cashgrab_03.wav" id="18_n52gk"]
+[ext_resource type="AudioStream" uid="uid://bhhnd6hqyakso" path="res://audio/atmo/morning.wav" id="19_wpbyn"]
+[ext_resource type="AudioStream" uid="uid://c37jlrtyvowkj" path="res://audio/atmo/scene_rooftop.wav" id="20_2neud"]
+[ext_resource type="AudioStream" uid="uid://c6saliykxyx6j" path="res://audio/sfx/vault_open.mp3" id="21_b3gf6"]
+[ext_resource type="AudioStream" uid="uid://bsniukunbqie2" path="res://audio/atmo/hallway_bg.wav" id="22_8i5ql"]
+[ext_resource type="AudioStream" uid="uid://jk7ow7rl8jkf" path="res://audio/sfx/hit.wav" id="23_4adfn"]
+[ext_resource type="AudioStream" uid="uid://bql4v78wd6nsq" path="res://audio/sfx/uzi_shot.wav" id="24_rwtp3"]
+[ext_resource type="AudioStream" uid="uid://cmomf4g61oy2" path="res://audio/sfx/ammo.wav" id="25_ban20"]
+
+[sub_resource type="Resource" id="Resource_ti5mj"]
+script = ExtResource("3_geqqb")
+tag = "scene_start"
+streams = Array[AudioStream]([ExtResource("4_c4kn6")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_i5q2i"]
+script = ExtResource("3_geqqb")
+tag = "night"
+streams = Array[AudioStream]([ExtResource("5_geqqb")])
+volume_db = -20.0
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_cbwqd"]
+script = ExtResource("3_geqqb")
+tag = "eating"
+streams = Array[AudioStream]([ExtResource("6_x3vvp")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_wsc6m"]
+script = ExtResource("3_geqqb")
+tag = "fridge"
+streams = Array[AudioStream]([ExtResource("7_cbwqd")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_wdse5"]
+script = ExtResource("3_geqqb")
+tag = "soda"
+streams = Array[AudioStream]([ExtResource("8_wdse5")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_3ciu0"]
+script = ExtResource("3_geqqb")
+tag = "bag"
+streams = Array[AudioStream]([ExtResource("9_ym8em")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_5ibni"]
+script = ExtResource("3_geqqb")
+tag = "basement"
+streams = Array[AudioStream]([ExtResource("10_jaogm")])
+volume_db = -10.0
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_jaogm"]
+script = ExtResource("3_geqqb")
+tag = "microwave_open"
+streams = Array[AudioStream]([ExtResource("11_abf41")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_1wpvj"]
+script = ExtResource("3_geqqb")
+tag = "microwave_close"
+streams = Array[AudioStream]([ExtResource("12_ikubc")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_ixfql"]
+script = ExtResource("3_geqqb")
+tag = "crawling"
+streams = Array[AudioStream]([ExtResource("13_q7acc")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_q7acc"]
+script = ExtResource("3_geqqb")
+tag = "scene_vent"
+streams = Array[AudioStream]([ExtResource("14_hvytk")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_dlqbl"]
+script = ExtResource("3_geqqb")
+tag = "gun"
+streams = Array[AudioStream]([ExtResource("15_72jes")])
+volume_db = -22.0
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_72jes"]
+script = ExtResource("3_geqqb")
+tag = "cash"
+streams = Array[AudioStream]([ExtResource("16_qmcs3"), ExtResource("17_jgf1q"), ExtResource("18_n52gk")])
+variation_mode = 2
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_wpbyn"]
+script = ExtResource("3_geqqb")
+tag = "morning"
+streams = Array[AudioStream]([ExtResource("19_wpbyn")])
+volume_db = -7.0
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_2neud"]
+script = ExtResource("3_geqqb")
+tag = "roof"
+streams = Array[AudioStream]([ExtResource("20_2neud")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_alwhf"]
+script = ExtResource("3_geqqb")
+tag = "vault"
+streams = Array[AudioStream]([ExtResource("21_b3gf6")])
+volume_db = -16.5
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_b3gf6"]
+script = ExtResource("3_geqqb")
+tag = "hallway"
+streams = Array[AudioStream]([ExtResource("22_8i5ql")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_8i5ql"]
+script = ExtResource("3_geqqb")
+tag = "hit"
+streams = Array[AudioStream]([ExtResource("23_4adfn")])
+volume_db = -16.0
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_4adfn"]
+script = ExtResource("3_geqqb")
+tag = "uzi"
+streams = Array[AudioStream]([ExtResource("24_rwtp3")])
+volume_db = -13.5
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_r4d1c"]
+script = ExtResource("3_geqqb")
+tag = "ammo"
+streams = Array[AudioStream]([ExtResource("25_ban20")])
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [resource]
 script = ExtResource("2_c4kn6")
+sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c")])
 metadata/_custom_type_script = "uid://bv1r6iypadxw1"

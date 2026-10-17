@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/police_bg.mp3-70a6880eb130bb6665acb9aaf5a0524
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
