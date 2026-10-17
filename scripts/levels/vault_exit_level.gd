@@ -17,7 +17,7 @@ func _ready() -> void:
 	duffle_bag.interacted.connect(on_duffle_picked)
 	buddy.position = first_pos
 	buddy_player.play("pointing")
-	AudioManager.play_sfx("helo")
+	AudioManager.play_sfx("bag")
 
 func on_duffle_picked() -> void:
 	buddy.position = second_pos

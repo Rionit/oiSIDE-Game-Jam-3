@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://dpedvpv2q5drg" path="res://scripts/audio/music.gd" id="1_xf70o"]
 [ext_resource type="Script" uid="uid://bv1r6iypadxw1" path="res://scripts/audio/audio_library.gd" id="2_c4kn6"]
 [ext_resource type="Script" uid="uid://cx7tu3j60rgxd" path="res://scripts/audio/sfx.gd" id="3_geqqb"]
+[ext_resource type="AudioStream" uid="uid://cmnye6vvnjfjc" path="res://audio/sfx/bag.wav" id="4_c4kn6"]
 
-[sub_resource type="Resource" id="Resource_x3ymj"]
+[sub_resource type="Resource" id="Resource_xf70o"]
 script = ExtResource("3_geqqb")
+tag = "bag"
+streams = Array[AudioStream]([ExtResource("4_c4kn6")])
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [resource]
 script = ExtResource("2_c4kn6")
-sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_x3ymj")])
+sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_xf70o")])
 metadata/_custom_type_script = "uid://bv1r6iypadxw1"
