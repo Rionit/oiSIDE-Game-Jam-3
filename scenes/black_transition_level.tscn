@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cflygqipcx06i"]
+
+[ext_resource type="Shader" uid="uid://cj72gtv7cjv3v" path="res://shaders/vhs.gdshader" id="1_jd52u"]
+[ext_resource type="Script" uid="uid://c8e1s3xnim48c" path="res://scripts/levels/black_transition_level.gd" id="1_r7yo1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7yo1"]
+shader = ExtResource("1_jd52u")
+shader_parameter/scanlines_1 = 300.0
+shader_parameter/scanlines_2 = 2.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/vinnette_alpla = 0.499999988824
+shader_parameter/vinnette_inner_radius = 0.0
+shader_parameter/vinnette_outer_radius = 1.0
+
+[node name="Control" type="Control" unique_id=716001313]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7yo1")
+
+[node name="BlackBG" type="ColorRect" parent="." unique_id=2049325833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="VHS" type="CanvasLayer" parent="." unique_id=230344237]
+layer = 10000
+
+[node name="ColorRect" type="ColorRect" parent="VHS" unique_id=67407312]
+z_index = 1000
+material = SubResource("ShaderMaterial_r7yo1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
