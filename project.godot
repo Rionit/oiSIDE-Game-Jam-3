@@ -15,11 +15,19 @@ run/main_scene="uid://dkekqiv4pf21g"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*uid://b3jgottx3wi3u"
+
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/audio_manager_editor/plugin.cfg")
 
 [input]
 
