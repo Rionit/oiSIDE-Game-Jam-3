@@ -9,10 +9,13 @@ var money_picked: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	buddy_player.play("stealing")
+	AudioManager.play_sfx("hallway")
 
 func on_money_picked(interactable: Interactable):
 	money_picked += 1
 	interactable.queue_free()
+	AudioManager.play_sfx("cash")
 	
 	if money_picked > 45:
 		get_tree().change_scene_to_packed(HALLWAY_LEVEL)
+		

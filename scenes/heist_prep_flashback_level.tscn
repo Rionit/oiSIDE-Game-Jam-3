@@ -127,6 +127,7 @@ sky_material = SubResource("ProceduralSkyMaterial_w7c3h")
 
 [sub_resource type="Environment" id="Environment_mx8sn"]
 background_mode = 2
+background_energy_multiplier = 0.3
 sky = SubResource("Sky_w8frs")
 ssao_enabled = true
 glow_enabled = true
@@ -228,6 +229,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15528584, 17.401163, -7.85
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/arcade/StaticBody3D" unique_id=1037367563]
 shape = SubResource("BoxShape3D_r1vv4")
 
+[node name="light1" parent="basement" index="13" unique_id=1487425367]
+transform = Transform3D(-4.0316672e-06, 0.07549125, 2.6997775e-08, 0, -2.6997775e-08, 0.07549125, 0.07549125, 4.0316672e-06, 1.4418367e-12, -1.0544318, 5.1009126, -3.1186821)
+
 [node name="38Cal_38Cal_0_002" parent="basement" index="18" unique_id=1198193304]
 transform = Transform3D(0.025003644, 0.042465646, 1.7408674e-08, 3.3522585e-09, -2.260608e-08, 0.04345391, 0.050377887, -0.021076627, -1.1531826e-08, 4.7477083, 0.9479831, 3.6391141)
 
@@ -283,8 +287,31 @@ shape = SubResource("BoxShape3D_1vkku")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/Object_86/StaticBody3D" unique_id=462851242]
 shape = SubResource("ConvexPolygonShape3D_2q2jh")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="basement" unique_id=596690232]
+transform = Transform3D(0.9871129, -0.15978743, -0.008728561, 0.018959194, 0.06261445, 0.9978577, -0.15889859, -0.9851636, 0.064836964, 5.3427854, 2.837088, 3.0595148)
+light_color = Color(0.7929616, 0.9269675, 0.92358774, 1)
+light_energy = 4.146
+shadow_enabled = true
+shadow_bias = 0.838
+shadow_normal_bias = 1.684
+shadow_opacity = 0.45
+spot_range = 5.7465005
+spot_angle = 71.158195
+
+[node name="SpotLight3D" type="SpotLight3D" parent="basement/SpotLight3D" unique_id=1335326283]
+transform = Transform3D(0.9989276, -0.0021950006, 0.04625154, -0.0004543364, 0.99836314, 0.05719298, -0.046301372, -0.05715265, 0.9972913, -5.281, 7.329, 1.865)
+light_color = Color(0.7929616, 0.9269675, 0.92358774, 1)
+light_energy = 3.12
+shadow_enabled = true
+shadow_bias = 0.838
+shadow_normal_bias = 1.684
+shadow_opacity = 0.95
+spot_range = 7.885
+spot_angle = 41.526978
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1621659170]
 transform = Transform3D(0.9585786, -0.1696675, -0.22877958, 0.03546843, -0.725862, 0.6869252, -0.2826113, -0.66658616, -0.6897781, 0, 0, 0)
+visible = false
 light_bake_mode = 1
 shadow_enabled = true
 
@@ -306,7 +333,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 unique_name_in_owner = true
 transform = Transform3D(-0.042177733, 0, -1.0741724, 0, 1.075, 0, 1.0741724, 0, -0.042177733, 3.953277, -0.16451776, 4.5677285)
 
-[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(713831908, 1810115079) index="0" unique_id=480956363]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(713831908, 1064375816) index="0" unique_id=3458006]
 bones/0/position = Vector3(0, -1.2508829, -97.22229)
 bones/0/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
 bones/1/rotation = Quaternion(-0.0017549145, -0.055402104, 0.99796396, -0.03155117)
@@ -351,17 +378,20 @@ bones/30/rotation = Quaternion(-2.7939679e-08, 1.303852e-08, -1.1455269e-07, 1)
 bones/31/position = Vector3(2.2108872, 4.276125, -1.0835121)
 bones/31/rotation = Quaternion(3.5390276e-08, 2.5238842e-07, -2.5168993e-07, 1)
 
-[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=1311982631]
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=1224198853]
 transform = Transform3D(-0.12533191, -0.92780614, -0.3513784, 0.9605771, -0.024893194, -0.2768946, 0.24815775, -0.3722298, 0.89435005, 24.28942, 13.878593, -125.83551)
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=1229732897]
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=1167214161]
 visible = false
 
-[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=124358553]
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=856787278]
 transform = Transform3D(0.31865677, 0.9426645, 0.09920553, -0.81822914, 0.32639766, -0.4732501, -0.4784966, 0.06963135, 0.87532413, -17.802647, 9.343988, -132.40141)
 
-[node name="duffle_bag" parent="buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=775358120]
+[node name="duffle_bag" parent="buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=1006707890]
 visible = false
+
+[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="2" unique_id=171786097]
+transform = Transform3D(0.9692147, 0.16409451, -0.18356454, 0.18950802, -0.021193592, 0.9816504, 0.15719306, -0.9862169, -0.051638365, 0, -1.1112453, -109.08029)
 
 [node name="InteractableBuddy" type="StaticBody3D" parent="." unique_id=440174308 node_paths=PackedStringArray("mesh_instance")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0370064, 0.7631657, 4.6730986)

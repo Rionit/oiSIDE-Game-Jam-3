@@ -43,8 +43,10 @@ sky_material = SubResource("ProceduralSkyMaterial_w7c3h")
 
 [sub_resource type="Environment" id="Environment_mx8sn"]
 background_mode = 1
-background_color = Color(0.029303584, 0.031768166, 0.061023757, 1)
+background_color = Color(0.08417515, 0.3215421, 0.7549887, 1)
+background_energy_multiplier = 0.06
 sky = SubResource("Sky_w8frs")
+ambient_light_color = Color(0.034001525, 0.17869371, 0.28665677, 1)
 ssao_enabled = true
 glow_enabled = true
 glow_intensity = 0.8
@@ -418,6 +420,7 @@ shape = SubResource("ConvexPolygonShape3D_313hs")
 
 [node name="Spot" parent="room" index="38" unique_id=119795248]
 transform = Transform3D(0.8082198, 0.5886742, 0.015603525, 0.06567088, -0.11643112, 0.9910253, 0.58520776, -0.7999416, -0.13276069, 1.827704, 3.3665361, 4.0797763)
+light_color = Color(0.76633143, 0.99970764, 0.9999998, 1)
 
 [node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("2_rkcox")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9233992, 1.1871581, 6.5159917)
