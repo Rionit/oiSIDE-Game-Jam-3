@@ -15,6 +15,7 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(wake_up_finished)
 	animation_player.play("wake_up")
 	buddy.play("idle")
+	AudioManager.play_sfx("scene_start")
 	
 	dialogue_manager.all_dialogue_finished.connect(_on_all_dialogue_finished)
 	

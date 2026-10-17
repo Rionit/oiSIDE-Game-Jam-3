@@ -43,24 +43,29 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "eating"
 streams = Array[AudioStream]([ExtResource("6_x3vvp")])
+pitch_randomness = 0.14
+volume_db = -15.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_wsc6m"]
 script = ExtResource("3_geqqb")
 tag = "fridge"
 streams = Array[AudioStream]([ExtResource("7_cbwqd")])
+volume_db = -11.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_wdse5"]
 script = ExtResource("3_geqqb")
 tag = "soda"
 streams = Array[AudioStream]([ExtResource("8_wdse5")])
+volume_db = -15.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_3ciu0"]
 script = ExtResource("3_geqqb")
 tag = "bag"
 streams = Array[AudioStream]([ExtResource("9_ym8em")])
+volume_db = -10.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_5ibni"]
