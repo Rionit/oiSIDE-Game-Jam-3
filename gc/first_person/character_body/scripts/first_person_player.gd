@@ -66,7 +66,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
-		
+	
 	if !can_move:
 		return
 	

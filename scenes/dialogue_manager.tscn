@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bsxafksuok83k"]
+
+[ext_resource type="Script" uid="uid://pmskhyxpqtkc" path="res://scripts/dialogue_manager.gd" id="1_jbixp"]
+
+[sub_resource type="Theme" id="Theme_qaqv0"]
+default_font_size = 32
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=551898399]
+process_mode = 3
+script = ExtResource("1_jbixp")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=966102923]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox" unique_id=89990258]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox/MarginContainer" unique_id=1283385130]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox/MarginContainer" unique_id=1171975079]
+layout_mode = 2
+theme = SubResource("Theme_qaqv0")
+bbcode_enabled = true
+text = "[shake rate=5.0 level=10]What the hell happened?[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
