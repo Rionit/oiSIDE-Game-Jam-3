@@ -12,11 +12,17 @@ func _ready() -> void:
 	buddy_movement_player.play("buddy_movement")
 	buddy_player.play("crawling")
 	animation_player.animation_finished.connect(finish_scene)
+	AudioManager.play_sfx("scene_vent")
+	AudioManager.play_sfx("crawling")
 
 func start_bullet_holes_animation(body):
 	if body is PlayerController:
 		first_person_player.can_walk = false
 		animation_player.play("bullets")
+
 		
 func finish_scene(_whatevr):
 	get_tree().change_scene_to_packed(VAULT_STEAL_MONEY_LEVEL)
+	
+func bullet():
+	AudioManager.play_sfx("gun")
