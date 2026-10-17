@@ -17,7 +17,7 @@ func _ready() -> void:
 	dialogue_manager.all_dialogue_finished.connect(func(): dialogue_finished = true)
 	animation_player.animation_finished.connect(func(x): animation_finished = true)
 
-func start_cutscene():
+func start_cutscene(interactable):
 	pizza_interact.interacted.disconnect(start_cutscene)
 	first_person_player.can_move = false
 	first_person_player.crosshair.visible = false

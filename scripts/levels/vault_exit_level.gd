@@ -18,7 +18,7 @@ func _ready() -> void:
 	buddy.position = first_pos
 	buddy_player.play("pointing")
 
-func on_duffle_picked() -> void:
+func on_duffle_picked(interactable) -> void:
 	buddy.position = second_pos
 	buddy_player.play("come")
 	duffle_bag.queue_free()

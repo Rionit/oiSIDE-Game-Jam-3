@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://cr28nuedfrje2"]
 
 [ext_resource type="PackedScene" uid="uid://y1mifk10btee" path="res://models/basement/basement.blend" id="1_1vkku"]
+[ext_resource type="Script" uid="uid://6xdr8txjxr1b" path="res://scripts/levels/heist_prep_flashback_level.gd" id="1_10nsf"]
+[ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="2_10nsf"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="2_oiwwx"]
+[ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="5_ieeok"]
+[ext_resource type="Material" uid="uid://djo00u2we4r87" path="res://materials/outline.tres" id="6_hqqd7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vkku"]
 size = Vector3(28.999996, 19.000002, 17.000004)
@@ -69,104 +73,150 @@ glow_enabled = true
 glow_intensity = 0.8
 glow_bloom = 0.2
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qaqv0"]
+radius = 0.38085938
+height = 2.1484375
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieeok"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsyc7"]
+size = Vector3(0.24505997, 0.03564453, 0.37216187)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqqd7"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2chr"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.07
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qaqv0"]
+size = Vector3(0.091796875, 0.076416016, 0.14746094)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olgme"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.07
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
 [node name="FoodFlashbackLevel" type="Node3D" unique_id=1033408852]
+script = ExtResource("1_10nsf")
 
 [node name="basement" parent="." unique_id=1191204236 instance=ExtResource("1_1vkku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006145239, 0.0014929771, 3.0755997e-05)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x170x190_4_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 102868417) index="0" unique_id=421155436]
+[node name="38Cal_38Cal_0_002" parent="basement" index="5" unique_id=1621567660]
+transform = Transform3D(0.025003644, 0.042465646, 1.7408674e-08, 3.3522585e-09, -2.260608e-08, 0.04345391, 0.050377887, -0.021076627, -1.1531826e-08, 4.7477083, 0.9479831, 3.6391141)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x170x190_4_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 746204193) index="0" unique_id=421155436]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/290x170x190_4_Cardboard_Box_Mat_0/StaticBody3D" unique_id=392331182]
 shape = SubResource("BoxShape3D_1vkku")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x290_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 44222266) index="0" unique_id=671596929]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x290_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 371859074) index="0" unique_id=671596929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/290x290x290_1_Cardboard_Box_Mat_0/StaticBody3D" unique_id=213131499]
 shape = SubResource("BoxShape3D_oiwwx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x290_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 305087661) index="0" unique_id=1149337033]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x290_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 846089471) index="0" unique_id=1149337033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/290x290x290_2_Cardboard_Box_Mat_0/StaticBody3D" unique_id=2135594182]
 shape = SubResource("BoxShape3D_10nsf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x400_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 1299736656) index="0" unique_id=601668924]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x400_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 1512845906) index="0" unique_id=601668924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8146973e-06, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/290x290x400_1_Cardboard_Box_Mat_0/StaticBody3D" unique_id=1505003045]
 shape = SubResource("BoxShape3D_ism51")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x400_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 648462308) index="0" unique_id=682124208]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/290x290x400_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 2116414426) index="0" unique_id=682124208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8146973e-06, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/290x290x400_2_Cardboard_Box_Mat_0/StaticBody3D" unique_id=972862984]
 shape = SubResource("BoxShape3D_ieeok")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 599048074) index="0" unique_id=1832349790]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_1_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 1561917902) index="0" unique_id=1832349790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.536743e-07, -9.536743e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/430x210x270_1_Cardboard_Box_Mat_0/StaticBody3D" unique_id=440194659]
 shape = SubResource("BoxShape3D_hqqd7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 2000043119) index="0" unique_id=1547254919]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_2_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 27284380) index="0" unique_id=1547254919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.536743e-07, -9.536743e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/430x210x270_2_Cardboard_Box_Mat_0/StaticBody3D" unique_id=1568944725]
 shape = SubResource("BoxShape3D_i2chr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_3_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 1337685606) index="0" unique_id=2128287514]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/430x210x270_3_Cardboard_Box_Mat_0" parent_id_path=PackedInt32Array(1191204236, 528127781) index="0" unique_id=2128287514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.536743e-07, 9.536743e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/430x210x270_3_Cardboard_Box_Mat_0/StaticBody3D" unique_id=1679523086]
 shape = SubResource("BoxShape3D_olgme")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/arcade" parent_id_path=PackedInt32Array(1191204236, 1212347442) index="0" unique_id=1260216201]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/arcade" parent_id_path=PackedInt32Array(1191204236, 2013042337) index="0" unique_id=1260216201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15528584, 17.401163, -7.8518877)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/arcade/StaticBody3D" unique_id=1037367563]
 shape = SubResource("BoxShape3D_r1vv4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/barrel1" parent_id_path=PackedInt32Array(1191204236, 1036449780) index="0" unique_id=1460344751]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/barrel1" parent_id_path=PackedInt32Array(1191204236, 2015650075) index="0" unique_id=1460344751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 0, 0.20280564)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/barrel1/StaticBody3D" unique_id=101246715]
 shape = SubResource("BoxShape3D_0n21q")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/barrel2" parent_id_path=PackedInt32Array(1191204236, 1953552567) index="0" unique_id=494437043]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/barrel2" parent_id_path=PackedInt32Array(1191204236, 1459246972) index="0" unique_id=494437043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 0, 0.20280564)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/barrel2/StaticBody3D" unique_id=1218718693]
 shape = SubResource("BoxShape3D_3xq6u")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/Object_86" parent_id_path=PackedInt32Array(1191204236, 536524532) index="0" unique_id=990757046]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/Object_86" parent_id_path=PackedInt32Array(1191204236, 1417844544) index="0" unique_id=990757046]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/Object_86/StaticBody3D" unique_id=462851242]
 shape = SubResource("ConvexPolygonShape3D_2q2jh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/room" parent_id_path=PackedInt32Array(1191204236, 1657312207) index="0" unique_id=1330126992]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/room" parent_id_path=PackedInt32Array(1191204236, 1638495817) index="0" unique_id=1330126992]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/room/StaticBody3D" unique_id=1784332498]
 shape = SubResource("ConcavePolygonShape3D_s4hrr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/shelf6" parent_id_path=PackedInt32Array(1191204236, 1948846530) index="0" unique_id=1955432414]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/shelf6" parent_id_path=PackedInt32Array(1191204236, 10565573) index="0" unique_id=1955432414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/shelf6/StaticBody3D" unique_id=451083070]
 shape = SubResource("BoxShape3D_553oi")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/stairs" parent_id_path=PackedInt32Array(1191204236, 885832892) index="0" unique_id=1881001095]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/stairs" parent_id_path=PackedInt32Array(1191204236, 1960955355) index="0" unique_id=1881001095]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/stairs/StaticBody3D" unique_id=94523368]
 shape = SubResource("ConvexPolygonShape3D_1vkku")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/table" parent_id_path=PackedInt32Array(1191204236, 837243722) index="0" unique_id=954565117]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/table" parent_id_path=PackedInt32Array(1191204236, 274018597) index="0" unique_id=954565117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.487156)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/table/StaticBody3D" unique_id=1722984628]
 shape = SubResource("BoxShape3D_sc1va")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="basement/Wooden Barrel_Texture_0" parent_id_path=PackedInt32Array(1191204236, 2115644061) index="0" unique_id=933384602]
+[node name="StaticBody3D" type="StaticBody3D" parent="basement/Wooden Barrel_Texture_0" parent_id_path=PackedInt32Array(1191204236, 1763675007) index="0" unique_id=933384602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, -0.17424762)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="basement/Wooden Barrel_Texture_0/StaticBody3D" unique_id=1209338928]
@@ -191,5 +241,127 @@ can_jump = false
 [node name="Camera" parent="FirstPersonPlayer" index="1" unique_id=347107271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="InteractableBuddy" type="StaticBody3D" parent="." unique_id=440174308 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0370064, 0.7631657, 4.6730986)
+script = ExtResource("5_ieeok")
+outline_material = ExtResource("6_hqqd7")
+mesh_instance = NodePath("buddy/Armature/Skeleton3D/man")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableBuddy" unique_id=95654033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043766975, 0.06793827, -0.034959793)
+shape = SubResource("CapsuleShape3D_qaqv0")
+
+[node name="buddy" parent="InteractableBuddy" unique_id=713831908 instance=ExtResource("2_10nsf")]
+unique_name_in_owner = true
+transform = Transform3D(-0.042177733, 0, -1.0741724, 0, 1.075, 0, 1.0741724, 0, -0.042177733, -0.08372927, -0.9276835, -0.105370045)
+
+[node name="Skeleton3D" parent="InteractableBuddy/buddy/Armature" parent_id_path=PackedInt32Array(713831908, 1867161865) index="0" unique_id=2129650535]
+bones/0/position = Vector3(0, -1.2508829, -97.22229)
+bones/0/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/1/rotation = Quaternion(-0.0017549145, -0.055402104, 0.99796396, -0.03155117)
+bones/2/rotation = Quaternion(0.039636623, -0.00038222424, -0.009625635, 0.99916774)
+bones/3/rotation = Quaternion(0.4124857, 0.012974126, -0.005875402, 0.91085273)
+bones/4/rotation = Quaternion(0.36625978, -0.026617592, 0.010481851, 0.9300728)
+bones/6/position = Vector3(-10.557267, -6.597726, 0.40961325)
+bones/6/rotation = Quaternion(-0.41418266, -0.0014199698, 0.90791756, 0.064315096)
+bones/7/rotation = Quaternion(0.032709215, 0.0003174472, 0.009666304, 0.99941814)
+bones/8/rotation = Quaternion(0.4204294, -0.012647373, 0.005861169, 0.90721816)
+bones/9/rotation = Quaternion(0.3637065, 0.026334232, -0.010286873, 0.93108445)
+bones/10/rotation = Quaternion(6.084133e-08, 2.6036558e-08, 1.6181673e-08, 1)
+bones/11/rotation = Quaternion(-0.018352905, -0.09401045, -0.08096117, 0.9921042)
+bones/12/rotation = Quaternion(3.7252903e-09, -3.7252903e-09, -1.1641534e-10, 1)
+bones/13/rotation = Quaternion(-5.5879354e-09, -3.958121e-09, 3.608875e-09, 1)
+bones/14/rotation = Quaternion(-0.48575312, -0.44011757, 0.54262614, -0.5252594)
+bones/15/position = Vector3(1.9622894e-06, 15.521034, -1.8100749e-05)
+bones/15/rotation = Quaternion(0.62330705, 0.041703556, 0.22592673, 0.7474666)
+bones/16/position = Vector3(5.102506e-06, 25.324215, 5.6072677e-06)
+bones/16/rotation = Quaternion(0.03335365, 0.49187163, 0.7660642, 0.41242638)
+bones/17/position = Vector3(-1.4725057e-06, 32.926956, -7.739016e-06)
+bones/17/rotation = Quaternion(-0.053468194, -0.002134626, 0.03983695, 0.9977724)
+bones/18/position = Vector3(-5.4153734e-06, 2.2384758, -9.2948685e-06)
+bones/18/rotation = Quaternion(0.18211824, 0.55302006, -0.12537722, 0.8032947)
+bones/19/position = Vector3(-4.0531104e-06, 3.4500902, 1.549716e-06)
+bones/19/rotation = Quaternion(-1.8533319e-07, 3.16184e-07, -1.7695129e-07, 1)
+bones/20/position = Vector3(-1.9913695, 4.691107, -0.119844675)
+bones/20/rotation = Quaternion(2.980232e-08, -4.5634806e-08, 5.5879354e-09, 1)
+bones/21/position = Vector3(-1.9677033, 2.474948, -1.1043344)
+bones/22/rotation = Quaternion(-0.005887611, 3.5109056e-09, 3.122597e-09, 0.99998266)
+bones/23/rotation = Quaternion(0.023917638, -0.21275449, -0.019156158, 0.9766251)
+bones/25/rotation = Quaternion(0.49000522, -0.37596312, 0.6102419, 0.4961365)
+bones/26/position = Vector3(6.266599e-07, 15.521036, -1.6970247e-05)
+bones/26/rotation = Quaternion(0.67377007, 0.17368805, -0.07920551, 0.71385777)
+bones/27/position = Vector3(1.00891075e-05, 25.31757, 1.7632865e-06)
+bones/27/rotation = Quaternion(0.3731449, -0.64559114, -0.5404072, 0.38978857)
+bones/28/rotation = Quaternion(-0.01052647, 0.0006474825, -0.06138923, 0.9980582)
+bones/29/position = Vector3(1.7482747e-06, 2.2552876, 1.0535816e-05)
+bones/29/rotation = Quaternion(0.16723037, -0.68158793, 0.16444533, 0.6931304)
+bones/30/position = Vector3(-7.301569e-07, 3.438543, -1.0013579e-05)
+bones/30/rotation = Quaternion(-2.7939679e-08, 1.303852e-08, -1.1455269e-07, 1)
+bones/31/position = Vector3(2.2108872, 4.276125, -1.0835121)
+bones/31/rotation = Quaternion(3.5390276e-08, 2.5238842e-07, -2.5168993e-07, 1)
+
+[node name="mixamorig_LeftForeArm" parent="InteractableBuddy/buddy/Armature/Skeleton3D" index="0" unique_id=2104161135]
+transform = Transform3D(-0.12533191, -0.92780614, -0.3513784, 0.9605771, -0.024893194, -0.2768946, 0.24815775, -0.3722298, 0.89435005, 24.28942, 13.878593, -125.83551)
+
+[node name="shotgun" parent="InteractableBuddy/buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=2025753104]
+visible = false
+
+[node name="mixamorig_RightForeArm" parent="InteractableBuddy/buddy/Armature/Skeleton3D" index="1" unique_id=1322497726]
+transform = Transform3D(0.31865677, 0.9426645, 0.09920553, -0.81822914, 0.32639766, -0.4732501, -0.4784966, 0.06963135, 0.87532413, -17.802647, 9.343988, -132.40141)
+
+[node name="duffle_bag" parent="InteractableBuddy/buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=438355733]
+visible = false
+
+[node name="InteractableGun" type="StaticBody3D" parent="." unique_id=39692917 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8192863, 0.95205766, 3.3977604)
+script = ExtResource("5_ieeok")
+outline_material = SubResource("StandardMaterial3D_ieeok")
+mesh_instance = NodePath("../basement/gun2")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableGun" unique_id=1083991699]
+transform = Transform3D(0.8898144, 0, -0.4563227, 0, 1, 0, 0.4563227, 0, 0.8898144, 0.01938343, -0.020137966, -0.0846293)
+shape = SubResource("BoxShape3D_gsyc7")
+
+[node name="InteractableGun2" type="StaticBody3D" parent="." unique_id=1228967904 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.88873154, 0, 0.45842785, 0, 1, 0, -0.45842785, 0, 0.88873154, 5.2264137, 0.9520576, 3.6135917)
+script = ExtResource("5_ieeok")
+outline_material = SubResource("StandardMaterial3D_hqqd7")
+mesh_instance = NodePath("../basement/gun4")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableGun2" unique_id=953302940]
+transform = Transform3D(0.8898144, 0, -0.4563227, 0, 1, 0, 0.4563227, 0, 0.8898144, 0.01938343, -0.020137966, -0.0846293)
+shape = SubResource("BoxShape3D_gsyc7")
+
+[node name="InteractableAmmo" type="StaticBody3D" parent="." unique_id=653502501 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.88873154, 0, 0.45842785, 0, 1, 0, -0.45842785, 0, 0.88873154, 4.732937, 0.9520576, 3.647208)
+script = ExtResource("5_ieeok")
+outline_material = SubResource("StandardMaterial3D_i2chr")
+mesh_instance = NodePath("../basement/38Cal_38Cal_0_002")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableAmmo" unique_id=1739493302]
+transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0, 0, 0)
+shape = SubResource("BoxShape3D_qaqv0")
+
+[node name="InteractableAmmo2" type="StaticBody3D" parent="." unique_id=500296822 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(0.9300376, 0, -0.36746448, 0, 1, 0, 0.36746448, 0, 0.9300376, 4.8396077, 0.9520576, 3.7739396)
+script = ExtResource("5_ieeok")
+outline_material = SubResource("StandardMaterial3D_olgme")
+mesh_instance = NodePath("../basement/38Cal_38Cal_0_003")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableAmmo2" unique_id=1888116747]
+transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0, 0, 0)
+shape = SubResource("BoxShape3D_qaqv0")
+
+[connection signal="interacted" from="InteractableGun" to="." method="on_weapon_picked"]
+[connection signal="interacted" from="InteractableGun2" to="." method="on_weapon_picked"]
+[connection signal="interacted" from="InteractableAmmo" to="." method="on_ammo_picked"]
+[connection signal="interacted" from="InteractableAmmo2" to="." method="on_ammo_picked"]
+
 [editable path="basement"]
 [editable path="FirstPersonPlayer"]
+[editable path="InteractableBuddy/buddy"]

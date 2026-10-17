@@ -1,13 +1,13 @@
 extends StaticBody3D
 class_name Interactable
 
-signal interacted
+signal interacted(interactable: Interactable)
 
 @export var outline_material: Material 
 @export var mesh_instance: MeshInstance3D
 
 func interact() -> void:
-	interacted.emit()
+	interacted.emit(self)
 
 func highlight() -> void:
 	if mesh_instance and outline_material:
