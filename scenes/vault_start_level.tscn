@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="2_d83rk"]
 [ext_resource type="Script" uid="uid://dq2ptpf5yrene" path="res://scripts/dialogue_line.gd" id="2_r51qy"]
 [ext_resource type="Shader" uid="uid://dsva13id4lr7k" path="res://shaders/blur.gdshader" id="3_d83rk"]
+[ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="3_oqjrs"]
 [ext_resource type="Material" uid="uid://ctk6cicvya27l" path="res://materials/fire_low.tres" id="3_vf37k"]
-[ext_resource type="PackedScene" uid="uid://d3kwlgetr1kx5" path="res://models/man/man_standing_w_dufflebag.glb" id="4_bx7d2"]
 [ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="4_xx5bj"]
 [ext_resource type="AudioStream" uid="uid://cmah2tb332yog" path="res://audio/sfx/tingiling.wav" id="7_2vxct"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="8_1kqo2"]
 [ext_resource type="PackedScene" uid="uid://dxxruwfkp4dky" path="res://models/woman/woman_laying.glb" id="10_owj4x"]
+[ext_resource type="PackedScene" uid="uid://dxsh6jweo72dg" path="res://models/dufflebag/duffle_bag.glb" id="12_oqjrs"]
 
 [sub_resource type="Resource" id="Resource_1kqo2"]
 script = ExtResource("2_r51qy")
@@ -28,15 +29,6 @@ script = ExtResource("2_r51qy")
 speaker = 0
 text = "[shake rate=5.0 level=10]We gotta get the hell outta here![/shake]"
 metadata/_custom_type_script = "uid://dq2ptpf5yrene"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owj4x"]
-albedo_color = Color(0, 0, 0, 1)
-metallic = 0.75
-grow_amount = 16.0
-proximity_fade_distance = 0.01
-stencil_flags = 2
-stencil_color = Color(1, 1, 1, 1)
-stencil_outline_thickness = 0.234
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
 fractal_gain = 0.8
@@ -209,65 +201,113 @@ glow_hdr_scale = 1.45
 script = ExtResource("1_vusgr")
 dialogue_lines = Array[ExtResource("2_r51qy")]([SubResource("Resource_1kqo2"), SubResource("Resource_r51qy"), SubResource("Resource_owj4x")])
 
-[node name="buddy" parent="." unique_id=1752171276 instance=ExtResource("4_bx7d2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3723341, 0.06080725, 1.6067162)
+[node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("3_oqjrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4070163, 0, 1.2788141)
 
-[node name="man_001" parent="buddy/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1752171276, 333814973) index="2" unique_id=1012857836]
-surface_material_override/0 = SubResource("StandardMaterial3D_owj4x")
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1350044209) index="0" unique_id=757806208]
+bones/0/position = Vector3(-3.8792267, -2.470395, -98.15044)
+bones/0/rotation = Quaternion(-0.7438719, 0.04690111, -0.03937841, 0.66551054)
+bones/1/rotation = Quaternion(0.050330397, 0.02252347, 0.9982331, -0.02214513)
+bones/2/rotation = Quaternion(-0.13053897, 0.059744623, -0.0051797805, 0.98962796)
+bones/3/rotation = Quaternion(0.4167497, 0.027087312, -0.0039076824, 0.90860933)
+bones/4/rotation = Quaternion(0.41276088, -0.026343366, 0.011751806, 0.9103825)
+bones/6/rotation = Quaternion(-0.13999307, -0.02172722, 0.98947936, 0.029334519)
+bones/7/rotation = Quaternion(-0.061106075, -0.007177567, 0.0031041906, 0.9981007)
+bones/8/rotation = Quaternion(0.42383644, -0.016534852, -0.003580785, 0.90558076)
+bones/9/rotation = Quaternion(0.38168147, 0.026240736, -0.010770485, 0.92385864)
+bones/11/rotation = Quaternion(0.060456753, -0.0146108195, -0.02541462, 0.9977402)
+bones/12/rotation = Quaternion(0.03980142, -0.0049654753, -0.001814316, 0.9991936)
+bones/13/rotation = Quaternion(0.010419391, -0.0061272467, -0.0015582511, 0.9999258)
+bones/14/rotation = Quaternion(-0.5879445, -0.41683888, 0.5552271, -0.4150778)
+bones/15/position = Vector3(-2.1698452e-06, 15.5210285, 1.3503657e-05)
+bones/15/rotation = Quaternion(0.45779103, 0.07626227, 0.053596623, 0.88416004)
+bones/16/position = Vector3(-4.7288536e-06, 25.324226, -5.4246702e-06)
+bones/16/rotation = Quaternion(0.048702385, -0.15935034, 0.2834108, 0.94441193)
+bones/17/position = Vector3(-1.340169e-06, 32.92696, 3.9183974e-06)
+bones/17/rotation = Quaternion(-0.042801395, -0.22088444, 0.0019895863, 0.9743584)
+bones/18/position = Vector3(-1.5282532e-06, 2.238479, 1.0228479e-07)
+bones/18/rotation = Quaternion(0.104281165, 0.56250876, 0.02447348, 0.8198233)
+bones/19/position = Vector3(2.8610293e-06, 3.450101, -2.384199e-06)
+bones/19/rotation = Quaternion(0.05056543, 0.008633438, -0.13513163, 0.989499)
+bones/20/rotation = Quaternion(0.17489275, 0.08920671, -0.06529175, 0.9783617)
+bones/21/position = Vector3(-1.9677148, 2.4749382, -1.1043286)
+bones/22/rotation = Quaternion(-0.036263827, 0.038330723, 0.02924901, 0.9981785)
+bones/23/rotation = Quaternion(0.06280761, 0.16809024, -0.0415326, 0.9828917)
+bones/25/rotation = Quaternion(0.6354497, -0.3637385, 0.5492633, 0.40275025)
+bones/26/position = Vector3(2.6161928e-08, 15.52104, 8.336555e-06)
+bones/26/rotation = Quaternion(0.3976913, 0.02304302, 0.028232142, 0.9167953)
+bones/27/position = Vector3(1.3807118e-06, 25.317577, -5.68374e-06)
+bones/27/rotation = Quaternion(0.0012873291, 0.017691586, -0.10781687, 0.99401253)
+bones/28/rotation = Quaternion(-0.14851712, 0.029225681, -0.081429966, 0.9851181)
+bones/29/position = Vector3(1.7022768e-06, 2.2552934, -6.259386e-06)
+bones/29/rotation = Quaternion(0.43179882, -0.58192426, -0.32709333, 0.6065674)
+bones/30/position = Vector3(-2.756712e-06, 3.4385514, 5.960461e-07)
+bones/30/rotation = Quaternion(0.15790154, -0.09007245, -0.44346693, 0.8776623)
+bones/31/position = Vector3(2.2108674, 4.2761183, -1.083511)
+bones/31/rotation = Quaternion(0.09038347, -0.29662833, -0.52547055, 0.79228985)
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=620339669]
+transform = Transform3D(-0.06602308, 0.1076574, -0.99199295, -0.8900291, 0.44308951, 0.10732366, 0.45109633, 0.88998914, 0.06656413, 25.675947, -5.22104, -123.43182)
+
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1368554785]
+transform = Transform3D(0.16737397, -0.3488348, 0.9221173, 0.9832544, 0.12745252, -0.13025594, -0.0720884, 0.92847776, 0.3643252, -32.52164, -0.27761912, -125.13038)
 
 [node name="vault" parent="." unique_id=728509335 instance=ExtResource("1_s45i7")]
 
-[node name="Plane" parent="vault" index="22" unique_id=445348912]
+[node name="boolean" parent="vault" index="0" unique_id=575859206]
+visible = false
+
+[node name="Plane" parent="vault" index="25" unique_id=422454299]
 surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 693272016) index="0" unique_id=901882634]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 1865992015) index="0" unique_id=901882634]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/room/StaticBody3D" unique_id=269825006]
 shape = SubResource("ConcavePolygonShape3D_s45i7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 231311700) index="0" unique_id=818462632]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1910084884) index="0" unique_id=818462632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf1/StaticBody3D" unique_id=462852903]
 shape = SubResource("BoxShape3D_d83rk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1272009058) index="0" unique_id=691822061]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1845324850) index="0" unique_id=691822061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf2/StaticBody3D" unique_id=1760184012]
 shape = SubResource("BoxShape3D_vusgr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 762786501) index="0" unique_id=409327881]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 697842204) index="0" unique_id=409327881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf3/StaticBody3D" unique_id=233878011]
 shape = SubResource("BoxShape3D_vf37k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1994031039) index="0" unique_id=108583369]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1522145351) index="0" unique_id=108583369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf4/StaticBody3D" unique_id=1951664071]
 shape = SubResource("BoxShape3D_xx5bj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1876123732) index="0" unique_id=1504421650]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1932419921) index="0" unique_id=1504421650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf5/StaticBody3D" unique_id=403247582]
 shape = SubResource("BoxShape3D_bx7d2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 383968794) index="0" unique_id=2062273112]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1065727742) index="0" unique_id=2062273112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf6/StaticBody3D" unique_id=1894717138]
 shape = SubResource("BoxShape3D_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 2111832208) index="0" unique_id=1183795904]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 889565114) index="0" unique_id=1183795904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf7/StaticBody3D" unique_id=549575784]
 shape = SubResource("BoxShape3D_r51qy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 266043597) index="0" unique_id=6196123]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 1517012068) index="0" unique_id=6196123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.502914, 399.10007, -1.2227173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/vault_wall/StaticBody3D" unique_id=1956814843]
@@ -345,6 +385,9 @@ visible = false
 transform = Transform3D(-0.26192045, 0, -0.9650895, 0, 1, 0, 0.9650895, 0, -0.26192045, 1.3140001, 0.05614215, 6.7003217)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=299222032]
+
+[node name="duffle_bag" parent="." unique_id=791672182 instance=ExtResource("12_oqjrs")]
+transform = Transform3D(0.78476405, 0, 0.6197946, 0, 1, 0, -0.6197946, 0, 0.78476405, 2.6671212, 0.059235886, 1.2892733)
 
 [editable path="buddy"]
 [editable path="vault"]

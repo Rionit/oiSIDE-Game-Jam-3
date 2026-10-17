@@ -113,7 +113,7 @@ func check_interactions():
 			current_interaction.unhighlight()
 			current_interaction = null
 			
-			crosshair.texture = DOT_HOLE
+		crosshair.texture = DOT_HOLE
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

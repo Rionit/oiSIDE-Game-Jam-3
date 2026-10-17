@@ -1,22 +1,15 @@
 [gd_scene format=3 uid="uid://21mv8jqgngke"]
 
-[ext_resource type="PackedScene" uid="uid://d3kwlgetr1kx5" path="res://models/man/man_standing_w_dufflebag.glb" id="3_wsc6m"]
+[ext_resource type="Script" uid="uid://cqc2yd75io3hy" path="res://scripts/levels/vault_exit_level.gd" id="1_ti5mj"]
 [ext_resource type="PackedScene" uid="uid://c7ihdy0sd7c1t" path="res://models/vault/vault.blend" id="4_3ciu0"]
 [ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="5_1wpvj"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="6_ixfql"]
-[ext_resource type="Shader" uid="uid://dsva13id4lr7k" path="res://shaders/blur.gdshader" id="7_dlqbl"]
+[ext_resource type="PackedScene" uid="uid://dxsh6jweo72dg" path="res://models/dufflebag/duffle_bag.glb" id="7_kjuuv"]
 [ext_resource type="Material" uid="uid://ctk6cicvya27l" path="res://materials/fire_low.tres" id="8_ihxhj"]
+[ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="8_p4p2w"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="9_1qddc"]
 [ext_resource type="PackedScene" uid="uid://dxxruwfkp4dky" path="res://models/woman/woman_laying.glb" id="10_ojyrp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owj4x"]
-albedo_color = Color(0, 0, 0, 1)
-metallic = 0.75
-grow_amount = 16.0
-proximity_fade_distance = 0.01
-stencil_flags = 2
-stencil_color = Color(1, 1, 1, 1)
-stencil_outline_thickness = 0.234
+[ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="10_ti5mj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
 fractal_gain = 0.8
@@ -62,95 +55,6 @@ size = Vector3(0.41938373, 2.1968026, 1.178529)
 [sub_resource type="BoxShape3D" id="BoxShape3D_owj4x"]
 size = Vector3(267.0057, 1293.7046, 500.20447)
 
-[sub_resource type="Animation" id="Animation_d83rk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPersonPlayer/Camera/Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPersonPlayer/Camera/Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [5.0]
-}
-
-[sub_resource type="Animation" id="Animation_s45i7"]
-resource_name = "wake_up"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPersonPlayer/Camera/Camera3D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3, 4.6666665, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.30667576, -0.2531115, -0.31501526), Vector3(-0.30667576, -0.2531115, -0.31501526), Vector3(-0.4166662, -0.4234329, -0.28392342), Vector3(-0.5110996, 0.013192072, 0.010768763), Vector3(-0.754806, 0.056260094, 0.038986024), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPersonPlayer/Camera/Camera3D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3, 4.6666665, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.3648918, 0), Vector3(0, -1.3648918, 0), Vector3(0, -1.3648918, 0), Vector3(0, -0.77064717, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.73333335, 1.8, 2.7666667, 3.5666666, 3.8766668, 5.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [5.0, 3.0000001425, 5.0, 1.8400000874, 3.600000171, 0.9730000462175, 1.73200008227, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_d83rk"]
-_data = {
-&"RESET": SubResource("Animation_d83rk"),
-&"wake_up": SubResource("Animation_s45i7")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qaqv0"]
-shader = ExtResource("7_dlqbl")
-shader_parameter/blur_amount = 5.0
-
 [sub_resource type="QuadMesh" id="QuadMesh_qaqv0"]
 material = ExtResource("8_ihxhj")
 
@@ -170,93 +74,93 @@ glow_bloom = 0.2
 glow_hdr_threshold = 0.1
 glow_hdr_scale = 1.45
 
-[node name="VaultStartLevel" type="Node3D" unique_id=1033408852]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4p2w"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
 
-[node name="buddy" parent="." unique_id=1752171276 instance=ExtResource("3_wsc6m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3723341, 0.06080725, 1.6067162)
+[sub_resource type="BoxShape3D" id="BoxShape3D_qaqv0"]
+size = Vector3(0.4215088, 0.552124, 0.9029541)
 
-[node name="man_001" parent="buddy/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1752171276, 333814973) index="2" unique_id=1012857836]
-surface_material_override/0 = SubResource("StandardMaterial3D_owj4x")
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsyc7"]
+size = Vector3(4.0666504, 3.440277, 1)
+
+[node name="VaultExitLevel" type="Node3D" unique_id=1033408852]
+script = ExtResource("1_ti5mj")
 
 [node name="vault" parent="." unique_id=728509335 instance=ExtResource("4_3ciu0")]
 
-[node name="Plane" parent="vault" index="22" unique_id=445348912]
+[node name="boolean" parent="vault" index="0" unique_id=575859206]
+visible = false
+
+[node name="Plane" parent="vault" index="25" unique_id=422454299]
 surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 693272016) index="0" unique_id=901882634]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 1865992015) index="0" unique_id=901882634]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/room/StaticBody3D" unique_id=269825006]
 shape = SubResource("ConcavePolygonShape3D_s45i7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 231311700) index="0" unique_id=818462632]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1910084884) index="0" unique_id=818462632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf1/StaticBody3D" unique_id=462852903]
 shape = SubResource("BoxShape3D_d83rk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1272009058) index="0" unique_id=691822061]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1845324850) index="0" unique_id=691822061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf2/StaticBody3D" unique_id=1760184012]
 shape = SubResource("BoxShape3D_vusgr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 762786501) index="0" unique_id=409327881]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 697842204) index="0" unique_id=409327881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf3/StaticBody3D" unique_id=233878011]
 shape = SubResource("BoxShape3D_vf37k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1994031039) index="0" unique_id=108583369]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1522145351) index="0" unique_id=108583369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf4/StaticBody3D" unique_id=1951664071]
 shape = SubResource("BoxShape3D_xx5bj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1876123732) index="0" unique_id=1504421650]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1932419921) index="0" unique_id=1504421650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf5/StaticBody3D" unique_id=403247582]
 shape = SubResource("BoxShape3D_bx7d2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 383968794) index="0" unique_id=2062273112]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1065727742) index="0" unique_id=2062273112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf6/StaticBody3D" unique_id=1894717138]
 shape = SubResource("BoxShape3D_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 2111832208) index="0" unique_id=1183795904]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 889565114) index="0" unique_id=1183795904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf7/StaticBody3D" unique_id=549575784]
 shape = SubResource("BoxShape3D_r51qy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 266043597) index="0" unique_id=6196123]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 1517012068) index="0" unique_id=6196123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.502914, 399.10007, -1.2227173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/vault_wall/StaticBody3D" unique_id=1956814843]
 shape = SubResource("BoxShape3D_owj4x")
 
 [node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("6_ixfql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3106537, 1.0615042, 7.586282)
-can_move = false
+transform = Transform3D(0.9636156, 0, 0.26729184, 0, 1, 0, -0.26729184, 0, 0.9636156, 1.9965285, 1.0687702, 5.765743)
 can_run = false
 can_jump = false
 is_hot = true
 
 [node name="Camera3D" parent="FirstPersonPlayer/Camera" parent_id_path=PackedInt32Array(1973127356, 347107271) index="0" unique_id=1008336844]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1874821401]
-libraries/ = SubResource("AnimationLibrary_d83rk")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1575009516]
-z_index = 10
-material = SubResource("ShaderMaterial_qaqv0")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+current = true
 
 [node name="Fire" type="Node3D" parent="." unique_id=2077734168]
 
@@ -307,6 +211,83 @@ visible = false
 [node name="woman_laying" parent="." unique_id=1309850206 instance=ExtResource("10_ojyrp")]
 transform = Transform3D(-0.26192045, 0, -0.9650895, 0, 1, 0, 0.9650895, 0, -0.26192045, 1.3140001, 0.05614215, 6.7003217)
 
-[editable path="buddy"]
+[node name="Interactable" type="StaticBody3D" parent="." unique_id=1369171818 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6925616, 1.1920929e-07, 1.1835952)
+script = ExtResource("8_p4p2w")
+outline_material = SubResource("StandardMaterial3D_p4p2w")
+mesh_instance = NodePath("duffle_bag/duffle_bag-og")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1979941550]
+transform = Transform3D(0.73914295, 0, 0.6735486, 0, 1, 0, -0.6735486, 0, 0.73914295, -0.02610898, 0.25787354, 0.11008346)
+shape = SubResource("BoxShape3D_qaqv0")
+
+[node name="duffle_bag" parent="Interactable" unique_id=791672182 instance=ExtResource("7_kjuuv")]
+transform = Transform3D(0.78476405, 0, 0.6197946, 0, 1, 0, -0.6197946, 0, 0.78476405, -0.025440454, 0.059235767, 0.10567808)
+
+[node name="ExitArea" type="Area3D" parent="." unique_id=747773176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1006169, 0, 8.452354)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea" unique_id=503224099]
+shape = SubResource("BoxShape3D_gsyc7")
+
+[node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_ti5mj")]
+transform = Transform3D(-0.9839087, 0, 0.17867182, 0, 1, 0, -0.17867182, 0, -0.9839087, 0.13837998, 0.06080713, 8.040763)
+
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1350044209) index="0" unique_id=757806208]
+bones/0/position = Vector3(-4.2550387, -1.3137205, -98.062744)
+bones/0/rotation = Quaternion(-0.7403169, 0.024906974, -0.002231357, 0.6717928)
+bones/1/rotation = Quaternion(0.06782633, 0.003241958, 0.9975529, -0.016657261)
+bones/2/rotation = Quaternion(-0.11960291, 0.007489434, -0.0046464433, 0.9927828)
+bones/3/rotation = Quaternion(0.45925978, 0.050414905, -0.016635682, 0.8867142)
+bones/4/rotation = Quaternion(0.38061702, -0.026540745, 0.010874114, 0.9242879)
+bones/6/rotation = Quaternion(-0.13048914, 0.00077493314, 0.9906148, 0.04067323)
+bones/7/rotation = Quaternion(-0.09272066, -0.044829838, 0.009535073, 0.9946367)
+bones/8/rotation = Quaternion(0.4404802, -0.017817136, -0.012071392, 0.8975044)
+bones/9/rotation = Quaternion(0.3815107, 0.02624168, -0.01076586, 0.92392915)
+bones/11/rotation = Quaternion(0.061538786, -0.017972566, -0.038846143, 0.99718654)
+bones/12/rotation = Quaternion(0.03799293, -0.0058099516, 0.001197915, 0.9992604)
+bones/13/rotation = Quaternion(0.008567036, -0.0067576715, 0.0013675832, 0.9999396)
+bones/14/rotation = Quaternion(-0.58682966, -0.4166562, 0.54782724, -0.42651367)
+bones/15/position = Vector3(-2.1698452e-06, 15.5210285, 1.3503657e-05)
+bones/15/rotation = Quaternion(0.46562794, 0.100294374, 0.061635736, 0.87711614)
+bones/16/position = Vector3(-4.7288536e-06, 25.324226, -5.4246702e-06)
+bones/16/rotation = Quaternion(0.054242764, -0.1711056, 0.31775093, 0.9310291)
+bones/17/position = Vector3(-1.340169e-06, 32.92696, 3.9183974e-06)
+bones/17/rotation = Quaternion(-0.050057407, -0.20790058, -0.0482641, 0.9756752)
+bones/18/position = Vector3(-1.5282532e-06, 2.238479, 1.0228479e-07)
+bones/18/rotation = Quaternion(0.13984115, 0.5590663, 0.04054495, 0.81623864)
+bones/19/position = Vector3(2.8610293e-06, 3.450101, -2.384199e-06)
+bones/19/rotation = Quaternion(0.0704239, 0.013083968, -0.101578794, 0.9922455)
+bones/20/rotation = Quaternion(0.18941249, 0.10478629, -0.032319427, 0.9757552)
+bones/21/position = Vector3(-1.9677148, 2.4749382, -1.1043286)
+bones/22/rotation = Quaternion(-0.05317618, 0.015006333, 0.024178728, 0.99817955)
+bones/23/rotation = Quaternion(0.034678105, -0.01478927, -0.028057415, 0.9988952)
+bones/25/rotation = Quaternion(0.6379393, -0.3568964, 0.54922396, 0.40498343)
+bones/26/position = Vector3(2.6161928e-08, 15.52104, 8.336555e-06)
+bones/26/rotation = Quaternion(0.3800345, 0.04596275, 0.029350799, 0.92336327)
+bones/27/position = Vector3(1.3807118e-06, 25.317577, -5.68374e-06)
+bones/27/rotation = Quaternion(0.0011304931, 0.015898874, -0.09470238, 0.9953781)
+bones/28/rotation = Quaternion(-0.113701105, -0.05037541, -0.09146592, 0.9880123)
+bones/29/position = Vector3(1.7022768e-06, 2.2552934, -6.259386e-06)
+bones/29/rotation = Quaternion(0.43179882, -0.58192426, -0.32709333, 0.6065674)
+bones/30/position = Vector3(-2.756712e-06, 3.4385514, 5.960461e-07)
+bones/30/rotation = Quaternion(0.15790154, -0.09007245, -0.44346693, 0.8776623)
+bones/31/position = Vector3(2.2108674, 4.2761183, -1.083511)
+bones/31/rotation = Quaternion(0.09038347, -0.29662833, -0.52547055, 0.79228985)
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=620339669]
+transform = Transform3D(0.051626295, 0.021703124, -0.99843025, -0.8671592, 0.49686533, -0.034038246, 0.49534702, 0.8675558, 0.044471636, 25.297836, -0.45195925, -123.89285)
+
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=1920003415]
+visible = false
+
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1368554785]
+transform = Transform3D(0.050098352, -0.38163033, 0.9229565, 0.9957188, 0.09096221, -0.016436245, -0.07768155, 0.9198286, 0.38455313, -33.80848, -0.38981676, -124.77256)
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_area_3d_body_entered"]
+
 [editable path="vault"]
 [editable path="FirstPersonPlayer"]
+[editable path="Interactable/duffle_bag"]
+[editable path="buddy"]

@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhr435cl2a6ud"
-path.s3tc="res://.godot/imported/man_standing_w_dufflebag_Image_1.png-aa20a7a71790a963b782ea7f4b93f13b.s3tc.ctex"
+uid="uid://q2rvxttvis81"
+path.s3tc="res://.godot/imported/rust-11_smooth.jpg-c6eaa1b9539dd34cea45e8b441df3ca2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "3b56048d3813a30c135a9eeb78cb16eb"
-}
+generator_parameters={}
 
 [deps]
 
-source_file="res://models/man/man_standing_w_dufflebag_Image_1.png"
-dest_files=["res://.godot/imported/man_standing_w_dufflebag_Image_1.png-aa20a7a71790a963b782ea7f4b93f13b.s3tc.ctex"]
+source_file="res://models/vault/textures/rust-11_smooth.jpg"
+dest_files=["res://.godot/imported/rust-11_smooth.jpg-c6eaa1b9539dd34cea45e8b441df3ca2.s3tc.ctex"]
 
 [params]
 

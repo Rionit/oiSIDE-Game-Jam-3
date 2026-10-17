@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cin1tlibgocx1"
-path.s3tc="res://.godot/imported/man_standing_w_dufflebag_Image_5.png-29c69cb741c1052d91830a8ec91b23a2.s3tc.ctex"
+uid="uid://ctax6mbni3ife"
+path.s3tc="res://.godot/imported/duffle_bag_Image_2.jpg-cb5d14b0c5273fc19cbd8a4ac7f28d26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "aaa1768153540e6252dcbac5917bcc6e"
+"md5": "e37461c7798f9e2f390bc6361e244287"
 }
 
 [deps]
 
-source_file="res://models/man/man_standing_w_dufflebag_Image_5.png"
-dest_files=["res://.godot/imported/man_standing_w_dufflebag_Image_5.png-29c69cb741c1052d91830a8ec91b23a2.s3tc.ctex"]
+source_file="res://models/dufflebag/duffle_bag_Image_2.jpg"
+dest_files=["res://.godot/imported/duffle_bag_Image_2.jpg-cb5d14b0c5273fc19cbd8a4ac7f28d26.s3tc.ctex"]
 
 [params]
 
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://models/man/man_standing_w_dufflebag_Image_5.png"
+roughness/src_normal="res://models/dufflebag/duffle_bag_Image_2.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

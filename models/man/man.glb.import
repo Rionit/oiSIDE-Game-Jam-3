@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3kwlgetr1kx5"
-path="res://.godot/imported/man_standing_w_dufflebag.glb-aa91742e1c5d66507f1911e2f9f939e2.scn"
+uid="uid://cjcrtu8dniacj"
+path="res://.godot/imported/man.glb-ca5f14e9f848ed1c60caf86ffbacca93.scn"
 
 [deps]
 
-source_file="res://models/man/man_standing_w_dufflebag.glb"
-dest_files=["res://.godot/imported/man_standing_w_dufflebag.glb-aa91742e1c5d66507f1911e2f9f939e2.scn"]
+source_file="res://models/man/man.glb"
+dest_files=["res://.godot/imported/man.glb-ca5f14e9f848ed1c60caf86ffbacca93.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"idle": {
+"pointing": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",

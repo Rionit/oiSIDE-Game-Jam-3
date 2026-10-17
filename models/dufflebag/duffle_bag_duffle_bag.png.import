@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbycfob1qdktb"
-path.s3tc="res://.godot/imported/man_standing_w_dufflebag_duffle_bag.png-1b9b5626900fc01dd65bc826a7d0c517.s3tc.ctex"
+uid="uid://dg8l2iti4jv15"
+path.s3tc="res://.godot/imported/duffle_bag_duffle_bag.png-14ef61a0dfc4007746e5c22b2af57f4b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/man/man_standing_w_dufflebag_duffle_bag.png"
-dest_files=["res://.godot/imported/man_standing_w_dufflebag_duffle_bag.png-1b9b5626900fc01dd65bc826a7d0c517.s3tc.ctex"]
+source_file="res://models/dufflebag/duffle_bag_duffle_bag.png"
+dest_files=["res://.godot/imported/duffle_bag_duffle_bag.png-14ef61a0dfc4007746e5c22b2af57f4b.s3tc.ctex"]
 
 [params]
 

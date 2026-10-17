@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmp755c0pnl5"
-path.s3tc="res://.godot/imported/man_standing_w_dufflebag_Image_4.png-9104c732a8bbd59dbf3b5161766fddc5.s3tc.ctex"
+uid="uid://pdkfu4ncbm1a"
+path.s3tc="res://.godot/imported/duffle_bag_Image_5.png-672f10f246b4c3826c9bf95d649fb937.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3ddb39b2a2fd0dd683c1a3767efb9287"
+"md5": "aaa1768153540e6252dcbac5917bcc6e"
 }
 
 [deps]
 
-source_file="res://models/man/man_standing_w_dufflebag_Image_4.png"
-dest_files=["res://.godot/imported/man_standing_w_dufflebag_Image_4.png-9104c732a8bbd59dbf3b5161766fddc5.s3tc.ctex"]
+source_file="res://models/dufflebag/duffle_bag_Image_5.png"
+dest_files=["res://.godot/imported/duffle_bag_Image_5.png-672f10f246b4c3826c9bf95d649fb937.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://models/man/man_standing_w_dufflebag_Image_5.png"
+roughness/mode=1
+roughness/src_normal="res://models/dufflebag/duffle_bag_Image_5.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
