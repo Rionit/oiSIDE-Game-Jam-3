@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://bql4v78wd6nsq" path="res://audio/sfx/uzi_shot.wav" id="24_rwtp3"]
 [ext_resource type="AudioStream" uid="uid://cmomf4g61oy2" path="res://audio/sfx/ammo.wav" id="25_ban20"]
 [ext_resource type="AudioStream" uid="uid://bqlx75nsl4wem" path="res://audio/sfx/gun_pick_up.wav" id="26_o5540"]
+[ext_resource type="AudioStream" uid="uid://dnck73htc805i" path="res://audio/atmo/police_bg.mp3" id="27_cq456"]
+[ext_resource type="AudioStream" uid="uid://bf0xyqtkm2omc" path="res://audio/sfx/alarm.wav" id="28_f8c8l"]
 
 [sub_resource type="Resource" id="Resource_ti5mj"]
 script = ExtResource("3_geqqb")
@@ -152,7 +154,7 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "uzi"
 streams = Array[AudioStream]([ExtResource("24_rwtp3")])
-volume_db = -13.5
+volume_db = -1.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_r4d1c"]
@@ -169,7 +171,21 @@ streams = Array[AudioStream]([ExtResource("26_o5540")])
 volume_db = -15.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
+[sub_resource type="Resource" id="Resource_2dd1r"]
+script = ExtResource("3_geqqb")
+tag = "police"
+streams = Array[AudioStream]([ExtResource("27_cq456")])
+volume_db = -5.5
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_m7g43"]
+script = ExtResource("3_geqqb")
+tag = "alarm"
+streams = Array[AudioStream]([ExtResource("28_f8c8l")])
+volume_db = -10.5
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
 [resource]
 script = ExtResource("2_c4kn6")
-sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c"), SubResource("Resource_04ec1")])
+sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c"), SubResource("Resource_04ec1"), SubResource("Resource_2dd1r"), SubResource("Resource_m7g43")])
 metadata/_custom_type_script = "uid://bv1r6iypadxw1"
