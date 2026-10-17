@@ -17,12 +17,14 @@ func _ready() -> void:
 	duffle_bag.interacted.connect(on_duffle_picked)
 	buddy.position = first_pos
 	buddy_player.play("pointing")
+	AudioManager.play_sfx("scene_start")
 
 func on_duffle_picked(interactable) -> void:
 	buddy.position = second_pos
 	buddy_player.play("come")
 	duffle_bag.queue_free()
 	duffle_picked = true
+	AudioManager.play_sfx("bag")
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is PlayerController and duffle_picked:
