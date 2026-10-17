@@ -3,9 +3,69 @@
 [ext_resource type="PackedScene" uid="uid://y1mifk10btee" path="res://models/basement/basement.blend" id="1_1vkku"]
 [ext_resource type="Script" uid="uid://6xdr8txjxr1b" path="res://scripts/levels/heist_prep_flashback_level.gd" id="1_10nsf"]
 [ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="2_10nsf"]
+[ext_resource type="Script" uid="uid://dq2ptpf5yrene" path="res://scripts/dialogue_line.gd" id="2_i2chr"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="2_oiwwx"]
 [ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="5_ieeok"]
 [ext_resource type="Material" uid="uid://djo00u2we4r87" path="res://materials/outline.tres" id="6_hqqd7"]
+[ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="7_hqqd7"]
+
+[sub_resource type="Resource" id="Resource_i2chr"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "So..."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_olgme"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Here's the plan."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_r1vv4"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Get in the vent."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_0n21q"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Drill inside the vault."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_3xq6u"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Don't get caught..."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_2q2jh"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Otherwise they gonna burn all the money down."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_s4hrr"]
+script = ExtResource("2_i2chr")
+text = "[shake]What??[/shake]"
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_553oi"]
+script = ExtResource("2_i2chr")
+text = "Why the [shake]$#&![/shake] would they do that??"
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_gymnr"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Can't tell ya mate."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
+[sub_resource type="Resource" id="Resource_sc1va"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Cause I have no idea."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vkku"]
 size = Vector3(28.999996, 19.000002, 17.000004)
@@ -115,8 +175,9 @@ grow_amount = 0.07
 stencil_flags = 2
 stencil_color = Color(1, 1, 1, 1)
 
-[node name="FoodFlashbackLevel" type="Node3D" unique_id=1033408852]
+[node name="HeistPrepFlashbackLevel" type="Node3D" unique_id=1033408852]
 script = ExtResource("1_10nsf")
+dialogue_lines = Array[ExtResource("2_i2chr")]([SubResource("Resource_i2chr"), SubResource("Resource_olgme"), SubResource("Resource_r1vv4"), SubResource("Resource_0n21q"), SubResource("Resource_3xq6u"), SubResource("Resource_2q2jh"), SubResource("Resource_s4hrr"), SubResource("Resource_553oi"), SubResource("Resource_gymnr"), SubResource("Resource_sc1va")])
 
 [node name="basement" parent="." unique_id=1191204236 instance=ExtResource("1_1vkku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006145239, 0.0014929771, 3.0755997e-05)
@@ -241,22 +302,11 @@ can_jump = false
 [node name="Camera" parent="FirstPersonPlayer" index="1" unique_id=347107271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="InteractableBuddy" type="StaticBody3D" parent="." unique_id=440174308 node_paths=PackedStringArray("mesh_instance")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0370064, 0.7631657, 4.6730986)
-script = ExtResource("5_ieeok")
-outline_material = ExtResource("6_hqqd7")
-mesh_instance = NodePath("buddy/Armature/Skeleton3D/man")
-metadata/_custom_type_script = "uid://dvgofkarni8kd"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableBuddy" unique_id=95654033]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043766975, 0.06793827, -0.034959793)
-shape = SubResource("CapsuleShape3D_qaqv0")
-
-[node name="buddy" parent="InteractableBuddy" unique_id=713831908 instance=ExtResource("2_10nsf")]
+[node name="buddy" parent="." unique_id=713831908 instance=ExtResource("2_10nsf")]
 unique_name_in_owner = true
-transform = Transform3D(-0.042177733, 0, -1.0741724, 0, 1.075, 0, 1.0741724, 0, -0.042177733, -0.08372927, -0.9276835, -0.105370045)
+transform = Transform3D(-0.042177733, 0, -1.0741724, 0, 1.075, 0, 1.0741724, 0, -0.042177733, 3.953277, -0.16451776, 4.5677285)
 
-[node name="Skeleton3D" parent="InteractableBuddy/buddy/Armature" parent_id_path=PackedInt32Array(713831908, 1867161865) index="0" unique_id=2129650535]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(713831908, 1867161865) index="0" unique_id=2129650535]
 bones/0/position = Vector3(0, -1.2508829, -97.22229)
 bones/0/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
 bones/1/rotation = Quaternion(-0.0017549145, -0.055402104, 0.99796396, -0.03155117)
@@ -301,17 +351,28 @@ bones/30/rotation = Quaternion(-2.7939679e-08, 1.303852e-08, -1.1455269e-07, 1)
 bones/31/position = Vector3(2.2108872, 4.276125, -1.0835121)
 bones/31/rotation = Quaternion(3.5390276e-08, 2.5238842e-07, -2.5168993e-07, 1)
 
-[node name="mixamorig_LeftForeArm" parent="InteractableBuddy/buddy/Armature/Skeleton3D" index="0" unique_id=2104161135]
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=2104161135]
 transform = Transform3D(-0.12533191, -0.92780614, -0.3513784, 0.9605771, -0.024893194, -0.2768946, 0.24815775, -0.3722298, 0.89435005, 24.28942, 13.878593, -125.83551)
 
-[node name="shotgun" parent="InteractableBuddy/buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=2025753104]
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=2025753104]
 visible = false
 
-[node name="mixamorig_RightForeArm" parent="InteractableBuddy/buddy/Armature/Skeleton3D" index="1" unique_id=1322497726]
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1322497726]
 transform = Transform3D(0.31865677, 0.9426645, 0.09920553, -0.81822914, 0.32639766, -0.4732501, -0.4784966, 0.06963135, 0.87532413, -17.802647, 9.343988, -132.40141)
 
-[node name="duffle_bag" parent="InteractableBuddy/buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=438355733]
+[node name="duffle_bag" parent="buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=438355733]
 visible = false
+
+[node name="InteractableBuddy" type="StaticBody3D" parent="." unique_id=440174308 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0370064, 0.7631657, 4.6730986)
+script = ExtResource("5_ieeok")
+outline_material = ExtResource("6_hqqd7")
+mesh_instance = NodePath("../buddy/Armature/Skeleton3D/man")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableBuddy" unique_id=95654033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043766975, 0.06793827, -0.034959793)
+shape = SubResource("CapsuleShape3D_qaqv0")
 
 [node name="InteractableGun" type="StaticBody3D" parent="." unique_id=39692917 node_paths=PackedStringArray("mesh_instance")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8192863, 0.95205766, 3.3977604)
@@ -357,6 +418,10 @@ metadata/_custom_type_script = "uid://dvgofkarni8kd"
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0, 0, 0)
 shape = SubResource("BoxShape3D_qaqv0")
 
+[node name="DialogueManager" parent="." unique_id=551898399 instance=ExtResource("7_hqqd7")]
+visible = false
+
+[connection signal="interacted" from="InteractableBuddy" to="." method="on_buddy_interacted"]
 [connection signal="interacted" from="InteractableGun" to="." method="on_weapon_picked"]
 [connection signal="interacted" from="InteractableGun2" to="." method="on_weapon_picked"]
 [connection signal="interacted" from="InteractableAmmo" to="." method="on_ammo_picked"]
@@ -364,4 +429,5 @@ shape = SubResource("BoxShape3D_qaqv0")
 
 [editable path="basement"]
 [editable path="FirstPersonPlayer"]
-[editable path="InteractableBuddy/buddy"]
+[editable path="buddy"]
+[editable path="DialogueManager"]

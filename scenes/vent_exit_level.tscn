@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c1e4v7uov14gj"]
+
+[ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="4_mub8s"]
+[ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="6_4iolx"]
+[ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="10_u7pal"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7c3h"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w8frs"]
+sky_material = SubResource("ProceduralSkyMaterial_w7c3h")
+
+[sub_resource type="Environment" id="Environment_mx8sn"]
+sky = SubResource("Sky_w8frs")
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+glow_hdr_threshold = 0.1
+glow_hdr_scale = 1.45
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsyc7"]
+size = Vector3(4.0666504, 3.440277, 1)
+
+[node name="VaultExitLevel" type="Node3D" unique_id=1033408852]
+
+[node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("4_mub8s")]
+transform = Transform3D(0.9636156, 0, 0.26729184, 0, 1, 0, -0.26729184, 0, 0.9636156, 1.9965285, 1.0687702, 5.765743)
+can_run = false
+can_jump = false
+is_hot = true
+
+[node name="Camera3D" parent="FirstPersonPlayer/Camera" parent_id_path=PackedInt32Array(1973127356, 347107271) index="0" unique_id=1008336844]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0)
+current = true
+
+[node name="Light" type="Node3D" parent="." unique_id=431302223]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" unique_id=1914736575]
+environment = SubResource("Environment_mx8sn")
+
+[node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1673871798]
+
+[node name="DialogueManager" parent="." unique_id=551898399 instance=ExtResource("6_4iolx")]
+visible = false
+
+[node name="ExitArea" type="Area3D" parent="." unique_id=747773176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1006169, 0, 8.452354)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea" unique_id=503224099]
+shape = SubResource("BoxShape3D_gsyc7")
+
+[node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_u7pal")]
+transform = Transform3D(-0.9839087, 0, 0.17867182, 0, 1, 0, -0.17867182, 0, -0.9839087, 0.67455184, 0.24470547, 8.747436)
+
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1867161865) index="0" unique_id=2129650535]
+bones/0/position = Vector3(1.1536181e-07, -1.2508827, -97.22229)
+bones/0/rotation = Quaternion(-0.43243256, -0.559466, 0.5594659, 0.43243256)
+bones/1/rotation = Quaternion(-0.025490612, 0.16795783, 0.9661584, -0.19410923)
+bones/2/rotation = Quaternion(-0.33632195, -0.27079365, -0.11498207, 0.8946158)
+bones/3/rotation = Quaternion(0.4124857, 0.012974129, -0.005875384, 0.91085273)
+bones/4/rotation = Quaternion(0.36625978, -0.026617592, 0.010481863, 0.9300728)
+bones/6/position = Vector3(-9.487898, -1.615325, 3.845488)
+bones/6/rotation = Quaternion(0.2211294, 0.35512, 0.83402365, 0.35971662)
+bones/7/rotation = Quaternion(-0.31280798, 0.0010501146, 0.41355732, 0.85505587)
+bones/8/rotation = Quaternion(0.38644668, -0.0066955965, 0.0025883557, 0.92228377)
+bones/9/rotation = Quaternion(0.3338785, 0.029123649, -0.016477615, 0.942022)
+bones/10/rotation = Quaternion(-0.015734343, -4.1479045e-05, -0.003724646, 0.9998693)
+bones/11/rotation = Quaternion(0.13746147, 0.011905119, 0.04305805, 0.9894992)
+bones/12/rotation = Quaternion(0.06980026, 0.26002932, -0.036251012, 0.9623921)
+bones/13/rotation = Quaternion(0.012121913, 0.17466238, -0.033866793, 0.9839711)
+bones/14/rotation = Quaternion(-0.5116684, -0.50884354, 0.5563278, -0.41203526)
+bones/15/position = Vector3(-7.4168995e-08, 15.521026, -7.4283703e-06)
+bones/15/rotation = Quaternion(0.19594003, -0.33338413, 0.19309668, 0.90176284)
+bones/16/position = Vector3(-5.1039474e-06, 25.324211, -1.3284967e-05)
+bones/16/rotation = Quaternion(0.062312443, -0.22620821, 0.42458317, 0.8744577)
+bones/17/position = Vector3(1.3462543e-05, 32.92695, 2.0241632e-06)
+bones/17/rotation = Quaternion(0.012239177, -0.2473537, 0.12174504, 0.96116835)
+bones/18/position = Vector3(9.605774e-06, 2.2384646, 1.0290176e-05)
+bones/18/rotation = Quaternion(0.0910532, 0.34746253, -0.037164085, 0.9325224)
+bones/19/position = Vector3(-9.655953e-06, 3.4500887, -7.748605e-06)
+bones/19/rotation = Quaternion(-1.8067658e-07, 3.3341348e-07, -1.7322598e-07, 1)
+bones/20/position = Vector3(-1.9913936, 4.691104, -0.11981082)
+bones/20/rotation = Quaternion(2.7939675e-08, -2.4214389e-08, 1.3038517e-08, 1)
+bones/21/position = Vector3(-1.9677176, 2.474952, -1.1043134)
+bones/22/rotation = Quaternion(-0.0058876206, 8.3821e-09, 8.857293e-12, 0.99998266)
+bones/23/rotation = Quaternion(0.026055219, 0.37625605, -0.06836872, 0.92362237)
+bones/25/rotation = Quaternion(0.49352843, -0.5948629, 0.5009092, 0.38943276)
+bones/26/position = Vector3(-8.4757385e-06, 15.521041, -1.084952e-05)
+bones/26/rotation = Quaternion(0.3006916, -0.010526234, 0.041289896, 0.9527691)
+bones/27/position = Vector3(1.0495336e-05, 25.317581, 8.995875e-06)
+bones/27/rotation = Quaternion(0.18414123, 0.21826637, -0.08938173, 0.95418173)
+bones/28/rotation = Quaternion(-0.0105264615, 0.0006474876, -0.061389238, 0.9980582)
+bones/29/position = Vector3(-4.46547e-06, 2.2552803, -4.9784526e-06)
+bones/29/rotation = Quaternion(0.1672304, -0.68158793, 0.1644453, 0.6931304)
+bones/30/position = Vector3(-4.3064347e-06, 3.438543, 1.4901177e-07)
+bones/30/rotation = Quaternion(-4.4936314e-08, 1.7927963e-08, -1.08964755e-07, 1)
+bones/31/position = Vector3(2.2109022, 4.2761207, -1.0835202)
+bones/31/rotation = Quaternion(-8.148768e-10, 2.6449564e-07, -2.349261e-07, 1)
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=2104161135]
+transform = Transform3D(0.50170314, -0.32292083, -0.80250573, 0.36279154, 0.9207258, -0.14368516, 0.785287, -0.21905524, 0.579084, 10.797895, 33.782127, -147.73189)
+
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=2025753104]
+visible = false
+
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1322497726]
+transform = Transform3D(-0.9641248, 0.03029032, 0.26371557, 0.20873639, -0.52723354, 0.82368344, 0.16398928, 0.84918076, 0.5019958, -25.151648, -44.37889, -132.07462)
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_area_3d_body_entered"]
+
+[editable path="FirstPersonPlayer"]
+[editable path="buddy"]
