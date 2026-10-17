@@ -1,15 +1,16 @@
 extends Node
 
-@onready var sfx_player: AudioStreamPlayer2D = $SFX
+@onready var sfx_player: AudioStreamPlayer = $SFX
 @export var audio_library: AudioLibrary
+
+@export_category("Audio Buses")
+@export var sfx_bus: String = "Master"
+@export var bgm_bus: String = "Master"
 
 # Dual BGM players for smooth crossfading
 var bgm_player_1: AudioStreamPlayer
 var bgm_player_2: AudioStreamPlayer
 var active_bgm_player: AudioStreamPlayer
-
-@export_category("BGM Settings")
-@export var bgm_bus: String = "Master"
 
 func _ready() -> void:
 	audio_library = load("res://resources/audio_library.tres")
@@ -68,13 +69,29 @@ func _get_audio_music(_tag: String) -> Music:
 # --- SFX Playback ---
 func play_sfx(_tag: String) -> void:
 	var sound_def = _get_audio_sfx(_tag)
-	if sound_def:
-		var stream = sound_def.get_next_stream()
-		if stream:
-			var playback: AudioStreamPlaybackPolyphonic = sfx_player.get_stream_playback()
-			if playback:
-				var final_pitch = sound_def.pitch_scale + randf_range(-sound_def.pitch_randomness, sound_def.pitch_randomness)
-				playback.play_stream(stream, 0, sound_def.volume_db, final_pitch)
+	if not sound_def:
+		return
+		
+	var stream = sound_def.get_next_stream()
+	if not stream:
+		return
+
+	var player = AudioStreamPlayer.new()
+	player.stream = stream
+	player.volume_db = sound_def.volume_db
+	player.pitch_scale = sound_def.pitch_scale + randf_range(-sound_def.pitch_randomness, sound_def.pitch_randomness)
+	player.bus = sfx_bus
+
+	var parent_node = get_tree().current_scene
+	if not parent_node:
+		parent_node = get_tree().root
+
+	parent_node.add_child(player)
+	if not player.is_inside_tree():
+		await player.tree_entered
+
+	player.finished.connect(player.queue_free)
+	player.play()
 
 func play_sfx_at_2d(_tag: String, world_position: Vector2) -> void:
 	_play_positional_sfx(_tag, world_position, AudioStreamPlayer2D, get_tree().root)

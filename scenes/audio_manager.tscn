@@ -9,5 +9,5 @@
 script = ExtResource("1_8qd8g")
 audio_library = ExtResource("2_liach")
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=558880531]
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=283751167]
 stream = SubResource("AudioStreamPolyphonic_fceot")
