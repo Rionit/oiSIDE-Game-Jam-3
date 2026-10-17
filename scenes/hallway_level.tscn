@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c582tbim68s0a"]
+
+[ext_resource type="PackedScene" uid="uid://sg3elif44r5a" path="res://models/hallway/hallway.blend" id="4_rwby4"]
+[ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="4_wg10x"]
+[ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="6_reoqw"]
+[ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="10_vcdxh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7c3h"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w8frs"]
+sky_material = SubResource("ProceduralSkyMaterial_w7c3h")
+
+[sub_resource type="Environment" id="Environment_mx8sn"]
+sky = SubResource("Sky_w8frs")
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+glow_hdr_threshold = 0.1
+glow_hdr_scale = 1.45
+
+[node name="HalwayLevel" type="Node3D" unique_id=1033408852]
+
+[node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("4_wg10x")]
+transform = Transform3D(-0.8421455, 0, 0.5392503, 0, 1, 0, -0.5392503, 0, -0.8421455, 1.9965285, 1.0687702, 5.765743)
+can_run = false
+can_jump = false
+is_hot = true
+
+[node name="Camera3D" parent="FirstPersonPlayer/Camera" parent_id_path=PackedInt32Array(1973127356, 347107271) index="0" unique_id=1008336844]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0)
+current = true
+
+[node name="Light" type="Node3D" parent="." unique_id=431302223]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" unique_id=1914736575]
+environment = SubResource("Environment_mx8sn")
+
+[node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1673871798]
+
+[node name="DialogueManager" parent="." unique_id=551898399 instance=ExtResource("6_reoqw")]
+visible = false
+
+[node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_vcdxh")]
+transform = Transform3D(-0.9839087, 0, 0.17867182, 0, 1, 0, -0.17867182, 0, -0.9839087, 0.67455184, 0.24470547, 8.747436)
+
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1735404108) index="0" unique_id=2028347770]
+visible = false
+
+[node name="hallway" parent="." unique_id=1029003116 instance=ExtResource("4_rwby4")]
+
+[editable path="FirstPersonPlayer"]
+[editable path="buddy"]

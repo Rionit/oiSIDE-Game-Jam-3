@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://vi7rxhvt1kwi"]
 
+[ext_resource type="Script" uid="uid://p47ed2tu46mt" path="res://scripts/levels/vault_steal_money_level.gd" id="1_3cscq"]
 [ext_resource type="PackedScene" uid="uid://cjcrtu8dniacj" path="res://models/man/man.glb" id="3_bum8s"]
 [ext_resource type="PackedScene" uid="uid://c7ihdy0sd7c1t" path="res://models/vault/vault.blend" id="4_18y8w"]
 [ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="5_edwo4"]
+[ext_resource type="Script" uid="uid://dvgofkarni8kd" path="res://scripts/interactable.gd" id="6_1ca26"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="6_fcjql"]
-[ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="10_erce0"]
+[ext_resource type="PackedScene" uid="uid://c5mpa3pw81hd5" path="res://models/money_stack/money_stack.glb" id="8_fur8v"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
 fractal_gain = 0.8
@@ -27,10 +29,10 @@ shader_parameter/emission_energy = 2.0
 data = PackedVector3Array(-1, -1.0001, 1, -1, 0.99979997, -1, -1, 0.99979997, 1, -1, -1.0001, 1, -1, -1.0001, -1, -1, 0.99979997, -1, -1, -1.0001, -1, 1, 0.99979997, -1, -1, 0.99979997, -1, -1, -1.0001, -1, 1, -1.0001, -1, 1, 0.99979997, -1, 1, -1.0001, -1, 1, 0.99979997, 1, 1, 0.99979997, -1, 1, -1.0001, -1, 1, -1.0001, 1, 1, 0.99979997, 1, 1, -1.0001, 1, -1, 0.99979997, 1, 1, 0.99979997, 1, 1, -1.0001, 1, -1, -1.0001, 1, -1, 0.99979997, 1, -1, -1.0001, -1, 1, -1.0001, 1, 1, -1.0001, -1, -1, -1.0001, -1, -1, -1.0001, 1, 1, -1.0001, 1, 1, 0.99979997, -1, -1, 0.99979997, 1, -1, 0.99979997, -1, 1, 0.99979997, -1, 1, 0.99979997, 1, -1, 0.99979997, 1, -0.85109997, -3.8560998, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.81689996, -3.8560998, 0.95519996, -0.85109997, -3.8560998, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.81689996, 120.0253, -0.9698, -0.81689996, 120.0253, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.85109997, 120.0253, -0.9698, -0.81689996, 120.0253, -0.9698, -0.85109997, 120.0253, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.81689996, 120.0253, -0.9698, -0.85109997, 120.0253, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.81689996, -3.8560998, 0.95519996, -0.81689996, -3.8560998, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.85109997, -3.8560998, 0.95519996, -0.81689996, -3.8560998, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.85109997, -3.8560998, -0.9698, -0.85109997, 120.0253, -0.9698, -0.85109997, 120.0253, 0.95519996, -0.85109997, -3.8560998, 0.95519996, -0.85109997, -3.8560998, -0.9698, -0.81689996, 120.0253, -0.9698, -0.81689996, -3.8560998, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.81689996, 120.0253, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.81689996, -3.8560998, 0.95519996, 0.9194, -4.8349, 0.9644, 0.9194, 119.044495, 0.9425, 0.9194, -4.8349, 0.9425, 0.9194, -4.8349, 0.9644, 0.9194, 119.044495, 0.9644, 0.9194, 119.044495, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9425, 0.9194, 119.044495, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9425, -0.88519996, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9644, 0.9194, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9644, 0.9194, -4.8349, 0.9644, 0.9194, -4.8349, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, 119.044495, 0.9644, 0.9194, 119.044495, 0.9644, 0.9194, -4.8349, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, 119.044495, 0.9425, 0.9194, -4.8349, 0.9425, 0.9194, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9425, -0.88519996, -4.8349, 0.9425, 0.9194, -4.8349, 0.9425, 0.8667, -3.8560998, 1.0071, 0.9009, 120.0253, 1.0071, 0.9009, -3.8560998, 1.0071, 0.8667, -3.8560998, 1.0071, 0.8667, 120.0253, 1.0071, 0.9009, 120.0253, 1.0071, 0.8667, 120.0253, 1.0071, 0.9009, 120.0253, -0.9307, 0.9009, 120.0253, 1.0071, 0.8667, 120.0253, 1.0071, 0.8667, 120.0253, -0.9307, 0.9009, 120.0253, -0.9307, 0.8667, 120.0253, -0.9307, 0.9009, -3.8560998, -0.9307, 0.9009, 120.0253, -0.9307, 0.8667, 120.0253, -0.9307, 0.8667, -3.8560998, -0.9307, 0.9009, -3.8560998, -0.9307, 0.8667, -3.8560998, -0.9307, 0.9009, -3.8560998, 1.0071, 0.9009, -3.8560998, -0.9307, 0.8667, -3.8560998, -0.9307, 0.8667, -3.8560998, 1.0071, 0.9009, -3.8560998, 1.0071, 0.8667, 120.0253, 1.0071, 0.8667, -3.8560998, -0.9307, 0.8667, 120.0253, -0.9307, 0.8667, 120.0253, 1.0071, 0.8667, -3.8560998, 1.0071, 0.8667, -3.8560998, -0.9307, 0.9009, 120.0253, -0.9307, 0.9009, -3.8560998, 1.0071, 0.9009, 120.0253, 1.0071, 0.9009, 120.0253, -0.9307, 0.9009, -3.8560998, -0.9307, 0.9009, -3.8560998, 1.0071, -0.9371, 116.6147, 0.96, -0.9371, 118.61459, -0.9601, -0.9371, 118.61459, 0.96, -0.9371, 116.6147, 0.96, -0.9371, 116.6147, -0.9601, -0.9371, 118.61459, -0.9601, -0.9371, 116.6147, -0.9601, 0.9371, 118.61459, -0.9601, -0.9371, 118.61459, -0.9601, -0.9371, 116.6147, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 118.61459, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 118.61459, 0.96, 0.9371, 118.61459, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 116.6147, 0.96, 0.9371, 118.61459, 0.96, 0.9371, 116.6147, 0.96, -0.9371, 118.61459, 0.96, 0.9371, 118.61459, 0.96, 0.9371, 116.6147, 0.96, -0.9371, 116.6147, 0.96, -0.9371, 118.61459, 0.96, -0.9371, 116.6147, -0.9601, 0.9371, 116.6147, 0.96, 0.9371, 116.6147, -0.9601, -0.9371, 116.6147, -0.9601, -0.9371, 116.6147, 0.96, 0.9371, 116.6147, 0.96, 0.9371, 118.61459, -0.9601, -0.9371, 118.61459, 0.96, -0.9371, 118.61459, -0.9601, 0.9371, 118.61459, -0.9601, 0.9371, 118.61459, 0.96, -0.9371, 118.61459, 0.96, 0.9194, 63.1171, -0.9242, 0.9194, 120.948494, -0.946, 0.9194, 63.1171, -0.946, 0.9194, 63.1171, -0.9242, 0.9194, 120.948494, -0.9242, 0.9194, 120.948494, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 120.948494, -0.946, 0.9194, 120.948494, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 120.948494, -0.9242, -0.88519996, 120.948494, -0.946, -0.88519996, 120.948494, -0.9242, -0.88519996, 63.1171, -0.946, -0.88519996, 120.948494, -0.946, -0.88519996, 120.948494, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 63.1171, -0.946, -0.88519996, 63.1171, -0.9242, 0.9194, 63.1171, -0.946, -0.88519996, 63.1171, -0.946, -0.88519996, 63.1171, -0.9242, 0.9194, 63.1171, -0.9242, 0.9194, 63.1171, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 120.948494, -0.9242, 0.9194, 120.948494, -0.9242, 0.9194, 63.1171, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 120.948494, -0.946, 0.9194, 63.1171, -0.946, 0.9194, 120.948494, -0.946, -0.88519996, 120.948494, -0.946, -0.88519996, 63.1171, -0.946, 0.9194, 63.1171, -0.946)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d83rk"]
-size = Vector3(0.41938373, 2.1968026, 1.178529)
+size = Vector3(0.41938373, 0.24537396, 1.178529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vusgr"]
-size = Vector3(0.41938373, 2.1968026, 1.178529)
+size = Vector3(0.41938373, 0.70142865, 1.178529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf37k"]
 size = Vector3(0.41938373, 2.1968026, 1.178529)
@@ -45,7 +47,7 @@ size = Vector3(0.41938373, 2.1968026, 1.178529)
 size = Vector3(0.41938373, 2.1968026, 1.178529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r51qy"]
-size = Vector3(0.41938373, 2.1968026, 1.178529)
+size = Vector3(0.41938373, 0.2360903, 1.178529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owj4x"]
 size = Vector3(267.0057, 1293.7046, 500.20447)
@@ -66,122 +68,92 @@ glow_bloom = 0.2
 glow_hdr_threshold = 0.1
 glow_hdr_scale = 1.45
 
-[node name="VaultStartLevel" type="Node3D" unique_id=1033408852]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt5kv"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5qrj"]
+size = Vector3(0.18554688, 0.064208984, 0.080078125)
+
+[node name="VaultStealMoneyLevel" type="Node3D" unique_id=1033408852]
+script = ExtResource("1_3cscq")
 
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("3_bum8s")]
 transform = Transform3D(0.7833165, 0, 0.6216231, 0, 1, 0, -0.6216231, 0, 0.7833165, 2.4393454, 0, 7.275062)
 
-[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1006950523) index="0" unique_id=1842155757]
-bones/0/position = Vector3(-3.8792267, -2.470395, -98.15044)
-bones/0/rotation = Quaternion(-0.7438719, 0.04690111, -0.03937841, 0.66551054)
-bones/1/rotation = Quaternion(0.050330397, 0.02252347, 0.9982331, -0.02214513)
-bones/2/rotation = Quaternion(-0.13053897, 0.059744623, -0.0051797805, 0.98962796)
-bones/3/rotation = Quaternion(0.4167497, 0.027087312, -0.0039076824, 0.90860933)
-bones/4/rotation = Quaternion(0.41276088, -0.026343366, 0.011751806, 0.9103825)
-bones/6/rotation = Quaternion(-0.13999307, -0.02172722, 0.98947936, 0.029334519)
-bones/7/rotation = Quaternion(-0.061106075, -0.007177567, 0.0031041906, 0.9981007)
-bones/8/rotation = Quaternion(0.42383644, -0.016534852, -0.003580785, 0.90558076)
-bones/9/rotation = Quaternion(0.38168147, 0.026240736, -0.010770485, 0.92385864)
-bones/11/rotation = Quaternion(0.060456753, -0.0146108195, -0.02541462, 0.9977402)
-bones/12/rotation = Quaternion(0.03980142, -0.0049654753, -0.001814316, 0.9991936)
-bones/13/rotation = Quaternion(0.010419391, -0.0061272467, -0.0015582511, 0.9999258)
-bones/14/rotation = Quaternion(-0.5879445, -0.41683888, 0.5552271, -0.4150778)
-bones/15/position = Vector3(-2.1698452e-06, 15.5210285, 1.3503657e-05)
-bones/15/rotation = Quaternion(0.45779103, 0.07626227, 0.053596623, 0.88416004)
-bones/16/position = Vector3(-4.7288536e-06, 25.324226, -5.4246702e-06)
-bones/16/rotation = Quaternion(0.048702385, -0.15935034, 0.2834108, 0.94441193)
-bones/17/position = Vector3(-1.340169e-06, 32.92696, 3.9183974e-06)
-bones/17/rotation = Quaternion(-0.042801395, -0.22088444, 0.0019895863, 0.9743584)
-bones/18/position = Vector3(-1.5282532e-06, 2.238479, 1.0228479e-07)
-bones/18/rotation = Quaternion(0.104281165, 0.56250876, 0.02447348, 0.8198233)
-bones/19/position = Vector3(2.8610293e-06, 3.450101, -2.384199e-06)
-bones/19/rotation = Quaternion(0.05056543, 0.008633438, -0.13513163, 0.989499)
-bones/20/rotation = Quaternion(0.17489275, 0.08920671, -0.06529175, 0.9783617)
-bones/21/position = Vector3(-1.9677148, 2.4749382, -1.1043286)
-bones/22/rotation = Quaternion(-0.036263827, 0.038330723, 0.02924901, 0.9981785)
-bones/23/rotation = Quaternion(0.06280761, 0.16809024, -0.0415326, 0.9828917)
-bones/25/rotation = Quaternion(0.6354497, -0.3637385, 0.5492633, 0.40275025)
-bones/26/position = Vector3(2.6161928e-08, 15.52104, 8.336555e-06)
-bones/26/rotation = Quaternion(0.3976913, 0.02304302, 0.028232142, 0.9167953)
-bones/27/position = Vector3(1.3807118e-06, 25.317577, -5.68374e-06)
-bones/27/rotation = Quaternion(0.0012873291, 0.017691586, -0.10781687, 0.99401253)
-bones/28/rotation = Quaternion(-0.14851712, 0.029225681, -0.081429966, 0.9851181)
-bones/29/position = Vector3(1.7022768e-06, 2.2552934, -6.259386e-06)
-bones/29/rotation = Quaternion(0.43179882, -0.58192426, -0.32709333, 0.6065674)
-bones/30/position = Vector3(-2.756712e-06, 3.4385514, 5.960461e-07)
-bones/30/rotation = Quaternion(0.15790154, -0.09007245, -0.44346693, 0.8776623)
-bones/31/position = Vector3(2.2108674, 4.2761183, -1.083511)
-bones/31/rotation = Quaternion(0.09038347, -0.29662833, -0.52547055, 0.79228985)
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1735404108) index="0" unique_id=2028347770]
+visible = false
 
-[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=586864360]
-transform = Transform3D(-0.06602308, 0.1076574, -0.99199295, -0.8900291, 0.44308951, 0.10732366, 0.45109633, 0.88998914, 0.06656413, 25.675947, -5.22104, -123.43182)
-
-[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=2068513258]
-transform = Transform3D(0.16737397, -0.3488348, 0.9221173, 0.9832544, 0.12745252, -0.13025594, -0.0720884, 0.92847776, 0.3643252, -32.52164, -0.27761912, -125.13038)
-
-[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="2" unique_id=670653593]
-transform = Transform3D(0.9948609, 0.04605532, 0.090170056, -0.090489976, 0.004905358, 0.9958853, 0.045423504, -0.9989269, 0.009047717, -4.0682235, -3.6345694, -109.95046)
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" parent_id_path=PackedInt32Array(2088342805, 1041027597) index="0" unique_id=1490790008]
+visible = false
 
 [node name="vault" parent="." unique_id=728509335 instance=ExtResource("4_18y8w")]
 
-[node name="boolean" parent="vault" index="0" unique_id=575859206]
+[node name="boolean" parent="vault" index="0" unique_id=2142985198]
 visible = false
 
-[node name="Plane" parent="vault" index="25" unique_id=422454299]
+[node name="Plane" parent="vault" index="26" unique_id=1103991537]
 visible = false
 surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 1865992015) index="0" unique_id=901882634]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 772482162) index="0" unique_id=901882634]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/room/StaticBody3D" unique_id=269825006]
 shape = SubResource("ConcavePolygonShape3D_s45i7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1910084884) index="0" unique_id=818462632]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1337968962) index="0" unique_id=818462632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf1/StaticBody3D" unique_id=462852903]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9757144, 0)
 shape = SubResource("BoxShape3D_d83rk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1845324850) index="0" unique_id=691822061]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 814370125) index="0" unique_id=691822061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf2/StaticBody3D" unique_id=1760184012]
+transform = Transform3D(1, 0, -5.587937e-09, 0, 1, 0, 5.587937e-09, 0, 1, 0, -0.7476759, 0)
 shape = SubResource("BoxShape3D_vusgr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 697842204) index="0" unique_id=409327881]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 972044000) index="0" unique_id=409327881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf3/StaticBody3D" unique_id=233878011]
 shape = SubResource("BoxShape3D_vf37k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1522145351) index="0" unique_id=108583369]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 859326131) index="0" unique_id=108583369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf4/StaticBody3D" unique_id=1951664071]
 shape = SubResource("BoxShape3D_xx5bj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1932419921) index="0" unique_id=1504421650]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 46483008) index="0" unique_id=1504421650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf5/StaticBody3D" unique_id=403247582]
 shape = SubResource("BoxShape3D_bx7d2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1065727742) index="0" unique_id=2062273112]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1519882494) index="0" unique_id=2062273112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf6/StaticBody3D" unique_id=1894717138]
 shape = SubResource("BoxShape3D_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 889565114) index="0" unique_id=1183795904]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 10655016) index="0" unique_id=1183795904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf7/StaticBody3D" unique_id=549575784]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9803562, 0)
 shape = SubResource("BoxShape3D_r51qy")
 
-[node name="vault_Door" parent="vault" index="36" unique_id=1466416964]
+[node name="vault_Door" parent="vault" index="37" unique_id=1577653412]
 transform = Transform3D(0.0017968575, 0, 0.039073776, 0, 0.03911508, 0, -0.039073788, 0, 0.0017968575, 1.4908972, 1.7226322, -0.7241483)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 1517012068) index="0" unique_id=6196123]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 726365089) index="0" unique_id=6196123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.502914, 399.10007, -1.2227173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/vault_wall/StaticBody3D" unique_id=1956814843]
@@ -194,6 +166,9 @@ can_jump = false
 
 [node name="Camera3D" parent="FirstPersonPlayer/Camera" parent_id_path=PackedInt32Array(1973127356, 347107271) index="0" unique_id=1008336844]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="InteractRayCast3D" parent="FirstPersonPlayer/Camera/Camera3D" index="0" unique_id=284567336]
+target_position = Vector3(0, 0, -3)
 
 [node name="Light" type="Node3D" parent="." unique_id=431302223]
 
@@ -212,9 +187,1329 @@ environment = SubResource("Environment_mx8sn")
 
 [node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1673871798]
 
-[node name="DialogueManager" parent="." unique_id=551898399 instance=ExtResource("10_erce0")]
-visible = false
+[node name="Money" type="Node3D" parent="." unique_id=2036202257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4156551, 0.77406454, 2.746663)
+
+[node name="Row" type="Node3D" parent="Money" unique_id=1438901250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24621296, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money/Row" unique_id=1245922813 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney" unique_id=362404219]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney" unique_id=587490489 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money/Row" unique_id=478071608 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney2" unique_id=884830537]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney2" unique_id=849542922 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money/Row" unique_id=1922269975 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney3" unique_id=1979811359]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney3" unique_id=1367878355 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money/Row" unique_id=1808163883 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney4" unique_id=963333236]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney4" unique_id=23097367 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money/Row" unique_id=1314368579 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney5" unique_id=851320112]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney5" unique_id=1293596356 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money/Row" unique_id=277271428 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney6" unique_id=2013639637]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney6" unique_id=1882927646 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money/Row" unique_id=79261745 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row/InteractableMoney7" unique_id=1537757665]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row/InteractableMoney7" unique_id=95358010 instance=ExtResource("8_fur8v")]
+
+[node name="Row2" type="Node3D" parent="Money" unique_id=1353341027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money/Row2" unique_id=976022646 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney" unique_id=1693457966]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney" unique_id=1628155856 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money/Row2" unique_id=192622097 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney2" unique_id=837918510]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney2" unique_id=1613284467 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money/Row2" unique_id=1066373199 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney3" unique_id=878607038]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney3" unique_id=726318082 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money/Row2" unique_id=1085081938 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney4" unique_id=590751815]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney4" unique_id=1459169519 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money/Row2" unique_id=2029192429 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney5" unique_id=1367298164]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney5" unique_id=1767537091 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money/Row2" unique_id=1658463448 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney6" unique_id=26965435]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney6" unique_id=992900429 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money/Row2" unique_id=381585106 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row2/InteractableMoney7" unique_id=1775219010]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row2/InteractableMoney7" unique_id=1707530918 instance=ExtResource("8_fur8v")]
+
+[node name="Row3" type="Node3D" parent="Money" unique_id=350257363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.289294, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money/Row3" unique_id=1904911421 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney" unique_id=1022322570]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney" unique_id=1918118528 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money/Row3" unique_id=422490593 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney2" unique_id=1100719826]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney2" unique_id=836009449 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money/Row3" unique_id=2102562768 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney3" unique_id=1757451050]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney3" unique_id=733992861 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money/Row3" unique_id=2106807769 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney4" unique_id=159379216]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney4" unique_id=515832971 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money/Row3" unique_id=157757652 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney5" unique_id=1230754547]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney5" unique_id=242517865 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money/Row3" unique_id=1384347342 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney6" unique_id=2017460907]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney6" unique_id=13903285 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money/Row3" unique_id=351691906 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row3/InteractableMoney7" unique_id=296115836]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row3/InteractableMoney7" unique_id=1282247421 instance=ExtResource("8_fur8v")]
+
+[node name="Row4" type="Node3D" parent="Money" unique_id=15134229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23196363, -0.31743383)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money/Row4" unique_id=2035627596 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney" unique_id=1500965258]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney" unique_id=330320694 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money/Row4" unique_id=640744508 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney2" unique_id=727115997]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney2" unique_id=563292797 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money/Row4" unique_id=1266754560 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney3" unique_id=96965442]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney3" unique_id=727599744 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money/Row4" unique_id=2111960654 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney4" unique_id=260389359]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney4" unique_id=1912764204 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money/Row4" unique_id=1482918245 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney5" unique_id=1669363594]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney5" unique_id=1747669235 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money/Row4" unique_id=1574765891 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney6" unique_id=253840857]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney6" unique_id=110844902 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money/Row4" unique_id=26809935 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money/Row4/InteractableMoney7" unique_id=936114781]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money/Row4/InteractableMoney7" unique_id=1741515327 instance=ExtResource("8_fur8v")]
+
+[node name="Money2" type="Node3D" parent="." unique_id=510085189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4156551, 0.77406454, 4.4126425)
+
+[node name="Row" type="Node3D" parent="Money2" unique_id=919392563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24621296, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money2/Row" unique_id=1089036652 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney" unique_id=897665382]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney" unique_id=2022896002 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money2/Row" unique_id=1247824517 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney2" unique_id=50997081]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney2" unique_id=47205642 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money2/Row" unique_id=420801744 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney3" unique_id=2004145667]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney3" unique_id=1331959476 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money2/Row" unique_id=1966186326 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney4" unique_id=1375493518]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney4" unique_id=921208820 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money2/Row" unique_id=1888674998 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney5" unique_id=1467581337]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney5" unique_id=1571946805 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money2/Row" unique_id=1037376588 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney6" unique_id=1604622819]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney6" unique_id=247709268 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money2/Row" unique_id=2081446245 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row/InteractableMoney7" unique_id=1273328736]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row/InteractableMoney7" unique_id=851276093 instance=ExtResource("8_fur8v")]
+
+[node name="Row2" type="Node3D" parent="Money2" unique_id=600156041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money2/Row2" unique_id=231324691 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney" unique_id=215909146]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney" unique_id=1362584759 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money2/Row2" unique_id=1527539104 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney2" unique_id=592323443]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney2" unique_id=471685717 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money2/Row2" unique_id=1034544357 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney3" unique_id=1350726119]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney3" unique_id=594718572 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money2/Row2" unique_id=1191730031 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney4" unique_id=1518853395]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney4" unique_id=2021702378 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money2/Row2" unique_id=1573869815 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney5" unique_id=31191892]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney5" unique_id=1420587096 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money2/Row2" unique_id=1814277263 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney6" unique_id=1665922556]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney6" unique_id=511291076 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money2/Row2" unique_id=1877309919 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row2/InteractableMoney7" unique_id=1331868466]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row2/InteractableMoney7" unique_id=1220108670 instance=ExtResource("8_fur8v")]
+
+[node name="Row3" type="Node3D" parent="Money2" unique_id=1163454773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.289294, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money2/Row3" unique_id=1440042845 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney" unique_id=1817439782]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney" unique_id=2093046965 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money2/Row3" unique_id=1856188271 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney2" unique_id=189969792]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney2" unique_id=516385217 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money2/Row3" unique_id=603999841 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney3" unique_id=861089975]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney3" unique_id=1298379501 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money2/Row3" unique_id=1009116789 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney4" unique_id=979786962]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney4" unique_id=1488407284 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money2/Row3" unique_id=1968693044 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney5" unique_id=1165888274]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney5" unique_id=2143825984 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money2/Row3" unique_id=1844244647 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney6" unique_id=2053411040]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney6" unique_id=1125414980 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money2/Row3" unique_id=1235284320 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row3/InteractableMoney7" unique_id=1817684111]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row3/InteractableMoney7" unique_id=1250146213 instance=ExtResource("8_fur8v")]
+
+[node name="Row5" type="Node3D" parent="Money2" unique_id=1951744401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.289294, -0.31421494)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money2/Row5" unique_id=116730677 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney" unique_id=875573970]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney" unique_id=588654437 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money2/Row5" unique_id=953962974 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney2" unique_id=1531593180]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney2" unique_id=1657998038 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money2/Row5" unique_id=1378774834 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney3" unique_id=1704271677]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney3" unique_id=507961553 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money2/Row5" unique_id=764239370 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney4" unique_id=1517015052]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney4" unique_id=718117102 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money2/Row5" unique_id=1688598519 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney5" unique_id=1093213188]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney5" unique_id=683667733 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money2/Row5" unique_id=1082102558 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney6" unique_id=599227254]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney6" unique_id=1222670487 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money2/Row5" unique_id=1200494401 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row5/InteractableMoney7" unique_id=1601044153]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row5/InteractableMoney7" unique_id=1692341018 instance=ExtResource("8_fur8v")]
+
+[node name="Row4" type="Node3D" parent="Money2" unique_id=1728506886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23196363, -0.31743383)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money2/Row4" unique_id=1398529065 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney" unique_id=278663933]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney" unique_id=1879906515 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money2/Row4" unique_id=1022323416 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney2" unique_id=1199143204]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney2" unique_id=2109983625 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money2/Row4" unique_id=317938214 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney3" unique_id=187391745]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney3" unique_id=1363908737 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money2/Row4" unique_id=403942006 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney4" unique_id=979482342]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney4" unique_id=1902402985 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money2/Row4" unique_id=1903946177 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney5" unique_id=1293465822]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney5" unique_id=1351137512 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money2/Row4" unique_id=1812937874 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney6" unique_id=606980101]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney6" unique_id=2098050081 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money2/Row4" unique_id=69529865 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money2/Row4/InteractableMoney7" unique_id=234284543]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money2/Row4/InteractableMoney7" unique_id=469929876 instance=ExtResource("8_fur8v")]
+
+[node name="Money3" type="Node3D" parent="." unique_id=1225506996]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6325656, 0.77406454, 2.746663)
+
+[node name="Row" type="Node3D" parent="Money3" unique_id=1759847272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24621296, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money3/Row" unique_id=2102106604 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney" unique_id=2129993001]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney" unique_id=1706169492 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money3/Row" unique_id=1367950202 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney2" unique_id=2054488894]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney2" unique_id=2103721175 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money3/Row" unique_id=1250678107 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney3" unique_id=291498525]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney3" unique_id=1361878066 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money3/Row" unique_id=1026278105 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney4" unique_id=1772772654]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney4" unique_id=234061223 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money3/Row" unique_id=433703507 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney5" unique_id=2096551433]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney5" unique_id=1912317325 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money3/Row" unique_id=2019828208 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney6" unique_id=663831943]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney6" unique_id=1312575636 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money3/Row" unique_id=488196638 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row/InteractableMoney7" unique_id=206610852]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row/InteractableMoney7" unique_id=112117028 instance=ExtResource("8_fur8v")]
+
+[node name="Row2" type="Node3D" parent="Money3" unique_id=1465744878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23073566, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money3/Row2" unique_id=1959453496 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney" unique_id=537865764]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney" unique_id=1790220498 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money3/Row2" unique_id=736512122 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney2" unique_id=2052435992]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney2" unique_id=1289619735 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money3/Row2" unique_id=696189716 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney3" unique_id=264073837]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney3" unique_id=322188310 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money3/Row2" unique_id=884939021 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney4" unique_id=321304531]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney4" unique_id=1066951826 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money3/Row2" unique_id=1702679952 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney5" unique_id=330691879]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney5" unique_id=2125744316 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money3/Row2" unique_id=691607198 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney6" unique_id=61920085]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney6" unique_id=1509621129 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money3/Row2" unique_id=946811669 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row2/InteractableMoney7" unique_id=167677098]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row2/InteractableMoney7" unique_id=402653287 instance=ExtResource("8_fur8v")]
+
+[node name="Row3" type="Node3D" parent="Money3" unique_id=25611075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.289294, 0.3237412)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money3/Row3" unique_id=1111147262 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney" unique_id=302423114]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney" unique_id=1272284964 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money3/Row3" unique_id=979317859 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney2" unique_id=1754147478]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney2" unique_id=1319666343 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money3/Row3" unique_id=471037413 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney3" unique_id=1393694569]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney3" unique_id=200568824 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money3/Row3" unique_id=1679810826 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney4" unique_id=2052384529]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney4" unique_id=765910756 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money3/Row3" unique_id=1898446656 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney5" unique_id=668476446]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney5" unique_id=362603059 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money3/Row3" unique_id=1788950287 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney6" unique_id=1233935255]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney6" unique_id=1974730121 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money3/Row3" unique_id=1098599652 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row3/InteractableMoney7" unique_id=1082592226]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row3/InteractableMoney7" unique_id=600766162 instance=ExtResource("8_fur8v")]
+
+[node name="Row4" type="Node3D" parent="Money3" unique_id=312921533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06906891, 0.23196363, -0.31743383)
+
+[node name="InteractableMoney" type="StaticBody3D" parent="Money3/Row4" unique_id=2025586176 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.2383635)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney" unique_id=1961927202]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney" unique_id=1815509841 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney2" type="StaticBody3D" parent="Money3/Row4" unique_id=2001506422 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.1567769)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney2" unique_id=1797591172]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney2" unique_id=1492297596 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney3" type="StaticBody3D" parent="Money3/Row4" unique_id=933071276 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.07481599)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney3" unique_id=139511399]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney3" unique_id=1309776278 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney4" type="StaticBody3D" parent="Money3/Row4" unique_id=2131431926 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, 0.0011968613)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney4" unique_id=71963827]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney4" unique_id=919382783 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney5" type="StaticBody3D" parent="Money3/Row4" unique_id=1531052466 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.07910395)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney5" unique_id=321960469]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney5" unique_id=1276590679 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney6" type="StaticBody3D" parent="Money3/Row4" unique_id=1200109785 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.15618229)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney6" unique_id=955925806]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney6" unique_id=1042967495 instance=ExtResource("8_fur8v")]
+
+[node name="InteractableMoney7" type="StaticBody3D" parent="Money3/Row4" unique_id=1803504539 node_paths=PackedStringArray("mesh_instance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015716553, 0.00180161, -0.2360878)
+script = ExtResource("6_1ca26")
+outline_material = SubResource("StandardMaterial3D_nt5kv")
+mesh_instance = NodePath("MoneyStack/one_money_stack")
+metadata/_custom_type_script = "uid://dvgofkarni8kd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Money3/Row4/InteractableMoney7" unique_id=1277481976]
+shape = SubResource("BoxShape3D_b5qrj")
+
+[node name="MoneyStack" parent="Money3/Row4/InteractableMoney7" unique_id=809372208 instance=ExtResource("8_fur8v")]
+
+[connection signal="interacted" from="Money/Row/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row2/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row3/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money/Row4/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row2/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row3/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row5/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money2/Row4/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row2/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row3/InteractableMoney7" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney2" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney3" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney4" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney5" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney6" to="." method="on_money_picked"]
+[connection signal="interacted" from="Money3/Row4/InteractableMoney7" to="." method="on_money_picked"]
 
 [editable path="buddy"]
 [editable path="vault"]
 [editable path="FirstPersonPlayer"]
+[editable path="Money/Row/InteractableMoney/MoneyStack"]
+[editable path="Money/Row/InteractableMoney2/MoneyStack"]
+[editable path="Money/Row/InteractableMoney3/MoneyStack"]
+[editable path="Money/Row/InteractableMoney4/MoneyStack"]
+[editable path="Money/Row/InteractableMoney5/MoneyStack"]
+[editable path="Money/Row/InteractableMoney6/MoneyStack"]
+[editable path="Money/Row/InteractableMoney7/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney2/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney3/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney4/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney5/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney6/MoneyStack"]
+[editable path="Money/Row2/InteractableMoney7/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney2/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney3/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney4/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney5/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney6/MoneyStack"]
+[editable path="Money/Row3/InteractableMoney7/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney2/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney3/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney4/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney5/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney6/MoneyStack"]
+[editable path="Money/Row4/InteractableMoney7/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney2/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney3/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney4/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney5/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney6/MoneyStack"]
+[editable path="Money2/Row/InteractableMoney7/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney2/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney3/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney4/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney5/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney6/MoneyStack"]
+[editable path="Money2/Row2/InteractableMoney7/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney2/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney3/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney4/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney5/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney6/MoneyStack"]
+[editable path="Money2/Row3/InteractableMoney7/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney2/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney3/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney4/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney5/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney6/MoneyStack"]
+[editable path="Money2/Row5/InteractableMoney7/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney2/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney3/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney4/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney5/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney6/MoneyStack"]
+[editable path="Money2/Row4/InteractableMoney7/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney2/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney3/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney4/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney5/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney6/MoneyStack"]
+[editable path="Money3/Row/InteractableMoney7/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney2/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney3/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney4/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney5/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney6/MoneyStack"]
+[editable path="Money3/Row2/InteractableMoney7/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney2/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney3/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney4/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney5/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney6/MoneyStack"]
+[editable path="Money3/Row3/InteractableMoney7/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney2/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney3/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney4/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney5/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney6/MoneyStack"]
+[editable path="Money3/Row4/InteractableMoney7/MoneyStack"]
