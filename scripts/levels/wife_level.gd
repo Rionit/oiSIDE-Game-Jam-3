@@ -11,6 +11,7 @@ const ROOFTOP_ENTRY_LEVEL = preload("uid://c8loqlr2xc8el")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wife_player.play("sitting")
+	AudioManager.play_sfx("morning")
 	dialogue_manager.all_dialogue_finished.connect(next_scene)
 
 func _on_start_dialogue(interactable: Interactable) -> void:
