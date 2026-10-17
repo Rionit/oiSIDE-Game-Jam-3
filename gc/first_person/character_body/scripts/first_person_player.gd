@@ -38,6 +38,14 @@ const DOT_HOLE = preload("uid://t6mhgutjwtji")
 @export var camera_sensitivty: float = 0.01
 @onready var camera_pivot: Node3D = $Camera
 
+@export_category("Camera Limits")
+## Enable to restrict camera view rotation to a cone
+@export var use_camera_limit: bool = false
+## Maximum angle of the view cone in degrees
+@export var camera_limit_angle: float = 30.0
+## Center direction of the view cone in local space
+@export var camera_limit_direction: Vector3 = Vector3(0, 0, -1)
+
 @export_category("Interaction")
 @export var current_interaction: Interactable = null
 @onready var crosshair: TextureRect = $Crosshair
@@ -71,7 +79,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Move Camera
-	move_camera()
+	move_camera(delta)
 	
 	# Interact
 	check_interactions()
@@ -88,6 +96,8 @@ func _physics_process(delta: float) -> void:
 	#Make player movement
 	if can_walk:
 		do_movement(input_dir)
+	else:
+		do_movement(Vector2.ZERO)
 
 	move_and_slide()
 	pass
@@ -178,13 +188,39 @@ func show_mouse(mouse_visiblity: bool):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if mouse_visiblity else Input.MOUSE_MODE_CAPTURED
 	pass
 
-func move_camera():
-	#Rotate in Y axis on the character
-	rotate_y(_mouse_motion.x)
-	#Rotate in X on the camera pivot
-	camera_pivot.rotate_x(_mouse_motion.y)
-	#adding limit to rotation in X on the camera pivot
-	camera_pivot.rotation_degrees.x = clamp(camera_pivot.rotation_degrees.x, -90, 90)
+func move_camera(delta: float):
+	if use_camera_limit:
+		# Accumulate rotation locally on the camera pivot (Yaw and Pitch) - use += for correct direction
+		camera_pivot.rotation.y += _mouse_motion.x
+		camera_pivot.rotation.x += _mouse_motion.y
+		
+		# Compute target yaw and pitch from the custom direction vector
+		var target_dir = camera_limit_direction.normalized()
+		var target_yaw = atan2(-target_dir.x, -target_dir.z)
+		var target_pitch = asin(clamp(target_dir.y, -1.0, 1.0))
+		
+		# Calculate offset from the target direction
+		var yaw_offset = camera_pivot.rotation.y - target_yaw
+		var pitch_offset = camera_pivot.rotation.x - target_pitch
+		
+		# Limit camera to a circular cone constraint around the custom direction
+		var max_rad = deg_to_rad(camera_limit_angle)
+		var view_offset = Vector2(yaw_offset, pitch_offset)
+		if view_offset.length() > max_rad:
+			view_offset = view_offset.limit_length(max_rad)
+			camera_pivot.rotation.y = target_yaw + view_offset.x
+			camera_pivot.rotation.x = target_pitch + view_offset.y
+			
+		# Enforce pitch boundaries
+		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, -deg_to_rad(90), deg_to_rad(90))
+	else:
+		# Smoothly reset local camera yaw when limit is disabled
+		camera_pivot.rotation.y = move_toward(camera_pivot.rotation.y, 0.0, delta * 10.0)
+		
+		# Rotate character body (Y axis) and camera (X axis)
+		rotate_y(_mouse_motion.x)
+		camera_pivot.rotate_x(_mouse_motion.y)
+		camera_pivot.rotation_degrees.x = clamp(camera_pivot.rotation_degrees.x, -90, 90)
 	
 	_mouse_motion = Vector2.ZERO
 	pass

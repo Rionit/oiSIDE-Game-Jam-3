@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c6nvswsqihnb0"]
+
+[ext_resource type="Shader" uid="uid://cuq7nvcmeej73" path="res://shaders/light_ray.gdshader" id="1_43mlb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_43mlb")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/intensity = 2.000000095
+shader_parameter/alpha_multiplier = 0.250000011875
+shader_parameter/top_fade_start = 0.0
+shader_parameter/top_fade_end = 0.50000002375
+shader_parameter/bottom_fade_start = 0.0
+shader_parameter/bottom_fade_end = 1.0
+shader_parameter/noise_speed = Vector2(0, 0.03)
+shader_parameter/noise_influence = 0.3
