@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://ctk6cicvya27l" path="res://materials/fire_low.tres" id="3_vf37k"]
 [ext_resource type="PackedScene" uid="uid://d3kwlgetr1kx5" path="res://models/man/man_standing_w_dufflebag.glb" id="4_bx7d2"]
 [ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="4_xx5bj"]
+[ext_resource type="AudioStream" uid="uid://cmah2tb332yog" path="res://audio/sfx/tingiling.wav" id="7_2vxct"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="8_1kqo2"]
 [ext_resource type="PackedScene" uid="uid://dxxruwfkp4dky" path="res://models/woman/woman_laying.glb" id="10_owj4x"]
 
@@ -159,6 +160,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [5.0, 3.0000001425, 5.0, 1.8400000874, 3.600000171, 0.9730000462175, 1.73200008227, 0.0]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_2vxct")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d83rk"]
 _data = {
@@ -327,6 +343,8 @@ visible = false
 
 [node name="woman_laying" parent="." unique_id=1309850206 instance=ExtResource("10_owj4x")]
 transform = Transform3D(-0.26192045, 0, -0.9650895, 0, 1, 0, 0.9650895, 0, -0.26192045, 1.3140001, 0.05614215, 6.7003217)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=299222032]
 
 [editable path="buddy"]
 [editable path="vault"]

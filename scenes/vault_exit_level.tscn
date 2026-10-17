@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://21mv8jqgngke"]
 
-[ext_resource type="Script" uid="uid://8f4hvhaxcums" path="res://scripts/levels/vault_start_level.gd" id="1_ti5mj"]
-[ext_resource type="Script" uid="uid://dq2ptpf5yrene" path="res://scripts/dialogue_line.gd" id="2_i5q2i"]
 [ext_resource type="PackedScene" uid="uid://d3kwlgetr1kx5" path="res://models/man/man_standing_w_dufflebag.glb" id="3_wsc6m"]
 [ext_resource type="PackedScene" uid="uid://c7ihdy0sd7c1t" path="res://models/vault/vault.blend" id="4_3ciu0"]
 [ext_resource type="Shader" uid="uid://dpw71c6hesjrd" path="res://shaders/fire.gdshader" id="5_1wpvj"]
@@ -10,23 +8,6 @@
 [ext_resource type="Material" uid="uid://ctk6cicvya27l" path="res://materials/fire_low.tres" id="8_ihxhj"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="9_1qddc"]
 [ext_resource type="PackedScene" uid="uid://dxxruwfkp4dky" path="res://models/woman/woman_laying.glb" id="10_ojyrp"]
-
-[sub_resource type="Resource" id="Resource_1kqo2"]
-script = ExtResource("2_i5q2i")
-text = "[shake rate=5.0 level=10]What the hell happened?![/shake]"
-metadata/_custom_type_script = "uid://dq2ptpf5yrene"
-
-[sub_resource type="Resource" id="Resource_r51qy"]
-script = ExtResource("2_i5q2i")
-speaker = 0
-text = "I ain't telling you!"
-metadata/_custom_type_script = "uid://dq2ptpf5yrene"
-
-[sub_resource type="Resource" id="Resource_owj4x"]
-script = ExtResource("2_i5q2i")
-speaker = 0
-text = "[shake rate=5.0 level=10]We gotta get the hell outta here![/shake]"
-metadata/_custom_type_script = "uid://dq2ptpf5yrene"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owj4x"]
 albedo_color = Color(0, 0, 0, 1)
@@ -168,7 +149,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qaqv0"]
 shader = ExtResource("7_dlqbl")
-shader_parameter/blur_amount = 0.0
+shader_parameter/blur_amount = 5.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_qaqv0"]
 material = ExtResource("8_ihxhj")
@@ -190,8 +171,6 @@ glow_hdr_threshold = 0.1
 glow_hdr_scale = 1.45
 
 [node name="VaultStartLevel" type="Node3D" unique_id=1033408852]
-script = ExtResource("1_ti5mj")
-dialogue_lines = Array[ExtResource("2_i5q2i")]([SubResource("Resource_1kqo2"), SubResource("Resource_r51qy"), SubResource("Resource_owj4x")])
 
 [node name="buddy" parent="." unique_id=1752171276 instance=ExtResource("3_wsc6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3723341, 0.06080725, 1.6067162)
