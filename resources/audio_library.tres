@@ -3,23 +3,23 @@
 [ext_resource type="Script" uid="uid://dpedvpv2q5drg" path="res://scripts/audio/music.gd" id="1_xf70o"]
 [ext_resource type="Script" uid="uid://bv1r6iypadxw1" path="res://scripts/audio/audio_library.gd" id="2_c4kn6"]
 [ext_resource type="Script" uid="uid://cx7tu3j60rgxd" path="res://scripts/audio/sfx.gd" id="3_geqqb"]
-[ext_resource type="AudioStream" uid="uid://ds41t3s86w82w" path="res://audio/atmo/scene_start.wav" id="4_c4kn6"]
-[ext_resource type="AudioStream" uid="uid://bcisd7o7wdtps" path="res://audio/atmo/night_bg.mp3" id="5_geqqb"]
+[ext_resource type="AudioStream" uid="uid://b545p5n5brfyb" path="res://audio/atmo/scene_start.mp3" id="4_yj72v"]
+[ext_resource type="AudioStream" uid="uid://wl0fxev3nicy" path="res://audio/atmo/night.mp3" id="5_yj72v"]
 [ext_resource type="AudioStream" uid="uid://bsffqdarv7rnb" path="res://audio/sfx/pizza_eating.wav" id="6_x3vvp"]
-[ext_resource type="AudioStream" uid="uid://bl1xj8h04hi4m" path="res://audio/sfx/fridge.wav" id="7_cbwqd"]
+[ext_resource type="AudioStream" uid="uid://b4gyvr1gh5uk5" path="res://audio/sfx/fridge.mp3" id="7_yj72v"]
 [ext_resource type="AudioStream" uid="uid://nj37k1prt3gc" path="res://audio/sfx/drink.wav" id="8_wdse5"]
 [ext_resource type="AudioStream" uid="uid://cmnye6vvnjfjc" path="res://audio/sfx/bag.wav" id="9_ym8em"]
-[ext_resource type="AudioStream" uid="uid://drxpnsau01fg5" path="res://audio/atmo/basement_bgm.wav" id="10_ban20"]
+[ext_resource type="AudioStream" uid="uid://bojf6mnpltcqp" path="res://audio/atmo/basement.mp3" id="10_yj72v"]
 [ext_resource type="AudioStream" uid="uid://bpetgiv2k5gt3" path="res://audio/sfx/microwave_open.wav" id="11_abf41"]
 [ext_resource type="AudioStream" uid="uid://c44qf4fnnt2dq" path="res://audio/sfx/microwave_close.wav" id="12_ikubc"]
-[ext_resource type="AudioStream" uid="uid://c5wfn7j5brq3q" path="res://audio/sfx/ventcrawling.wav" id="13_q7acc"]
-[ext_resource type="AudioStream" uid="uid://b5br7mnndx08s" path="res://audio/atmo/scene_vent.wav" id="14_hvytk"]
+[ext_resource type="AudioStream" uid="uid://es8ng5es0jpe" path="res://audio/sfx/ventcrawling.mp3" id="14_o3v8a"]
+[ext_resource type="AudioStream" uid="uid://b8mo6murjev" path="res://audio/atmo/scene_vent.mp3" id="14_yj72v"]
 [ext_resource type="AudioStream" uid="uid://ctu7hw0u15cwo" path="res://audio/sfx/gunshot.wav" id="15_72jes"]
 [ext_resource type="AudioStream" uid="uid://coxpt0aqqjf08" path="res://audio/sfx/cashgrab_01.wav" id="16_qmcs3"]
 [ext_resource type="AudioStream" uid="uid://bd42km0x0su31" path="res://audio/sfx/cashgrab_02.wav" id="17_jgf1q"]
 [ext_resource type="AudioStream" uid="uid://6a4mg4tqohep" path="res://audio/sfx/cashgrab_03.wav" id="18_n52gk"]
-[ext_resource type="AudioStream" uid="uid://bhhnd6hqyakso" path="res://audio/atmo/morning.wav" id="19_wpbyn"]
-[ext_resource type="AudioStream" uid="uid://c37jlrtyvowkj" path="res://audio/atmo/scene_rooftop.wav" id="20_2neud"]
+[ext_resource type="AudioStream" uid="uid://btb6kuxbxl4fv" path="res://audio/atmo/morning.mp3" id="19_yj72v"]
+[ext_resource type="AudioStream" uid="uid://xow86dcoqnwp" path="res://audio/atmo/scene_rooftop.mp3" id="20_yj72v"]
 [ext_resource type="AudioStream" uid="uid://c6saliykxyx6j" path="res://audio/sfx/vault_open.mp3" id="21_b3gf6"]
 [ext_resource type="AudioStream" uid="uid://bc3wjo0emx06h" path="res://audio/atmo/hallway_bg.mp3" id="22_yj72v"]
 [ext_resource type="AudioStream" uid="uid://jk7ow7rl8jkf" path="res://audio/sfx/hit.wav" id="23_4adfn"]
@@ -29,20 +29,20 @@
 [ext_resource type="AudioStream" uid="uid://dnck73htc805i" path="res://audio/atmo/police_bg.mp3" id="27_cq456"]
 [ext_resource type="AudioStream" uid="uid://bf0xyqtkm2omc" path="res://audio/sfx/alarm.wav" id="28_f8c8l"]
 [ext_resource type="AudioStream" uid="uid://cmah2tb332yog" path="res://audio/sfx/tingiling.wav" id="29_hquuc"]
-[ext_resource type="AudioStream" uid="uid://bdk31s0joj4gv" path="res://audio/atmo/scene_end.wav" id="30_mwt6g"]
-[ext_resource type="AudioStream" uid="uid://b3n1xcyjxjir" path="res://audio/sfx/heartbeat.wav" id="31_72ak2"]
+[ext_resource type="AudioStream" uid="uid://cmkicq7itdowl" path="res://audio/atmo/scene_end.mp3" id="30_yj72v"]
+[ext_resource type="AudioStream" uid="uid://be7p55d8w6yt7" path="res://audio/sfx/heartbeat.mp3" id="31_yj72v"]
 [ext_resource type="AudioStream" uid="uid://dfkftx7fivqd0" path="res://audio/sfx/boom.mp3" id="32_yj72v"]
 
 [sub_resource type="Resource" id="Resource_ti5mj"]
 script = ExtResource("3_geqqb")
 tag = "scene_start"
-streams = Array[AudioStream]([ExtResource("4_c4kn6")])
+streams = Array[AudioStream]([ExtResource("4_yj72v")])
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_i5q2i"]
 script = ExtResource("3_geqqb")
 tag = "night"
-streams = Array[AudioStream]([ExtResource("5_geqqb")])
+streams = Array[AudioStream]([ExtResource("5_yj72v")])
 volume_db = -20.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [sub_resource type="Resource" id="Resource_wsc6m"]
 script = ExtResource("3_geqqb")
 tag = "fridge"
-streams = Array[AudioStream]([ExtResource("7_cbwqd")])
+streams = Array[AudioStream]([ExtResource("7_yj72v")])
 volume_db = -11.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
@@ -78,8 +78,8 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [sub_resource type="Resource" id="Resource_5ibni"]
 script = ExtResource("3_geqqb")
 tag = "basement"
-streams = Array[AudioStream]([ExtResource("10_ban20")])
-volume_db = -10.0
+streams = Array[AudioStream]([ExtResource("10_yj72v")])
+volume_db = -2.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_jaogm"]
@@ -97,13 +97,13 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [sub_resource type="Resource" id="Resource_ixfql"]
 script = ExtResource("3_geqqb")
 tag = "crawling"
-streams = Array[AudioStream]([ExtResource("13_q7acc")])
+streams = Array[AudioStream]([ExtResource("14_o3v8a")])
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_q7acc"]
 script = ExtResource("3_geqqb")
 tag = "scene_vent"
-streams = Array[AudioStream]([ExtResource("14_hvytk")])
+streams = Array[AudioStream]([ExtResource("14_yj72v")])
 volume_db = -15.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
@@ -124,14 +124,14 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [sub_resource type="Resource" id="Resource_wpbyn"]
 script = ExtResource("3_geqqb")
 tag = "morning"
-streams = Array[AudioStream]([ExtResource("19_wpbyn")])
+streams = Array[AudioStream]([ExtResource("19_yj72v")])
 volume_db = 3.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_2neud"]
 script = ExtResource("3_geqqb")
 tag = "roof"
-streams = Array[AudioStream]([ExtResource("20_2neud")])
+streams = Array[AudioStream]([ExtResource("20_yj72v")])
 volume_db = 7.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
@@ -199,14 +199,14 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [sub_resource type="Resource" id="Resource_cov3v"]
 script = ExtResource("3_geqqb")
 tag = "end"
-streams = Array[AudioStream]([ExtResource("30_mwt6g")])
+streams = Array[AudioStream]([ExtResource("30_yj72v")])
 volume_db = 2.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_4mpv7"]
 script = ExtResource("3_geqqb")
 tag = "heart"
-streams = Array[AudioStream]([ExtResource("31_72ak2")])
+streams = Array[AudioStream]([ExtResource("31_yj72v")])
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_2jsks"]

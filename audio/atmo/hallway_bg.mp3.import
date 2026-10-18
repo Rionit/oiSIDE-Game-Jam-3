@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/hallway_bg.mp3-d001c932269db7351205e4ddc909bb
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
