@@ -4,8 +4,10 @@ extends Node
 @export var audio_library: AudioLibrary
 
 @export_category("Audio Buses")
-@export var sfx_bus: String = "Master"
-@export var bgm_bus: String = "Master"
+@export var sfx_bus: String = "SFX"
+@export var bgm_bus: String = "Music"
+
+@onready var settings: Control = $Settings
 
 # Dual BGM players for smooth crossfading
 var bgm_player_1: AudioStreamPlayer
@@ -177,6 +179,12 @@ func pause_bgm() -> void:
 func resume_bgm() -> void:
 	if active_bgm_player:
 		active_bgm_player.stream_paused = false
+
+func menu():
+	if settings.visible:
+		settings.visible = false
+	else:
+		settings.visible = true
 
 # --- Bus Volume Helpers (Linear to dB for Options Menus) ---
 func set_bus_volume_linear(bus_name: String, linear_value: float) -> void:

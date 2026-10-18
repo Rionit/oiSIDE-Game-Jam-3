@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfvqlgt27klu3" path="res://scripts/audio/audio_manager.gd" id="1_8qd8g"]
 [ext_resource type="Resource" uid="uid://o56nj8wnimyr" path="res://resources/audio_library.tres" id="2_liach"]
+[ext_resource type="Script" uid="uid://dk8pnubafe2bw" path="res://scripts/audio_settings.gd" id="3_3asnw"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_fceot"]
 
@@ -11,3 +12,80 @@ audio_library = ExtResource("2_liach")
 
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=283751167]
 stream = SubResource("AudioStreamPolyphonic_fceot")
+
+[node name="Settings" type="Control" parent="." unique_id=808255353]
+process_mode = 3
+visible = false
+top_level = true
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_3asnw")
+
+[node name="music" type="Label" parent="Settings" unique_id=946870550]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 361.0
+offset_right = 308.0
+offset_bottom = 384.0
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MUSIC" type="HSlider" parent="Settings" unique_id=1470794645]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 331.0
+offset_top = 364.0
+offset_right = 631.0
+offset_bottom = 380.0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="vol" type="Label" parent="Settings" unique_id=1311101578]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 317.0
+offset_right = 307.0
+offset_bottom = 340.0
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VOLUME" type="HSlider" parent="Settings" unique_id=1696691544]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 332.0
+offset_top = 321.0
+offset_right = 632.0
+offset_bottom = 337.0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+
+[node name="sfx" type="Label" parent="Settings" unique_id=769658608]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 402.0
+offset_right = 309.0
+offset_bottom = 425.0
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFX" type="HSlider" parent="Settings" unique_id=98827266]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 331.0
+offset_top = 409.0
+offset_right = 631.0
+offset_bottom = 425.0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
