@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func _on_exit_area_body_entered(body: Node3D) -> void:
 	if body is PlayerController:
-		get_tree().change_scene_to_packed(VAULT_PLOT_TWIST_LEVEL)
+		get_tree().change_scene_to_packed.call_deferred(VAULT_PLOT_TWIST_LEVEL)

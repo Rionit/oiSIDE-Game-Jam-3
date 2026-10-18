@@ -81,6 +81,9 @@ func _physics_process(delta: float) -> void:
 	# Move Camera
 	move_camera(delta)
 	
+	# FORCE raycast to update immediately after camera movement 
+	interact_ray_cast_3d.force_raycast_update()
+	
 	# Interact
 	check_interactions()
 	
@@ -100,7 +103,6 @@ func _physics_process(delta: float) -> void:
 		do_movement(Vector2.ZERO)
 
 	move_and_slide()
-	pass
 	
 func check_interactions():
 	var collider = interact_ray_cast_3d.get_collider()

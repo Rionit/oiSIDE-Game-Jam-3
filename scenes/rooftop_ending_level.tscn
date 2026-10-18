@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://uqtc7p8wx3sj"]
 
-[ext_resource type="Script" uid="uid://urmpw1a34hey" path="res://scripts/levels/rooftop_entry_level.gd" id="1_spvck"]
 [ext_resource type="PackedScene" uid="uid://devgtmpeuomay" path="res://models/rooftop/rooftop.blend" id="2_myor5"]
 [ext_resource type="PackedScene" uid="uid://djfagpi4wf30r" path="res://gc/first_person/character_body/nodes/first_person_player.tscn" id="3_4ayg5"]
 [ext_resource type="PackedScene" uid="uid://bsxafksuok83k" path="res://scenes/dialogue_manager.tscn" id="4_ukgae"]
@@ -72,7 +71,6 @@ fog_light_color = Color(0.1267241, 0.14171177, 0.16503283, 1)
 size = Vector3(6.5999146, 3.440277, 2.2878418)
 
 [node name="RooftopEntryLevel" type="Node3D" unique_id=1033408852]
-script = ExtResource("1_spvck")
 
 [node name="rooftop" parent="." unique_id=2093155760 instance=ExtResource("2_myor5")]
 

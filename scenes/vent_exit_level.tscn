@@ -340,31 +340,31 @@ script = ExtResource("1_5h1bl")
 
 [node name="vent" parent="." unique_id=960514469 instance=ExtResource("1_sbtle")]
 
-[node name="bullet_hole_1" parent="vent" index="2" unique_id=1506883988]
+[node name="bullet_hole_1" parent="vent" index="0" unique_id=1692174863]
 visible = false
 
-[node name="bullet_hole_2" parent="vent" index="3" unique_id=259288812]
+[node name="bullet_hole_2" parent="vent" index="1" unique_id=1924575789]
 visible = false
 
-[node name="bullet_hole_3" parent="vent" index="4" unique_id=2038647559]
+[node name="bullet_hole_3" parent="vent" index="2" unique_id=2023999459]
 visible = false
 
-[node name="bullet_hole_5" parent="vent" index="5" unique_id=1513611110]
+[node name="bullet_hole_4" parent="vent" index="3" unique_id=946275959]
 visible = false
 
-[node name="bullet_hole_4" parent="vent" index="6" unique_id=954819119]
+[node name="bullet_hole_5" parent="vent" index="4" unique_id=1632566969]
 visible = false
 
-[node name="bullet_hole_6" parent="vent" index="7" unique_id=1187752220]
+[node name="bullet_hole_6" parent="vent" index="5" unique_id=42015293]
 visible = false
 
-[node name="bullet_hole_7" parent="vent" index="8" unique_id=1049036382]
+[node name="bullet_hole_7" parent="vent" index="6" unique_id=1698458106]
 visible = false
 
-[node name="bullet_hole_8" parent="vent" index="9" unique_id=733519105]
+[node name="bullet_hole_8" parent="vent" index="7" unique_id=728739766]
 visible = false
 
-[node name="bullet_hole_9" parent="vent" index="10" unique_id=1136744459]
+[node name="bullet_hole_9" parent="vent" index="8" unique_id=1281754032]
 visible = false
 
 [node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("4_mub8s")]
@@ -401,7 +401,7 @@ shape = SubResource("BoxShape3D_gsyc7")
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_u7pal")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 1.7215387)
 
-[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 504567028) index="0" unique_id=1139433850]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 521920846) index="0" unique_id=608039347]
 bones/0/position = Vector3(6.308954, -6.9988766, -43.51452)
 bones/0/rotation = Quaternion(-0.32767946, -0.057062034, -0.04387596, 0.942043)
 bones/1/rotation = Quaternion(0.0050048283, 0.249787, 0.9679372, 0.026059825)
@@ -446,19 +446,25 @@ bones/30/rotation = Quaternion(0.11078697, 0.0026183894, -0.013804838, 0.9937448
 bones/31/position = Vector3(2.2108815, 4.2761216, -1.0835125)
 bones/31/rotation = Quaternion(0.07039334, -0.008067136, -0.020956667, 0.99726653)
 
-[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="0" unique_id=1524825183]
+[node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=398009383]
+transform = Transform3D(0.33271223, 0.82002354, 0.4656853, -0.16103178, 0.5359696, -0.82873696, -0.9291773, 0.200741, 0.31037366, 13.399069, 48.564507, 12.010105)
+
+[node name="uzi" parent="buddy/Armature/Skeleton3D/mixamorig_LeftHandIndex1" index="0" unique_id=455652752]
+visible = false
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1967155826]
 transform = Transform3D(0.6923086, -0.3632391, -0.6235103, -0.58634436, 0.22047147, -0.77948195, 0.4206047, 0.905234, -0.060349237, 24.182306, 39.43847, -18.171936)
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=1042444207]
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=166128216]
 visible = false
 
-[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=266635326]
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=2014847931]
 transform = Transform3D(0.728936, 0.25429785, 0.63559794, 0.39344543, 0.6041721, -0.6929477, -0.56022584, 0.75518787, 0.3403505, -31.329552, 36.39167, -36.35627)
 
-[node name="duffle_bag" parent="buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=1174617225]
+[node name="duffle_bag" parent="buddy/Armature/Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=1394882013]
 visible = false
 
-[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="2" unique_id=1077342467]
+[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=815016828]
 transform = Transform3D(0.9782431, -0.040700853, -0.20343018, 0.093584046, 0.9617063, 0.25761017, 0.18515512, -0.2710432, 0.9445915, 7.721654, 2.353899, -50.667248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1291383635]

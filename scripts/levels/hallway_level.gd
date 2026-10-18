@@ -7,12 +7,10 @@ const WIFE_LEVEL = preload("uid://bo6ljgi40lqcs")
 @export var node_3d: Node3D
 @export var animation_player_2: AnimationPlayer
 
-
-
 var money_picked: int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void:	
 	get_tree().create_timer(20.0).timeout.connect(end_scene)
 	buddy_player.play("shooting")
 	animation_player_2.play("uzi_sound")
@@ -25,7 +23,7 @@ func on_money_picked(interactable: Interactable):
 	interactable.queue_free()
 	AudioManager.play_sfx("cash")
 	
-	if money_picked == 8 and duffle_bag_flipped.visible:
+	if money_picked > 7 and duffle_bag_flipped.visible:
 		end_scene()
 
 # Flip the dufflebag back

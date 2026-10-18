@@ -12,6 +12,10 @@ var gear_count: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	first_person_player.can_move = false
+	get_tree().create_timer(0.3).timeout.connect(func(): first_person_player.can_move = true)
+
+	
 	AudioManager.play_sfx("basement")
 	buddy_player.play("explaining")
 	dialogue_manager.all_dialogue_finished.connect(on_dialogue_finished)

@@ -85,6 +85,9 @@ script = ExtResource("1_3cscq")
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("3_bum8s")]
 transform = Transform3D(0.7833165, 0, 0.6216231, 0, 1, 0, -0.6216231, 0, 0.7833165, 2.4393454, 0, 7.275062)
 
+[node name="uzi" parent="buddy/Armature/Skeleton3D/mixamorig_LeftHandIndex1" parent_id_path=PackedInt32Array(2088342805, 398009383) index="0" unique_id=455652752]
+visible = false
+
 [node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1967155826) index="0" unique_id=166128216]
 visible = false
 
