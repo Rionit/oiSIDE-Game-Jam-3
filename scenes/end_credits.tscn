@@ -1,6 +1,134 @@
 [gd_scene format=3 uid="uid://kfgfesj1q3mm"]
 
 [ext_resource type="Script" uid="uid://oiihkeb4c7vl" path="res://scenes/end_credits.gd" id="1_dhn2b"]
+[ext_resource type="FontFile" uid="uid://bba2ngwwh770w" path="res://fonts/BowlbyOneSC-Regular.ttf" id="2_325g6"]
+[ext_resource type="AudioStream" uid="uid://clakvv31ay2yw" path="res://audio/music/end_credits.mp3" id="3_240hb"]
+
+[sub_resource type="Animation" id="Animation_55m7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CANT:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_325g6"]
+resource_name = "end_credits"
+length = 12.2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"music"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CANT:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.9367752),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_240hb")
+}],
+"times": PackedFloat32Array(2)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TELL YOU:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.6333334, 3.9367752),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Created By:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.8333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Filip Doležal:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6.4660296),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("And:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.176216),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Arina Doležalová:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7.8095493),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_240hb"]
+_data = {
+&"RESET": SubResource("Animation_55m7m"),
+&"end_credits": SubResource("Animation_325g6")
+}
 
 [node name="EndCredits" type="Control" unique_id=12049047]
 layout_mode = 3
@@ -20,13 +148,134 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=249520215]
+[node name="TELL YOU" type="RichTextLabel" parent="." unique_id=1250442828]
+visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -58.0
+offset_right = 466.0
+offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "END CREDITS"
+offset_transform_position = Vector2(0, 15)
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 185
+bbcode_enabled = true
+text = "[shake]TELL YOU[/shake]"
+fit_content = true
+autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CANT" type="RichTextLabel" parent="." unique_id=374944878]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -303.0
+offset_right = 466.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(0, 15)
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 265
+bbcode_enabled = true
+text = "[shake]CAN'T[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Created By" type="RichTextLabel" parent="." unique_id=618251645]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 156.0
+grow_horizontal = 2
+offset_transform_position = Vector2(0, 15)
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 49
+bbcode_enabled = true
+text = "[shake]Created by[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filip Doležal" type="RichTextLabel" parent="." unique_id=486843933]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 137.0
+offset_bottom = 315.0
+grow_horizontal = 2
+offset_transform_position = Vector2(0, 15)
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 116
+bbcode_enabled = true
+text = "[shake]Filip Doležal[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="And" type="RichTextLabel" parent="." unique_id=641532395]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -111.0
+offset_right = 33.5
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(0, 15)
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 76
+bbcode_enabled = true
+text = "[shake]&[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arina Doležalová" type="RichTextLabel" parent="." unique_id=335427100]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 369.0
+offset_bottom = 677.0
+grow_horizontal = 2
+offset_transform_position = Vector2(0, 15)
+theme_override_constants/line_separation = -48
+theme_override_fonts/normal_font = ExtResource("2_325g6")
+theme_override_font_sizes/normal_font_size = 116
+bbcode_enabled = true
+text = "[shake]Arina
+Doležalová[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=851101608]
+libraries/ = SubResource("AnimationLibrary_240hb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=274651934]
