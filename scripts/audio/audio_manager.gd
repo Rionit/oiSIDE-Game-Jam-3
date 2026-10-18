@@ -35,6 +35,12 @@ func _ready() -> void:
 	
 	active_bgm_player = bgm_player_1
 
+func _process(delta: float) -> void:
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		settings.visible = false
+	else:
+		settings.visible = true
+
 # --- Lookup Helpers ---
 func _get_audio_sfx(_tag: String) -> SFX:
 	if not _tag:
@@ -179,12 +185,6 @@ func pause_bgm() -> void:
 func resume_bgm() -> void:
 	if active_bgm_player:
 		active_bgm_player.stream_paused = false
-
-func menu():
-	if settings.visible:
-		settings.visible = false
-	else:
-		settings.visible = true
 
 # --- Bus Volume Helpers (Linear to dB for Options Menus) ---
 func set_bus_volume_linear(bus_name: String, linear_value: float) -> void:

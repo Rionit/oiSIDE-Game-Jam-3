@@ -134,9 +134,7 @@ func _input(event: InputEvent) -> void:
 	#Show or Hide mouse
 	if event.is_action_pressed("escape"):
 		show_mouse(Input.mouse_mode == Input.MOUSE_MODE_CAPTURED)
-		var menu = AudioManager.menu()
-		if menu:
-			menu.visible = Input.mouse_mode != Input.MOUSE_MODE_CAPTURED
+
 	#Run
 	if event.is_action_pressed("run"):
 		_current_speed = speed * run_multiplier
