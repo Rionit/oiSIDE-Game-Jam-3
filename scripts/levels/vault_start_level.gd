@@ -11,6 +11,8 @@ const FOOD_FLASHBACK_LEVEL = preload("uid://brf04vyupjui8")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	first_person_player.crosshair.visible = false
 	animation_player.animation_finished.connect(wake_up_finished)
 	animation_player.play("wake_up")
@@ -20,6 +22,8 @@ func _ready() -> void:
 	dialogue_manager.all_dialogue_finished.connect(_on_all_dialogue_finished)
 	
 func wake_up_finished(_whatever) -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	first_person_player.show_mouse(false)
 	dialogue_manager.start_dialogue(dialogue_lines)
 	
 func _on_all_dialogue_finished() -> void:
