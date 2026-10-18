@@ -31,9 +31,8 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="ColorRect" type="ColorRect" parent="DialogueBox/MarginContainer" unique_id=1283385130]
+[node name="BackgroundBox" type="ColorRect" parent="DialogueBox/MarginContainer" unique_id=1283385130]
 layout_mode = 2
-color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox/MarginContainer" unique_id=1171975079]
 layout_mode = 2

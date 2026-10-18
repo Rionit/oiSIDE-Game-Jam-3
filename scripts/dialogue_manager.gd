@@ -4,6 +4,7 @@ signal dialogue_finished
 signal all_dialogue_finished
 
 @onready var label: RichTextLabel = $DialogueBox/MarginContainer/RichTextLabel
+@onready var background_box: ColorRect = $DialogueBox/MarginContainer/BackgroundBox
 
 var dialogue_lines: Array[DialogueLine] = []
 var current_dialogue_index: int = 0
@@ -22,7 +23,17 @@ func start_dialogue(lines: Array[DialogueLine]) -> void:
 func play_next_line() -> void:
 	if current_dialogue_index < dialogue_lines.size():
 		var line = dialogue_lines[current_dialogue_index]
-		var formatted_text = "[b][color=yellow]%s:[/color][/b] %s" % [line.speaker, line.text]
+		var formatted_text
+		if line.speaker == DialogueLine.Speaker.BUDDY:
+			background_box.color = Color.BLACK
+			formatted_text = "[color=white]%s[/color]" % line.text
+		elif line.speaker == DialogueLine.Speaker.WIFE:
+			background_box.color = Color.BLACK
+			formatted_text = "[color=white]%s[/color]" % line.text
+		elif line.speaker == DialogueLine.Speaker.PLAYER:
+			background_box.color = Color.WHITE
+			formatted_text = "[color=black]%s[/color]" % line.text
+		
 		display_text(formatted_text)
 		current_dialogue_index += 1
 	else:
