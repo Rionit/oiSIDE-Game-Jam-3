@@ -29,6 +29,12 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/audio_manager_editor/plugin.cfg")
 
+[importer_defaults]
+
+texture={
+&"process/size_limit": 256
+}
+
 [input]
 
 move_left={
