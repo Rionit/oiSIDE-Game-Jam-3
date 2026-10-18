@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://kfgfesj1q3mm"]
 
+[ext_resource type="Script" uid="uid://oiihkeb4c7vl" path="res://scenes/end_credits.gd" id="1_dhn2b"]
+
 [node name="EndCredits" type="Control" unique_id=12049047]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dhn2b")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=690376428]
 layout_mode = 1
