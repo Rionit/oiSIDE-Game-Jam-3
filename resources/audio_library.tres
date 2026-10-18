@@ -37,11 +37,13 @@
 [ext_resource type="AudioStream" uid="uid://cmkicq7itdowl" path="res://audio/atmo/scene_end.mp3" id="30_yj72v"]
 [ext_resource type="AudioStream" uid="uid://be7p55d8w6yt7" path="res://audio/sfx/heartbeat.mp3" id="31_yj72v"]
 [ext_resource type="AudioStream" uid="uid://dfkftx7fivqd0" path="res://audio/sfx/boom.mp3" id="32_yj72v"]
+[ext_resource type="AudioStream" uid="uid://1688mnlsrf6m" path="res://audio/speech/tsk.mp3" id="38_7x28w"]
 
 [sub_resource type="Resource" id="Resource_5qhko"]
 script = ExtResource("1_xf70o")
 tag = "end_credits"
 stream = ExtResource("2_o3v8a")
+volume_db = -5.0
 metadata/_custom_type_script = "uid://dpedvpv2q5drg"
 
 [sub_resource type="Resource" id="Resource_2olil"]
@@ -256,8 +258,24 @@ streams = Array[AudioStream]([ExtResource("32_yj72v")])
 volume_db = -10.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
+[sub_resource type="Resource" id="Resource_iqg14"]
+script = ExtResource("3_geqqb")
+tag = "tsk_female"
+streams = Array[AudioStream]([ExtResource("38_7x28w")])
+pitch_randomness = 0.1
+pitch_scale = 1.2
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
+[sub_resource type="Resource" id="Resource_oqjrs"]
+script = ExtResource("3_geqqb")
+tag = "tsk_male"
+streams = Array[AudioStream]([ExtResource("38_7x28w")])
+pitch_randomness = 0.1
+pitch_scale = 0.6
+metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
+
 [resource]
 script = ExtResource("2_c4kn6")
-sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c"), SubResource("Resource_04ec1"), SubResource("Resource_2dd1r"), SubResource("Resource_m7g43"), SubResource("Resource_f8c8l"), SubResource("Resource_cov3v"), SubResource("Resource_4mpv7"), SubResource("Resource_2jsks")])
+sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c"), SubResource("Resource_04ec1"), SubResource("Resource_2dd1r"), SubResource("Resource_m7g43"), SubResource("Resource_f8c8l"), SubResource("Resource_cov3v"), SubResource("Resource_4mpv7"), SubResource("Resource_2jsks"), SubResource("Resource_iqg14"), SubResource("Resource_oqjrs")])
 music_tracks = Array[ExtResource("1_xf70o")]([SubResource("Resource_5qhko"), SubResource("Resource_2olil"), SubResource("Resource_56tyr"), SubResource("Resource_vwj5a"), SubResource("Resource_v5y3k")])
 metadata/_custom_type_script = "uid://bv1r6iypadxw1"

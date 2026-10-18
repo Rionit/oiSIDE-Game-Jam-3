@@ -24,6 +24,8 @@ func play_next_line() -> void:
 	if current_dialogue_index < dialogue_lines.size():
 		var line = dialogue_lines[current_dialogue_index]
 		var formatted_text
+		var sfx_name = "tsk_female" if line.speaker == DialogueLine.Speaker.WIFE else "tsk_male"
+		
 		if line.speaker == DialogueLine.Speaker.BUDDY:
 			background_box.color = Color.BLACK
 			formatted_text = "[color=white]%s[/color]" % line.text
@@ -34,13 +36,13 @@ func play_next_line() -> void:
 			background_box.color = Color.WHITE
 			formatted_text = "[color=black]%s[/color]" % line.text
 		
-		display_text(formatted_text)
+		display_text(formatted_text, 0.03, sfx_name)
 		current_dialogue_index += 1
 	else:
 		all_dialogue_finished.emit()
 		visible = false
 
-func display_text(text: String, speed: float = 0.03) -> void:
+func display_text(text: String, speed: float = 0.03, sfx_name: String = "tsk_male") -> void:
 	if current_tween and current_tween.is_valid():
 		current_tween.kill()
 	
@@ -52,8 +54,16 @@ func display_text(text: String, speed: float = 0.03) -> void:
 		dialogue_finished.emit()
 		return
 		
+	var last_played_char: int = 0
 	current_tween = create_tween()
-	current_tween.tween_property(label, "visible_characters", total_chars, total_chars * speed)
+	current_tween.tween_method(func(v: float):
+		var current_char = int(v)
+		if current_char > last_played_char:
+			if current_char % 3 == 0:
+				AudioManager.play_sfx(sfx_name)
+			last_played_char = current_char
+		label.visible_characters = current_char
+	, 0.0, float(total_chars), total_chars * speed)
 	
 	await current_tween.finished
 	dialogue_finished.emit()
