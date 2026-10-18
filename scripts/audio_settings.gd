@@ -6,7 +6,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	volume_slider.changed.connect(func(v): AudioManager.set_bus_volume_linear("Master", v))
-	sfx_slider.changed.connect(func(v): AudioManager.set_bus_volume_linear("SFX", v))
-	music_slider.changed.connect(func(v): AudioManager.set_bus_volume_linear("Music", v))
+	volume_slider.value_changed.connect(func(v): AudioManager.set_bus_volume_linear("Master", v))
+	sfx_slider.value_changed.connect(func(v): AudioManager.set_bus_volume_linear("SFX", v))
+	music_slider.value_changed.connect(func(v): AudioManager.set_bus_volume_linear("Music", v))
 	
