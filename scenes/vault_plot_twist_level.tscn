@@ -9,23 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c5mpa3pw81hd5" path="res://models/money_stack/money_stack.glb" id="7_vcojq"]
 [ext_resource type="PackedScene" uid="uid://b2jeavimrw14a" path="res://models/woman/woman.glb" id="8_ycjcl"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
-fractal_gain = 0.8
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bx7d2"]
-noise = SubResource("FastNoiseLite_xx5bj")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1kqo2"]
-render_priority = 0
-shader = ExtResource("4_7i3xh")
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_bx7d2")
-shader_parameter/root_color = Color(1, 0.75, 0.3, 1)
-shader_parameter/tip_color = Color(1, 0.03, 0.001, 1)
-shader_parameter/fire_alpha = 0.850000040375
-shader_parameter/fire_speed = Vector2(0, 1)
-shader_parameter/fire_aperture = 2.0130000956175
-shader_parameter/emission_energy = 2.0
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s45i7"]
 data = PackedVector3Array(-1, -1.0001, 1, -1, 0.99979997, -1, -1, 0.99979997, 1, -1, -1.0001, 1, -1, -1.0001, -1, -1, 0.99979997, -1, -1, -1.0001, -1, 1, 0.99979997, -1, -1, 0.99979997, -1, -1, -1.0001, -1, 1, -1.0001, -1, 1, 0.99979997, -1, 1, -1.0001, -1, 1, 0.99979997, 1, 1, 0.99979997, -1, 1, -1.0001, -1, 1, -1.0001, 1, 1, 0.99979997, 1, 1, -1.0001, 1, -1, 0.99979997, 1, 1, 0.99979997, 1, 1, -1.0001, 1, -1, -1.0001, 1, -1, 0.99979997, 1, -1, -1.0001, -1, 1, -1.0001, 1, 1, -1.0001, -1, -1, -1.0001, -1, -1, -1.0001, 1, 1, -1.0001, 1, 1, 0.99979997, -1, -1, 0.99979997, 1, -1, 0.99979997, -1, 1, 0.99979997, -1, 1, 0.99979997, 1, -1, 0.99979997, 1, -0.85109997, -3.8560998, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.81689996, -3.8560998, 0.95519996, -0.85109997, -3.8560998, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.81689996, 120.0253, -0.9698, -0.81689996, 120.0253, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.85109997, 120.0253, -0.9698, -0.81689996, 120.0253, -0.9698, -0.85109997, 120.0253, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.81689996, 120.0253, -0.9698, -0.85109997, 120.0253, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.81689996, -3.8560998, 0.95519996, -0.81689996, -3.8560998, -0.9698, -0.85109997, -3.8560998, -0.9698, -0.85109997, -3.8560998, 0.95519996, -0.81689996, -3.8560998, 0.95519996, -0.85109997, 120.0253, 0.95519996, -0.85109997, -3.8560998, -0.9698, -0.85109997, 120.0253, -0.9698, -0.85109997, 120.0253, 0.95519996, -0.85109997, -3.8560998, 0.95519996, -0.85109997, -3.8560998, -0.9698, -0.81689996, 120.0253, -0.9698, -0.81689996, -3.8560998, 0.95519996, -0.81689996, 120.0253, 0.95519996, -0.81689996, 120.0253, -0.9698, -0.81689996, -3.8560998, -0.9698, -0.81689996, -3.8560998, 0.95519996, 0.9194, -4.8349, 0.9644, 0.9194, 119.044495, 0.9425, 0.9194, -4.8349, 0.9425, 0.9194, -4.8349, 0.9644, 0.9194, 119.044495, 0.9644, 0.9194, 119.044495, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9425, 0.9194, 119.044495, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9644, -0.88519996, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9425, -0.88519996, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9644, 0.9194, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9425, -0.88519996, -4.8349, 0.9644, 0.9194, -4.8349, 0.9644, 0.9194, -4.8349, 0.9425, 0.9194, 119.044495, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, 119.044495, 0.9644, 0.9194, 119.044495, 0.9644, 0.9194, -4.8349, 0.9644, -0.88519996, -4.8349, 0.9644, -0.88519996, 119.044495, 0.9425, 0.9194, -4.8349, 0.9425, 0.9194, 119.044495, 0.9425, -0.88519996, 119.044495, 0.9425, -0.88519996, -4.8349, 0.9425, 0.9194, -4.8349, 0.9425, 0.8667, -3.8560998, 1.0071, 0.9009, 120.0253, 1.0071, 0.9009, -3.8560998, 1.0071, 0.8667, -3.8560998, 1.0071, 0.8667, 120.0253, 1.0071, 0.9009, 120.0253, 1.0071, 0.8667, 120.0253, 1.0071, 0.9009, 120.0253, -0.9307, 0.9009, 120.0253, 1.0071, 0.8667, 120.0253, 1.0071, 0.8667, 120.0253, -0.9307, 0.9009, 120.0253, -0.9307, 0.8667, 120.0253, -0.9307, 0.9009, -3.8560998, -0.9307, 0.9009, 120.0253, -0.9307, 0.8667, 120.0253, -0.9307, 0.8667, -3.8560998, -0.9307, 0.9009, -3.8560998, -0.9307, 0.8667, -3.8560998, -0.9307, 0.9009, -3.8560998, 1.0071, 0.9009, -3.8560998, -0.9307, 0.8667, -3.8560998, -0.9307, 0.8667, -3.8560998, 1.0071, 0.9009, -3.8560998, 1.0071, 0.8667, 120.0253, 1.0071, 0.8667, -3.8560998, -0.9307, 0.8667, 120.0253, -0.9307, 0.8667, 120.0253, 1.0071, 0.8667, -3.8560998, 1.0071, 0.8667, -3.8560998, -0.9307, 0.9009, 120.0253, -0.9307, 0.9009, -3.8560998, 1.0071, 0.9009, 120.0253, 1.0071, 0.9009, 120.0253, -0.9307, 0.9009, -3.8560998, -0.9307, 0.9009, -3.8560998, 1.0071, -0.9371, 116.6147, 0.96, -0.9371, 118.61459, -0.9601, -0.9371, 118.61459, 0.96, -0.9371, 116.6147, 0.96, -0.9371, 116.6147, -0.9601, -0.9371, 118.61459, -0.9601, -0.9371, 116.6147, -0.9601, 0.9371, 118.61459, -0.9601, -0.9371, 118.61459, -0.9601, -0.9371, 116.6147, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 118.61459, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 118.61459, 0.96, 0.9371, 118.61459, -0.9601, 0.9371, 116.6147, -0.9601, 0.9371, 116.6147, 0.96, 0.9371, 118.61459, 0.96, 0.9371, 116.6147, 0.96, -0.9371, 118.61459, 0.96, 0.9371, 118.61459, 0.96, 0.9371, 116.6147, 0.96, -0.9371, 116.6147, 0.96, -0.9371, 118.61459, 0.96, -0.9371, 116.6147, -0.9601, 0.9371, 116.6147, 0.96, 0.9371, 116.6147, -0.9601, -0.9371, 116.6147, -0.9601, -0.9371, 116.6147, 0.96, 0.9371, 116.6147, 0.96, 0.9371, 118.61459, -0.9601, -0.9371, 118.61459, 0.96, -0.9371, 118.61459, -0.9601, 0.9371, 118.61459, -0.9601, 0.9371, 118.61459, 0.96, -0.9371, 118.61459, 0.96, 0.9194, 63.1171, -0.9242, 0.9194, 120.948494, -0.946, 0.9194, 63.1171, -0.946, 0.9194, 63.1171, -0.9242, 0.9194, 120.948494, -0.9242, 0.9194, 120.948494, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 120.948494, -0.946, 0.9194, 120.948494, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 120.948494, -0.9242, -0.88519996, 120.948494, -0.946, -0.88519996, 120.948494, -0.9242, -0.88519996, 63.1171, -0.946, -0.88519996, 120.948494, -0.946, -0.88519996, 120.948494, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 63.1171, -0.946, -0.88519996, 63.1171, -0.9242, 0.9194, 63.1171, -0.946, -0.88519996, 63.1171, -0.946, -0.88519996, 63.1171, -0.9242, 0.9194, 63.1171, -0.9242, 0.9194, 63.1171, -0.946, 0.9194, 120.948494, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 120.948494, -0.9242, 0.9194, 120.948494, -0.9242, 0.9194, 63.1171, -0.9242, -0.88519996, 63.1171, -0.9242, -0.88519996, 120.948494, -0.946, 0.9194, 63.1171, -0.946, 0.9194, 120.948494, -0.946, -0.88519996, 120.948494, -0.946, -0.88519996, 63.1171, -0.946, 0.9194, 63.1171, -0.946)
 
@@ -52,6 +35,23 @@ size = Vector3(0.41938373, 0.2360903, 1.178529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owj4x"]
 size = Vector3(267.0057, 1293.7046, 500.20447)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xx5bj"]
+fractal_gain = 0.8
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bx7d2"]
+noise = SubResource("FastNoiseLite_xx5bj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1kqo2"]
+render_priority = 0
+shader = ExtResource("4_7i3xh")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_bx7d2")
+shader_parameter/root_color = Color(1, 0.75, 0.3, 1)
+shader_parameter/tip_color = Color(1, 0.03, 0.001, 1)
+shader_parameter/fire_alpha = 0.850000040375
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/fire_aperture = 2.0130000956175
+shader_parameter/emission_energy = 2.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7c3h"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -110,6 +110,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 1.5248424, 0), Vector3(0, -0.20868371, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"vault_sound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycjcl"]
 _data = {
@@ -117,86 +131,148 @@ _data = {
 &"vault_door_open": SubResource("Animation_dxdwo")
 }
 
-[node name="VaultPlotTwistLevel" type="Node3D" unique_id=1033408852]
+[node name="VaultPlotTwistLevel" type="Node3D" unique_id=1033408852 node_paths=PackedStringArray("vault_door")]
 script = ExtResource("1_bvn5y")
+vault_door = NodePath("vault/vault_Door")
 
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("2_ycjcl")]
 transform = Transform3D(-0.028197438, 0, 0.9996024, 0, 1, 0, -0.9996024, 0, -0.028197438, 2.666674, -2.3841858e-07, 5.9936447)
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1967155826) index="0" unique_id=166128216]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1154149066) index="0" unique_id=1614178450]
+bones/0/position = Vector3(1.1536181e-07, -1.2508827, -97.22229)
+bones/0/rotation = Quaternion(-0.43243256, -0.559466, 0.5594659, 0.43243256)
+bones/1/rotation = Quaternion(-0.025490612, 0.16795783, 0.9661584, -0.19410923)
+bones/2/rotation = Quaternion(-0.33632195, -0.27079365, -0.11498207, 0.8946158)
+bones/3/rotation = Quaternion(0.4124857, 0.012974129, -0.005875384, 0.91085273)
+bones/4/rotation = Quaternion(0.36625978, -0.026617592, 0.010481863, 0.9300728)
+bones/5/rotation = Quaternion(-1.9237065e-08, 9.864925e-08, -7.580184e-09, 1)
+bones/6/position = Vector3(-9.487898, -1.615325, 3.845488)
+bones/6/rotation = Quaternion(0.2211294, 0.35512, 0.83402365, 0.35971662)
+bones/7/rotation = Quaternion(-0.31280798, 0.0010501146, 0.41355732, 0.85505587)
+bones/8/rotation = Quaternion(0.38644668, -0.0066955965, 0.0025883557, 0.92228377)
+bones/9/rotation = Quaternion(0.3338785, 0.029123649, -0.016477615, 0.942022)
+bones/10/rotation = Quaternion(-0.015734343, -4.1479045e-05, -0.003724646, 0.9998693)
+bones/11/rotation = Quaternion(0.13746147, 0.011905119, 0.04305804, 0.9894992)
+bones/12/rotation = Quaternion(0.069800265, 0.26002932, -0.036251012, 0.9623921)
+bones/13/rotation = Quaternion(0.012121908, 0.17466238, -0.03386679, 0.9839711)
+bones/14/position = Vector3(6.942257, 14.428009, -0.032975487)
+bones/14/rotation = Quaternion(-0.5116684, -0.50884354, 0.5563278, -0.41203532)
+bones/15/position = Vector3(-2.647432e-06, 15.521033, -2.273432e-06)
+bones/15/rotation = Quaternion(0.19593997, -0.33338422, 0.19309667, 0.9017628)
+bones/16/position = Vector3(8.863406e-06, 25.324215, -2.7655737e-05)
+bones/16/rotation = Quaternion(0.06231244, -0.22620822, 0.4245832, 0.87445766)
+bones/17/position = Vector3(2.3268864e-05, 32.926945, 4.311847e-06)
+bones/17/rotation = Quaternion(0.012239177, -0.24735373, 0.12174504, 0.9611683)
+bones/18/position = Vector3(1.4439026e-05, 2.2384686, 6.011321e-06)
+bones/18/rotation = Quaternion(0.09105322, 0.34746253, -0.037164114, 0.9325224)
+bones/19/position = Vector3(-1.7642964e-05, 3.4500926, 8.463862e-06)
+bones/19/rotation = Quaternion(-1.806766e-07, 3.3713877e-07, -1.5832484e-07, 1)
+bones/20/position = Vector3(-1.9913902, 4.6911, -0.119823694)
+bones/20/rotation = Quaternion(3.9115548e-08, -2.4214385e-08, -5.5879363e-09, 1)
+bones/21/position = Vector3(-1.9677215, 2.4749553, -1.1043253)
+bones/22/rotation = Quaternion(-0.0058875945, -1.866691e-08, -6.816927e-09, 0.99998266)
+bones/23/rotation = Quaternion(0.02605521, 0.37625605, -0.06836869, 0.92362237)
+bones/24/position = Vector3(-3.1888485e-06, 21.34939, 5.1519055)
+bones/25/position = Vector3(-6.9422445, 14.429633, 0.11209585)
+bones/25/rotation = Quaternion(0.49352846, -0.5948629, 0.5009092, 0.38943276)
+bones/26/position = Vector3(-7.503803e-06, 15.521033, 1.875697e-05)
+bones/26/rotation = Quaternion(0.3006916, -0.010526223, 0.04128988, 0.9527691)
+bones/27/position = Vector3(1.1043771e-05, 25.317585, -9.4566985e-07)
+bones/27/rotation = Quaternion(0.18414132, 0.21826643, -0.08938175, 0.9541817)
+bones/28/rotation = Quaternion(-0.010526447, 0.0006475048, -0.06138923, 0.9980582)
+bones/29/position = Vector3(-2.5983047e-07, 2.2552824, -8.864316e-06)
+bones/29/rotation = Quaternion(0.16723038, -0.68158793, 0.16444531, 0.6931304)
+bones/30/position = Vector3(-9.685764e-07, 3.4385355, 2.0861663e-07)
+bones/30/rotation = Quaternion(-4.1618478e-08, 2.3050235e-08, -1.01514175e-07, 1)
+bones/31/position = Vector3(2.210898, 4.276125, -1.0835181)
+bones/31/rotation = Quaternion(9.895331e-09, 2.6577618e-07, -2.3492612e-07, 1)
+
+[node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=1430247367]
+transform = Transform3D(0.5766746, -0.532318, -0.61974454, 0.5795839, 0.8011985, -0.14887002, 0.57578486, -0.27334476, 0.77055424, -0.739787, 65.91497, -155.88998)
+
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1360012531]
+transform = Transform3D(0.50170285, -0.32292092, -0.80250573, 0.36279178, 0.92072564, -0.14368503, 0.785287, -0.21905565, 0.5790839, 10.797918, 33.78215, -147.7319)
+
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=647939329]
 visible = false
 
-[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" parent_id_path=PackedInt32Array(2088342805, 815016828) index="0" unique_id=702026064]
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=1751233016]
+transform = Transform3D(-0.9641248, 0.03029029, 0.26371536, 0.20873635, -0.52723336, 0.8236835, 0.16398907, 0.8491808, 0.50199574, -25.151604, -44.378887, -132.07451)
+
+[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=799491994]
+transform = Transform3D(-0.23965836, -0.2435988, -0.9397997, 0.9668166, -0.14810786, -0.20815791, -0.08848469, -0.95850074, 0.27101064, -0.13512963, -1.2860712, -109.08029)
+
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" index="0" unique_id=1426225327]
 visible = false
 
 [node name="vault" parent="." unique_id=728509335 instance=ExtResource("3_cgans")]
 
-[node name="boolean" parent="vault" index="0" unique_id=1241162768]
-visible = false
-
-[node name="Plane" parent="vault" index="26" unique_id=1827272726]
-visible = false
-surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 700436393) index="0" unique_id=901882634]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 975291114) index="0" unique_id=901882634]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/room/StaticBody3D" unique_id=269825006]
 shape = SubResource("ConcavePolygonShape3D_s45i7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1245406210) index="0" unique_id=818462632]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 611825515) index="0" unique_id=818462632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf1/StaticBody3D" unique_id=462852903]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9757144, 0)
 shape = SubResource("BoxShape3D_d83rk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1871561665) index="0" unique_id=691822061]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 536366370) index="0" unique_id=691822061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf2/StaticBody3D" unique_id=1760184012]
 transform = Transform3D(1, 0, -5.587937e-09, 0, 1, 0, 5.587937e-09, 0, 1, 0, -0.7476759, 0)
 shape = SubResource("BoxShape3D_vusgr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 46204939) index="0" unique_id=409327881]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 687957775) index="0" unique_id=409327881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf3/StaticBody3D" unique_id=233878011]
 shape = SubResource("BoxShape3D_vf37k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 225790451) index="0" unique_id=108583369]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1447339998) index="0" unique_id=108583369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf4/StaticBody3D" unique_id=1951664071]
 shape = SubResource("BoxShape3D_xx5bj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 974596728) index="0" unique_id=1504421650]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1583502694) index="0" unique_id=1504421650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf5/StaticBody3D" unique_id=403247582]
 shape = SubResource("BoxShape3D_bx7d2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1095028972) index="0" unique_id=2062273112]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1421915010) index="0" unique_id=2062273112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf6/StaticBody3D" unique_id=1894717138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71155405, 0)
 shape = SubResource("BoxShape3D_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 787883276) index="0" unique_id=1183795904]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 516481613) index="0" unique_id=1183795904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf7/StaticBody3D" unique_id=549575784]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9803562, 0)
 shape = SubResource("BoxShape3D_r51qy")
 
-[node name="vault_Door" parent="vault" index="37" unique_id=676321739]
+[node name="vault_Door" parent="vault" index="8" unique_id=524908230]
 transform = Transform3D(0.0017968594, 0, 0.039073773, 0, 0.03911508, 0, -0.03907378, 0, 0.0017968591, 3.1877298, 1.7226318, -0.25263157)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 385282792) index="0" unique_id=6196123]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 684631930) index="0" unique_id=6196123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.502914, 399.10007, -1.2227173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/vault_wall/StaticBody3D" unique_id=1956814843]
 shape = SubResource("BoxShape3D_owj4x")
+
+[node name="Plane" parent="vault" index="32" unique_id=1819169251]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
+
+[node name="boolean" parent="vault" index="34" unique_id=1911440581]
+visible = false
 
 [node name="FirstPersonPlayer" parent="." unique_id=1973127356 instance=ExtResource("5_agu4e")]
 transform = Transform3D(0.028013498, 0, 0.9996075, 0, 1, 0, -0.9996075, 0, 0.028013498, 0.4380567, 1.0615042, 4.5251637)

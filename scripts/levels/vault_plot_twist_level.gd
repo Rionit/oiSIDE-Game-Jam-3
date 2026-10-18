@@ -8,6 +8,8 @@ const BLACK_TRANSITION_LEVEL = preload("uid://cflygqipcx06i")
 @onready var first_person_player: PlayerController = $FirstPersonPlayer
 @onready var camera_3d: Camera3D = $FirstPersonPlayer/Camera/Camera3D
 @onready var marker_3d: Marker3D = $Marker3D
+@export var vault_door: MeshInstance3D
+
 
 var money_picked = 0
 
@@ -16,13 +18,19 @@ func _ready() -> void:
 	buddy_player.play("stealing")
 	wife_player.play("female_standing")
 	get_tree().create_timer(20.0).timeout.connect(end_scene)
+	AudioManager.play_sfx("hallway")
+	
 
 func on_money_picked(interactable: Interactable) -> void:
 	interactable.queue_free()
 	money_picked += 1
+	AudioManager.play_sfx("cash")
 	if money_picked > 6:
 		end_scene()
-
+		
+func vault_sound():
+		AudioManager.play_sfx_at_3d("vault", vault_door.global_position)
+		
 func end_scene():
 	first_person_player.can_move = false
 	first_person_player.crosshair.visible = false
@@ -47,3 +55,4 @@ func end_scene():
 	await tween2.finished
 	
 	get_tree().change_scene_to_packed(BLACK_TRANSITION_LEVEL)
+	
