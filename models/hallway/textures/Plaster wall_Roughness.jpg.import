@@ -3,23 +3,22 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfnp13owd7608"
-path.s3tc="res://.godot/imported/Plaster wall_Roughness.jpg-6c5e1b96c1492bee655c05f7ad769ebe.s3tc.ctex"
+path="res://.godot/imported/Plaster wall_Roughness.jpg-6c5e1b96c1492bee655c05f7ad769ebe.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://models/hallway/textures/Plaster wall_Roughness.jpg"
-dest_files=["res://.godot/imported/Plaster wall_Roughness.jpg-6c5e1b96c1492bee655c05f7ad769ebe.s3tc.ctex"]
+dest_files=["res://.godot/imported/Plaster wall_Roughness.jpg-6c5e1b96c1492bee655c05f7ad769ebe.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.3
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
@@ -38,5 +37,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=256
 detect_3d/compress_to=0
