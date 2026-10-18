@@ -155,7 +155,7 @@ visible = false
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_vcdxh")]
 transform = Transform3D(0.9978195, 0, -0.066002175, 0, 1, 0, 0.066002175, 0, 0.9978195, 0.5596173, -0.2334533, 9.531842)
 
-[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 521920846) index="0" unique_id=608039347]
+[node name="Skeleton3D" parent="buddy/Armature" parent_id_path=PackedInt32Array(2088342805, 1074974086) index="0" unique_id=1533119037]
 bones/0/position = Vector3(-1.7219164, -9.894493, -82.631516)
 bones/0/rotation = Quaternion(-0.60734934, 0.028679162, -0.019772349, 0.7936709)
 bones/1/rotation = Quaternion(0.0741291, 0.10112215, 0.9845837, -0.121960476)
@@ -204,22 +204,22 @@ bones/30/rotation = Quaternion(0.15790154, -0.09007245, -0.44346693, 0.8776623)
 bones/31/position = Vector3(2.2108815, 4.2761188, -1.0835087)
 bones/31/rotation = Quaternion(0.090383425, -0.29662827, -0.5254704, 0.79229)
 
-[node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=398009383]
+[node name="mixamorig_LeftHandIndex1" parent="buddy/Armature/Skeleton3D" index="0" unique_id=1751827208]
 transform = Transform3D(0.69031084, -0.5526738, 0.46692818, -0.012349561, 0.6362677, 0.7713691, -0.72340703, -0.53825045, 0.43239766, 26.502932, 65.94874, -135.79521)
 
-[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1967155826]
+[node name="mixamorig_LeftForeArm" parent="buddy/Armature/Skeleton3D" index="1" unique_id=1292336728]
 transform = Transform3D(-0.078341246, -0.5143734, -0.85398006, 0.35215697, 0.78710985, -0.50640166, 0.9326561, -0.3404069, 0.119477004, 45.145775, 38.78899, -123.841095)
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=166128216]
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=93876497]
 visible = false
 
-[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=2014847931]
+[node name="mixamorig_RightForeArm" parent="buddy/Armature/Skeleton3D" index="2" unique_id=464226110]
 transform = Transform3D(0.4622464, -0.5237096, 0.7155814, 0.843948, 0.0121334195, -0.5362877, 0.27217653, 0.8518106, 0.44759223, -39.12034, 14.192986, -119.331116)
 
-[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=815016828]
+[node name="mixamorig_Spine" parent="buddy/Armature/Skeleton3D" index="3" unique_id=1426696505]
 transform = Transform3D(0.9949669, 0.08411463, 0.05445703, -0.08464884, 0.41472888, 0.90599924, 0.05362289, -0.9060489, 0.41976172, -1.7531285, -6.659498, -94.04053)
 
-[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" index="0" unique_id=702026064]
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" index="0" unique_id=1555557520]
 visible = false
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="buddy" unique_id=1139286070]
@@ -228,10 +228,10 @@ libraries/ = SubResource("AnimationLibrary_6fcx3")
 
 [node name="hallway" parent="." unique_id=1029003116 instance=ExtResource("4_rwby4")]
 
-[node name="barracade" parent="hallway" index="0" unique_id=365708267]
+[node name="barracade" parent="hallway" index="0" unique_id=2138621766]
 transform = Transform3D(0.10350476, 0.64806074, 0.00026536395, 0.013221038, -0.0017505693, -0.48778635, -0.6478679, 0.10349984, -0.0099118585, 0.6370833, 0.35364395, 10.578691)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="hallway/floor" parent_id_path=PackedInt32Array(1029003116, 1339453800) index="0" unique_id=178039349]
+[node name="StaticBody3D" type="StaticBody3D" parent="hallway/floor" parent_id_path=PackedInt32Array(1029003116, 884247486) index="0" unique_id=178039349]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hallway/floor/StaticBody3D" unique_id=108294841]
 shape = SubResource("ConcavePolygonShape3D_rwby4")
@@ -325,7 +325,7 @@ shape = SubResource("BoxShape3D_6fcx3")
 
 [node name="MoneyStack" parent="Money/InteractableMoney7" unique_id=1513144280 instance=ExtResource("7_ndyok")]
 
-[node name="one_money_stack" parent="Money/InteractableMoney7/MoneyStack" index="0" unique_id=208507747]
+[node name="one_money_stack" parent="Money/InteractableMoney7/MoneyStack" index="0" unique_id=637995671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047307245, 0, -0.02404654)
 
 [node name="InteractableMoney9" type="StaticBody3D" parent="Money" unique_id=1791424124 node_paths=PackedStringArray("mesh_instance")]
@@ -360,7 +360,7 @@ visible = false
 [node name="MoneyStackTooFar" parent="." unique_id=1781825329 instance=ExtResource("7_ndyok")]
 transform = Transform3D(0.98805434, 0, -0.15410537, 0, 1, 0, 0.15410537, 0, 0.98805434, 1.089041, -0.22455007, 9.017096)
 
-[node name="one_money_stack" parent="MoneyStackTooFar" index="0" unique_id=208507747]
+[node name="one_money_stack" parent="MoneyStackTooFar" index="0" unique_id=637995671]
 transform = Transform3D(0.9935748, 0, -0.11317736, 0, 1, 0, 0.11317736, 0, 0.9935748, -0.11007882, 0, -0.01799638)
 
 [node name="one_money_stack2" type="MeshInstance3D" parent="MoneyStackTooFar" unique_id=1155832406]

@@ -14,24 +14,26 @@ var dialogue_finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.play_bgm("jazz_loop", 0.0)
+	AudioManager.play_sfx("basement")
+	
 	first_person_player.can_move = false
 	get_tree().create_timer(0.3).timeout.connect(func(): first_person_player.can_move = true)
 	
-	AudioManager.play_sfx("basement")
 	buddy_player.play("explaining")
 	dialogue_manager.all_dialogue_finished.connect(on_dialogue_finished)
 
 func on_weapon_picked(interactable: Interactable):
+	AudioManager.play_sfx_at_3d("gun_pick", interactable.global_position)
 	interactable.mesh_instance.queue_free()
 	interactable.queue_free()
 	gear_count += 1
-	AudioManager.play_sfx("gun_pick")
 
 func on_ammo_picked(interactable: Interactable):
+	AudioManager.play_sfx_at_3d("ammo", interactable.global_position)
 	interactable.mesh_instance.queue_free()
 	interactable.queue_free()
 	gear_count += 1
-	AudioManager.play_sfx("ammo")
 	
 func on_buddy_interacted(interactable: Interactable):
 	interactable.unhighlight()
@@ -49,4 +51,5 @@ func on_dialogue_finished():
 
 func _process(delta: float) -> void:
 	if gear_count >= 4 and dialogue_finished:
+		AudioManager.stop_bgm(0.0)
 		get_tree().change_scene_to_packed(VENT_EXIT_LEVEL)

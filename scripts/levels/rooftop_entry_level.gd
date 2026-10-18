@@ -8,7 +8,9 @@ const VAULT_PLOT_TWIST_LEVEL = preload("uid://uxuu4xa1ct14")
 func _ready() -> void:
 	buddy_player.play("come")
 	AudioManager.play_sfx("roof")
+	AudioManager.play_bgm("heist_music_intense", 0.0)
 
 func _on_exit_area_body_entered(body: Node3D) -> void:
 	if body is PlayerController:
+		AudioManager.stop_bgm(0.0)
 		get_tree().change_scene_to_packed.call_deferred(VAULT_PLOT_TWIST_LEVEL)

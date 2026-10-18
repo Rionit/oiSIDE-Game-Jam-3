@@ -10,13 +10,15 @@ const WIFE_LEVEL = preload("uid://bo6ljgi40lqcs")
 var money_picked: int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:	
-	get_tree().create_timer(20.0).timeout.connect(end_scene)
-	buddy_player.play("shooting")
-	animation_player_2.play("uzi_sound")
+func _ready() -> void:
+	AudioManager.play_bgm("heist_music_intense", 0.0)
 	AudioManager.play_sfx_at_3d("police", node_3d.global_position)
 	AudioManager.play_sfx("hallway")
 	AudioManager.play_sfx("alarm")
+	animation_player_2.play("uzi_sound")
+	
+	get_tree().create_timer(20.0).timeout.connect(end_scene)
+	buddy_player.play("shooting")
 
 func on_money_picked(interactable: Interactable):
 	money_picked += 1
@@ -36,4 +38,5 @@ func uzi_sound():
 	AudioManager.play_sfx("uzi")
 
 func end_scene():
+	AudioManager.stop_bgm(0.0)
 	get_tree().change_scene_to_packed(WIFE_LEVEL)

@@ -93,60 +93,60 @@ script = ExtResource("1_ti5mj")
 
 [node name="vault" parent="." unique_id=728509335 instance=ExtResource("4_3ciu0")]
 
-[node name="boolean" parent="vault" index="0" unique_id=1241162768]
+[node name="boolean" parent="vault" index="0" unique_id=908499479]
 visible = false
 
-[node name="Plane" parent="vault" index="26" unique_id=1827272726]
+[node name="Plane" parent="vault" index="26" unique_id=606123656]
 surface_material_override/0 = SubResource("ShaderMaterial_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 700436393) index="0" unique_id=901882634]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/room" parent_id_path=PackedInt32Array(728509335, 133434644) index="0" unique_id=901882634]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/room/StaticBody3D" unique_id=269825006]
 shape = SubResource("ConcavePolygonShape3D_s45i7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 1245406210) index="0" unique_id=818462632]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf1" parent_id_path=PackedInt32Array(728509335, 648963793) index="0" unique_id=818462632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf1/StaticBody3D" unique_id=462852903]
 shape = SubResource("BoxShape3D_d83rk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1871561665) index="0" unique_id=691822061]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf2" parent_id_path=PackedInt32Array(728509335, 1754163883) index="0" unique_id=691822061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf2/StaticBody3D" unique_id=1760184012]
 shape = SubResource("BoxShape3D_vusgr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 46204939) index="0" unique_id=409327881]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf3" parent_id_path=PackedInt32Array(728509335, 1575493874) index="0" unique_id=409327881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf3/StaticBody3D" unique_id=233878011]
 shape = SubResource("BoxShape3D_vf37k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 225790451) index="0" unique_id=108583369]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf4" parent_id_path=PackedInt32Array(728509335, 1886621612) index="0" unique_id=108583369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf4/StaticBody3D" unique_id=1951664071]
 shape = SubResource("BoxShape3D_xx5bj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 974596728) index="0" unique_id=1504421650]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf5" parent_id_path=PackedInt32Array(728509335, 1064618295) index="0" unique_id=1504421650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf5/StaticBody3D" unique_id=403247582]
 shape = SubResource("BoxShape3D_bx7d2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1095028972) index="0" unique_id=2062273112]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf6" parent_id_path=PackedInt32Array(728509335, 1733427618) index="0" unique_id=2062273112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf6/StaticBody3D" unique_id=1894717138]
 shape = SubResource("BoxShape3D_1kqo2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 787883276) index="0" unique_id=1183795904]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/shelf7" parent_id_path=PackedInt32Array(728509335, 995485444) index="0" unique_id=1183795904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1019657, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/shelf7/StaticBody3D" unique_id=549575784]
 shape = SubResource("BoxShape3D_r51qy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 385282792) index="0" unique_id=6196123]
+[node name="StaticBody3D" type="StaticBody3D" parent="vault/vault_wall" parent_id_path=PackedInt32Array(728509335, 566314658) index="0" unique_id=6196123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.502914, 399.10007, -1.2227173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vault/vault_wall/StaticBody3D" unique_id=1956814843]
@@ -239,13 +239,13 @@ shape = SubResource("BoxShape3D_gsyc7")
 [node name="buddy" parent="." unique_id=2088342805 instance=ExtResource("10_ti5mj")]
 transform = Transform3D(-0.9839087, 0, 0.17867182, 0, 1, 0, -0.17867182, 0, -0.9839087, 0.67455184, 0.24470547, 8.747436)
 
-[node name="uzi" parent="buddy/Armature/Skeleton3D/mixamorig_LeftHandIndex1" parent_id_path=PackedInt32Array(2088342805, 398009383) index="0" unique_id=455652752]
+[node name="uzi" parent="buddy/Armature/Skeleton3D/mixamorig_LeftHandIndex1" parent_id_path=PackedInt32Array(2088342805, 1751827208) index="0" unique_id=969622564]
 visible = false
 
-[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1967155826) index="0" unique_id=166128216]
+[node name="shotgun" parent="buddy/Armature/Skeleton3D/mixamorig_LeftForeArm" parent_id_path=PackedInt32Array(2088342805, 1292336728) index="0" unique_id=93876497]
 visible = false
 
-[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" parent_id_path=PackedInt32Array(2088342805, 815016828) index="0" unique_id=702026064]
+[node name="duffle_bag_dragged" parent="buddy/Armature/Skeleton3D/mixamorig_Spine" parent_id_path=PackedInt32Array(2088342805, 1426696505) index="0" unique_id=1555557520]
 visible = false
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_area_3d_body_entered"]

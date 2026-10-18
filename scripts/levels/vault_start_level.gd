@@ -18,6 +18,7 @@ func _ready() -> void:
 	animation_player.play("wake_up")
 	buddy.play("idle")
 	AudioManager.play_sfx("scene_start")
+	AudioManager.play_bgm("heist_music_intense", 6.0)
 	
 	dialogue_manager.all_dialogue_finished.connect(_on_all_dialogue_finished)
 	
@@ -30,4 +31,5 @@ func _on_all_dialogue_finished() -> void:
 	first_person_player.can_move = true
 	first_person_player.crosshair.visible = true
 	await get_tree().create_timer(6.0).timeout
+	AudioManager.stop_bgm(0.0)
 	get_tree().change_scene_to_packed(FOOD_FLASHBACK_LEVEL)

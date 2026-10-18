@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://dpedvpv2q5drg" path="res://scripts/audio/music.gd" id="1_xf70o"]
 [ext_resource type="Script" uid="uid://bv1r6iypadxw1" path="res://scripts/audio/audio_library.gd" id="2_c4kn6"]
 [ext_resource type="AudioStream" uid="uid://clakvv31ay2yw" path="res://audio/music/end_credits.mp3" id="2_o3v8a"]
+[ext_resource type="AudioStream" uid="uid://3bub0xncc5n0" path="res://audio/music/jazz_loop.mp3" id="3_1o1ip"]
 [ext_resource type="Script" uid="uid://cx7tu3j60rgxd" path="res://scripts/audio/sfx.gd" id="3_geqqb"]
+[ext_resource type="AudioStream" uid="uid://b7dx5h5jpmo0q" path="res://audio/music/heist_music_intense.mp3" id="4_vyqds"]
 [ext_resource type="AudioStream" uid="uid://b545p5n5brfyb" path="res://audio/atmo/scene_start.mp3" id="4_yj72v"]
+[ext_resource type="AudioStream" uid="uid://btbtrt7x6ihoh" path="res://audio/music/heist_music_calm.mp3" id="5_kxp5o"]
 [ext_resource type="AudioStream" uid="uid://wl0fxev3nicy" path="res://audio/atmo/night.mp3" id="5_yj72v"]
+[ext_resource type="AudioStream" uid="uid://bbh88cmre4i0a" path="res://audio/music/cyberpunk_heist_music.mp3" id="6_w7kme"]
 [ext_resource type="AudioStream" uid="uid://bsffqdarv7rnb" path="res://audio/sfx/pizza_eating.wav" id="6_x3vvp"]
 [ext_resource type="AudioStream" uid="uid://b4gyvr1gh5uk5" path="res://audio/sfx/fridge.mp3" id="7_yj72v"]
 [ext_resource type="AudioStream" uid="uid://nj37k1prt3gc" path="res://audio/sfx/drink.wav" id="8_wdse5"]
@@ -40,10 +44,35 @@ tag = "end_credits"
 stream = ExtResource("2_o3v8a")
 metadata/_custom_type_script = "uid://dpedvpv2q5drg"
 
+[sub_resource type="Resource" id="Resource_2olil"]
+script = ExtResource("1_xf70o")
+tag = "jazz_loop"
+stream = ExtResource("3_1o1ip")
+metadata/_custom_type_script = "uid://dpedvpv2q5drg"
+
+[sub_resource type="Resource" id="Resource_56tyr"]
+script = ExtResource("1_xf70o")
+tag = "heist_music_intense"
+stream = ExtResource("4_vyqds")
+metadata/_custom_type_script = "uid://dpedvpv2q5drg"
+
+[sub_resource type="Resource" id="Resource_vwj5a"]
+script = ExtResource("1_xf70o")
+tag = "heist_music_calm"
+stream = ExtResource("5_kxp5o")
+metadata/_custom_type_script = "uid://dpedvpv2q5drg"
+
+[sub_resource type="Resource" id="Resource_v5y3k"]
+script = ExtResource("1_xf70o")
+tag = "cyberpunk_heist_music"
+stream = ExtResource("6_w7kme")
+metadata/_custom_type_script = "uid://dpedvpv2q5drg"
+
 [sub_resource type="Resource" id="Resource_ti5mj"]
 script = ExtResource("3_geqqb")
 tag = "scene_start"
 streams = Array[AudioStream]([ExtResource("4_yj72v")])
+volume_db = 5.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_i5q2i"]
@@ -105,13 +134,14 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "crawling"
 streams = Array[AudioStream]([ExtResource("14_o3v8a")])
+volume_db = 5.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_q7acc"]
 script = ExtResource("3_geqqb")
 tag = "scene_vent"
 streams = Array[AudioStream]([ExtResource("14_yj72v")])
-volume_db = -15.0
+volume_db = 7.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_dlqbl"]
@@ -127,6 +157,7 @@ script = ExtResource("3_geqqb")
 tag = "cash"
 streams = Array[AudioStream]([ExtResource("16_qmcs3"), ExtResource("17_jgf1q"), ExtResource("18_n52gk")])
 variation_mode = 2
+pitch_randomness = 0.2
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_wpbyn"]
@@ -174,14 +205,14 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "ammo"
 streams = Array[AudioStream]([ExtResource("25_ban20")])
-volume_db = -15.0
+volume_db = -5.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_04ec1"]
 script = ExtResource("3_geqqb")
 tag = "gun_pick"
 streams = Array[AudioStream]([ExtResource("26_o5540")])
-volume_db = -15.0
+volume_db = -5.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_2dd1r"]
@@ -195,7 +226,7 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "alarm"
 streams = Array[AudioStream]([ExtResource("28_f8c8l")])
-volume_db = -10.5
+volume_db = -10.0
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_f8c8l"]
@@ -215,6 +246,7 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 script = ExtResource("3_geqqb")
 tag = "heart"
 streams = Array[AudioStream]([ExtResource("31_yj72v")])
+volume_db = -9.5
 metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 
 [sub_resource type="Resource" id="Resource_2jsks"]
@@ -227,5 +259,5 @@ metadata/_custom_type_script = "uid://cx7tu3j60rgxd"
 [resource]
 script = ExtResource("2_c4kn6")
 sound_effects = Array[ExtResource("3_geqqb")]([SubResource("Resource_ti5mj"), SubResource("Resource_i5q2i"), SubResource("Resource_cbwqd"), SubResource("Resource_wsc6m"), SubResource("Resource_wdse5"), SubResource("Resource_3ciu0"), SubResource("Resource_5ibni"), SubResource("Resource_jaogm"), SubResource("Resource_1wpvj"), SubResource("Resource_ixfql"), SubResource("Resource_q7acc"), SubResource("Resource_dlqbl"), SubResource("Resource_72jes"), SubResource("Resource_wpbyn"), SubResource("Resource_2neud"), SubResource("Resource_alwhf"), SubResource("Resource_b3gf6"), SubResource("Resource_8i5ql"), SubResource("Resource_4adfn"), SubResource("Resource_r4d1c"), SubResource("Resource_04ec1"), SubResource("Resource_2dd1r"), SubResource("Resource_m7g43"), SubResource("Resource_f8c8l"), SubResource("Resource_cov3v"), SubResource("Resource_4mpv7"), SubResource("Resource_2jsks")])
-music_tracks = Array[ExtResource("1_xf70o")]([SubResource("Resource_5qhko")])
+music_tracks = Array[ExtResource("1_xf70o")]([SubResource("Resource_5qhko"), SubResource("Resource_2olil"), SubResource("Resource_56tyr"), SubResource("Resource_vwj5a"), SubResource("Resource_v5y3k")])
 metadata/_custom_type_script = "uid://bv1r6iypadxw1"

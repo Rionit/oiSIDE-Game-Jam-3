@@ -18,6 +18,7 @@ func _ready() -> void:
 	buddy.position = first_pos
 	buddy_player.play("pointing")
 	AudioManager.play_sfx("scene_start")
+	AudioManager.play_bgm("heist_music_intense", 0.0)
 
 func on_duffle_picked(interactable) -> void:
 	buddy.position = second_pos
@@ -28,4 +29,5 @@ func on_duffle_picked(interactable) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is PlayerController and duffle_picked:
+		AudioManager.stop_bgm(0.0)
 		get_tree().change_scene_to_packed.call_deferred(HEIST_PREP_FLASHBACK_LEVEL)

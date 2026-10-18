@@ -75,75 +75,75 @@ environment = SubResource("Environment_mx8sn")
 [node name="room" parent="." unique_id=891097288 instance=ExtResource("1_rynrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00069242716, 0.00049340725, 0.00027608871)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/chair1" parent_id_path=PackedInt32Array(891097288, 1192072263) index="0" unique_id=550936395]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/chair1" parent_id_path=PackedInt32Array(891097288, 818594235) index="0" unique_id=550936395]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/chair1/StaticBody3D" unique_id=1817192180]
 shape = SubResource("ConvexPolygonShape3D_j3rmx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/chair2" parent_id_path=PackedInt32Array(891097288, 608158955) index="0" unique_id=697522140]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/chair2" parent_id_path=PackedInt32Array(891097288, 221639821) index="0" unique_id=697522140]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/chair2/StaticBody3D" unique_id=1656255128]
 shape = SubResource("ConvexPolygonShape3D_d4ht8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Circle Table" parent_id_path=PackedInt32Array(891097288, 1879015387) index="0" unique_id=243393391]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Circle Table" parent_id_path=PackedInt32Array(891097288, 1570734194) index="0" unique_id=243393391]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Circle Table/StaticBody3D" unique_id=615869009]
 shape = SubResource("ConvexPolygonShape3D_jt4u8")
 
-[node name="Cube_005" parent="room" index="7" unique_id=2034391240]
+[node name="Cube_005" parent="room" index="7" unique_id=1957709585]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/floor" parent_id_path=PackedInt32Array(891097288, 1297230563) index="0" unique_id=1994523591]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/floor" parent_id_path=PackedInt32Array(891097288, 238332690) index="0" unique_id=1994523591]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/floor/StaticBody3D" unique_id=221750536]
 shape = SubResource("ConvexPolygonShape3D_ppch8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/fridge" parent_id_path=PackedInt32Array(891097288, 1033996237) index="0" unique_id=1995610829]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/fridge" parent_id_path=PackedInt32Array(891097288, 1937460009) index="0" unique_id=1995610829]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/fridge/StaticBody3D" unique_id=1805284402]
 shape = SubResource("ConvexPolygonShape3D_v5asq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Kitchen Furniture_Atlas Texture_0" parent_id_path=PackedInt32Array(891097288, 817304595) index="0" unique_id=1188852867]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Kitchen Furniture_Atlas Texture_0" parent_id_path=PackedInt32Array(891097288, 1457747534) index="0" unique_id=1188852867]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Kitchen Furniture_Atlas Texture_0/StaticBody3D" unique_id=783956648]
 shape = SubResource("ConvexPolygonShape3D_yvpr0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Kitchen Furniture_Atlas Texture_0_001" parent_id_path=PackedInt32Array(891097288, 549687381) index="0" unique_id=819292765]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Kitchen Furniture_Atlas Texture_0_001" parent_id_path=PackedInt32Array(891097288, 1919832724) index="0" unique_id=819292765]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Kitchen Furniture_Atlas Texture_0_001/StaticBody3D" unique_id=1528337278]
 shape = SubResource("ConvexPolygonShape3D_er5el")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/KitchenSink" parent_id_path=PackedInt32Array(891097288, 1613955777) index="0" unique_id=1612723992]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/KitchenSink" parent_id_path=PackedInt32Array(891097288, 623657170) index="0" unique_id=1612723992]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/KitchenSink/StaticBody3D" unique_id=175831807]
 shape = SubResource("ConvexPolygonShape3D_134rj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_6_001" parent_id_path=PackedInt32Array(891097288, 896633290) index="0" unique_id=1381695170]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_6_001" parent_id_path=PackedInt32Array(891097288, 355324377) index="0" unique_id=1381695170]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Object_6_001/StaticBody3D" unique_id=201918313]
 shape = SubResource("ConvexPolygonShape3D_313hs")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_23" parent_id_path=PackedInt32Array(891097288, 1936405707) index="0" unique_id=1693773357]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_23" parent_id_path=PackedInt32Array(891097288, 267436527) index="0" unique_id=1693773357]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Object_23/StaticBody3D" unique_id=1564735263]
 shape = SubResource("ConvexPolygonShape3D_c1o2e")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_31" parent_id_path=PackedInt32Array(891097288, 1475326415) index="0" unique_id=1884397792]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/Object_31" parent_id_path=PackedInt32Array(891097288, 1620232122) index="0" unique_id=1884397792]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/Object_31/StaticBody3D" unique_id=1948608517]
 shape = SubResource("ConvexPolygonShape3D_lut0o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/stove" parent_id_path=PackedInt32Array(891097288, 1173235125) index="0" unique_id=456257570]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/stove" parent_id_path=PackedInt32Array(891097288, 1799411293) index="0" unique_id=456257570]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/stove/StaticBody3D" unique_id=1416422447]
 shape = SubResource("ConvexPolygonShape3D_8uisr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/table" parent_id_path=PackedInt32Array(891097288, 1442991585) index="0" unique_id=718108996]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/table" parent_id_path=PackedInt32Array(891097288, 579355363) index="0" unique_id=718108996]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/table/StaticBody3D" unique_id=1086562086]
 shape = SubResource("ConvexPolygonShape3D_t8b83")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="room/walls" parent_id_path=PackedInt32Array(891097288, 1080572570) index="0" unique_id=1221365659]
+[node name="StaticBody3D" type="StaticBody3D" parent="room/walls" parent_id_path=PackedInt32Array(891097288, 699833045) index="0" unique_id=1221365659]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room/walls/StaticBody3D" unique_id=297397737]
 shape = SubResource("ConcavePolygonShape3D_hxqiq")

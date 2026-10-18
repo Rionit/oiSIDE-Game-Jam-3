@@ -19,6 +19,7 @@ func _ready() -> void:
 	wife_player.play("female_standing")
 	get_tree().create_timer(20.0).timeout.connect(end_scene)
 	AudioManager.play_sfx("hallway")
+	AudioManager.play_bgm("heist_music_calm", 0.0)
 	
 
 func on_money_picked(interactable: Interactable) -> void:
@@ -32,6 +33,8 @@ func vault_sound():
 		AudioManager.play_sfx_at_3d("vault", vault_door.global_position)
 		
 func end_scene():
+	AudioManager.stop_bgm(3.0)
+	
 	first_person_player.can_move = false
 	first_person_player.crosshair.visible = false
 	

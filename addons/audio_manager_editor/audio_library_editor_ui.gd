@@ -196,8 +196,12 @@ func _populate_sfx_details(sfx: SFX) -> void:
 	header_lbl.add_theme_font_size_override("font_size", 18)
 	vbox.add_child(header_lbl)
 
+	var preview_hbox = HBoxContainer.new()
+	vbox.add_child(preview_hbox)
+
 	var preview_btn = Button.new()
 	preview_btn.text = "▶ Preview Sound Effect"
+	preview_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	preview_btn.pressed.connect(func():
 		var stream = sfx.get_next_stream()
 		if stream:
@@ -210,7 +214,15 @@ func _populate_sfx_details(sfx: SFX) -> void:
 			
 			preview_player.play()
 	)
-	vbox.add_child(preview_btn)
+	preview_hbox.add_child(preview_btn)
+
+	var stop_btn = Button.new()
+	stop_btn.text = "⏹ Stop"
+	stop_btn.pressed.connect(func():
+		if preview_player.playing:
+			preview_player.stop()
+	)
+	preview_hbox.add_child(stop_btn)
 
 	# Tag Field
 	_add_input_field(vbox, "Tag Name:", sfx.tag, func(new_text):
@@ -374,8 +386,12 @@ func _populate_music_details(music: Music) -> void:
 	header_lbl.add_theme_font_size_override("font_size", 18)
 	vbox.add_child(header_lbl)
 
+	var preview_hbox = HBoxContainer.new()
+	vbox.add_child(preview_hbox)
+
 	var preview_btn = Button.new()
 	preview_btn.text = "▶ Preview Track"
+	preview_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	preview_btn.pressed.connect(func():
 		if music.stream:
 			preview_player.stream = music.stream
@@ -383,7 +399,15 @@ func _populate_music_details(music: Music) -> void:
 			preview_player.pitch_scale = music.pitch_scale
 			preview_player.play()
 	)
-	vbox.add_child(preview_btn)
+	preview_hbox.add_child(preview_btn)
+
+	var stop_btn = Button.new()
+	stop_btn.text = "⏹ Stop"
+	stop_btn.pressed.connect(func():
+		if preview_player.playing:
+			preview_player.stop()
+	)
+	preview_hbox.add_child(stop_btn)
 
 	_add_input_field(vbox, "Tag Name:", music.tag, func(new_text):
 		music.tag = new_text
