@@ -73,15 +73,19 @@ size = Vector3(0.5395584, 1.4508588, 0.53955793)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s00kh"]
 size = Vector3(0.8692117, 1.870178, 1.5845468)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7c3h"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wbf3b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_w8frs"]
-sky_material = SubResource("ProceduralSkyMaterial_w7c3h")
+sky_material = SubResource("ProceduralSkyMaterial_wbf3b")
 
-[sub_resource type="Environment" id="Environment_mx8sn"]
+[sub_resource type="Environment" id="Environment_rdtkk"]
+background_mode = 1
+background_color = Color(0.07735384, 0.10069571, 0.11042989, 1)
 sky = SubResource("Sky_w8frs")
+ambient_light_color = Color(0.13184947, 0.45916563, 0.54146457, 1)
+ambient_light_energy = 1.47
 ssao_enabled = true
 glow_enabled = true
 glow_intensity = 1.0
@@ -379,13 +383,23 @@ self_modulate = Color(0, 0, 0, 1)
 
 [node name="Light" type="Node3D" parent="." unique_id=431302223]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light" unique_id=1178779326]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Light" unique_id=1246239045]
 transform = Transform3D(0.9237292, -0.2865227, 0.2542226, -0.38301826, -0.6989373, 0.6039733, 0.0046338877, -0.65527976, -0.7553724, 0.9865356, 5.989459, -6.6796994)
+light_color = Color(0.17385623, 0.3044399, 0.3672315, 1)
+light_energy = 5.696
 light_bake_mode = 0
 shadow_enabled = true
+shadow_opacity = 0.45
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" unique_id=1914736575]
-environment = SubResource("Environment_mx8sn")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light/DirectionalLight3D2" unique_id=276414263]
+transform = Transform3D(0.81142235, -0.582049, -0.0530331, -0.5293232, -0.69336945, -0.4889333, 0.24781162, 0.42480308, -0.8707074, 2.1093602, -14.082968, -15.2754)
+light_color = Color(0.17385623, 0.3044399, 0.3672315, 1)
+light_energy = 1.237
+light_bake_mode = 0
+shadow_opacity = 0.45
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="Light" unique_id=1039573188]
+environment = SubResource("Environment_rdtkk")
 
 [node name="DialogueManager" parent="." unique_id=551898399 instance=ExtResource("4_ukgae")]
 visible = false
