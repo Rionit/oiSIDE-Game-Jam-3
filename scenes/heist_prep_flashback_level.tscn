@@ -67,6 +67,12 @@ speaker = 0
 text = "Cause I have no idea."
 metadata/_custom_type_script = "uid://dq2ptpf5yrene"
 
+[sub_resource type="Resource" id="Resource_3wj35"]
+script = ExtResource("2_i2chr")
+speaker = 0
+text = "Go ahead and grab your gear."
+metadata/_custom_type_script = "uid://dq2ptpf5yrene"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vkku"]
 size = Vector3(28.999996, 19.000002, 17.000004)
 
@@ -182,6 +188,7 @@ stencil_color = Color(1, 1, 1, 1)
 [node name="HeistPrepFlashbackLevel" type="Node3D" unique_id=1033408852]
 script = ExtResource("1_10nsf")
 dialogue_lines = Array[ExtResource("2_i2chr")]([SubResource("Resource_i2chr"), SubResource("Resource_olgme"), SubResource("Resource_r1vv4"), SubResource("Resource_0n21q"), SubResource("Resource_3xq6u"), SubResource("Resource_2q2jh"), SubResource("Resource_s4hrr"), SubResource("Resource_553oi"), SubResource("Resource_gymnr"), SubResource("Resource_sc1va")])
+gear_line = SubResource("Resource_3wj35")
 
 [node name="basement" parent="." unique_id=1191204236 instance=ExtResource("1_1vkku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006145239, 0.0014929771, 3.0755997e-05)
