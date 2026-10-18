@@ -12,6 +12,8 @@ const END_CREDITS = preload("uid://kfgfesj1q3mm")
 func _ready() -> void:
 	cutscene.play("cutscene")
 	dialogue_manager.all_dialogue_finished.connect(prep_for_end)
+	AudioManager.play_sfx("end")
+	AudioManager.play_sfx("heart")
 
 func start_dialogue():
 	dialogue_manager.start_dialogue(dialogue_lines)
@@ -21,4 +23,8 @@ func prep_for_end():
 	end_scene_interact.process_mode = Node.PROCESS_MODE_INHERIT
 
 func end_scene(interactable: Interactable) -> void:
+
 	get_tree().change_scene_to_packed(END_CREDITS)
+	
+func boom():
+	AudioManager.play_sfx("boom")
